@@ -1,0 +1,651 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-06-30 16:35+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: es-AR\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/modules/ui/components/TermsModal.tsx
+msgid "{0}"
+msgstr ""
+
+#: src/modules/ui/components/LinkedActionCard.tsx
+msgid "{0}<0>{1} {primaryToken} </0>to <1>{secondaryToken} </1>{2}"
+msgstr ""
+
+#: src/modules/rewards/components/history/RewardsCharts.tsx
+msgid "{chart}"
+msgstr ""
+
+#: src/modules/app/components/WidgetNavigation.tsx
+msgid "{label}"
+msgstr ""
+
+#: src/modules/balances/components/ModuleCard.tsx
+msgid "{title}"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "About Balances"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "About Sky Token Rewards"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "About Sky tokens"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "About the Sky Savings Rate"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "About Trade"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "Access Restricted"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Access rewards without giving up control"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Access Sky Savings Rate with USDS"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Access the Sky Savings Rate"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "Access via VPN is not permitted. Please disconnect your VPN and refresh the page to continue."
+msgstr ""
+
+#: src/modules/ui/components/BalanceCards.tsx
+msgid "Accumulated Rewards"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "Address Verification Error"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsHistory.tsx
+#: src/modules/savings/components/SavingsHistory.tsx
+msgid "Amount"
+msgstr ""
+
+#: src/modules/ui/components/TermsModal.tsx
+msgid "An error occurred while submitting your signature. Please ensure your wallet is connected to Ethereum mainnet and try again. If the issue persists, reach out for assistance in the official <0>Sky Discord</0>"
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "balances"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Balances displays all of your Sky-related assets. When you connect your crypto wallet to Sky.money to access the decentralised Sky Protocol, only the tokens in the wallet that are relevant to the app are listed. With all of your Sky assets visible in one place, you can better self-manage your assets Sky.money is non-custodial and permissionless."
+msgstr ""
+
+#: src/modules/rewards/components/BoostedRewardsClaim.tsx
+msgid "Boosted Rewards"
+msgstr ""
+
+#: src/modules/config/components/LanguageSelector.tsx
+msgid "Choose language"
+msgstr ""
+
+#: src/modules/ui/components/AboutCle.tsx
+msgid "Chronicle"
+msgstr ""
+
+#: src/modules/ui/components/AboutCle.tsx
+msgid "Chronicle Points are not a native feature of the Sky Protocol. Skybase International does not control or guarantee the availability, distribution or allocation of Chronicle Points or any other Chronicle assets. The Chronicle project operates independently of Sky.money and Skybase International. Please be aware that any engagement with Chronicle is at your own risk, and we bear no responsibility for any outcomes associated with this third-party system, or any assets associated with it."
+msgstr ""
+
+#: src/modules/rewards/components/BoostedRewardsClaim.tsx
+msgid "Claim all"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsHistory.tsx
+msgid "Claim rewards"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "Combined actions"
+msgstr ""
+
+#: src/modules/rewards/components/BoostedRewardsClaim.tsx
+msgid "Coming soon"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Connect wallet"
+msgstr ""
+
+#: src/modules/layout/components/CustomConnectButton.tsx
+#: src/modules/ui/components/TermsModal.tsx
+msgid "Connect Wallet"
+msgstr ""
+
+#: src/modules/ui/components/CopyToClipboard.tsx
+msgid "Copied"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
+msgid "Copy transaction hash"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
+#: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
+msgid "Date"
+msgstr ""
+
+#: src/modules/upgrade/components/UpgradeHistory.tsx
+msgid "Details"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Directly trade eligible tokens for Sky ecosystem tokens using permissionless and non-custodial rails. With the Sky.money interface, it’s easy to access the decentralised Sky Protocol to trade, via smart contracts on the blockchain instead of relying on centralised entities."
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Earn with USDS"
+msgstr ""
+
+#: src/modules/balances/components/BalancesDetails.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "FAQs"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "Get rewards"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "Get rewards with USDS"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Get rewards with your {0} {1}"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "Get rewards with your USDS"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Get SKY rewards with USDS"
+msgstr ""
+
+#: src/modules/balances/components/ModuleCard.tsx
+msgid "Go to {module}"
+msgstr ""
+
+#: src/components/DetailsSwitcher.tsx
+msgid "Hide details"
+msgstr ""
+
+#: src/modules/ui/components/TermsModal.tsx
+msgid "Legal Terms"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "Looks like you need {0} to get rewards"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "Looks like you need USDS"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "Metrics"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "Network Error"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryTable.tsx
+msgid "No transactions found"
+msgstr ""
+
+#: src/modules/layout/components/UnsupportedNetworkPage.tsx
+msgid "Only Ethereum Mainnet is supported at this time.<0/>Please switch networks to continue."
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryTable.tsx
+msgid "Please connect your wallet to view your history"
+msgstr ""
+
+#: src/modules/layout/components/Error.tsx
+msgid "Please try the action again or reach out on Discord for assistance if the problem persists."
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+#: src/modules/ui/components/TermsModal.tsx
+msgid "Please wait..."
+msgstr ""
+
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+msgid "Rate"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Ready to upgrade and explore?"
+msgstr ""
+
+#: src/modules/ui/components/TermsModal.tsx
+msgid "Reject"
+msgstr ""
+
+#: src/modules/ui/components/BalanceCards.tsx
+msgid "Remaining balance"
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "rewards"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Rewards"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+msgid "Rewards statistics"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsSuppliersCard.tsx
+msgid "Rewards Suppliers"
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "savings"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Savings"
+msgstr ""
+
+#: src/modules/savings/components/SavingsSuppliersCard.tsx
+msgid "Savings Suppliers"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "See all rewards"
+msgstr ""
+
+#: src/modules/ui/components/AboutSky.tsx
+msgid "SKY"
+msgstr ""
+
+#: src/modules/ui/components/AboutSky.tsx
+msgid "SKY is a native governance token of the decentralised Sky ecosystem and the upgraded version of MKR. You can upgrade your MKR to SKY at the rate of 1:24,000, trade SKY for USDS and, soon, use it to accumulate Activation Token Rewards and participate in Sky ecosystem governance."
+msgstr ""
+
+#: src/modules/balances/components/BalancesDetails.tsx
+msgid "Sky Protocol activity"
+msgstr ""
+
+#: src/modules/balances/components/BalancesDetails.tsx
+msgid "Sky Protocol overview"
+msgstr ""
+
+#: src/modules/savings/components/SavingsRateCard.tsx
+msgid "Sky Savings Rate"
+msgstr ""
+
+#: src/modules/savings/components/SavingsDetails.tsx
+msgid "Sky Savings Rate info"
+msgstr ""
+
+#: src/modules/savings/components/SkySavingsRatePoolCard.tsx
+msgid "Sky Savings Rate Pool"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsOverview.tsx
+msgid "Sky Token Rewards activity"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsOverview.tsx
+msgid "Sky Token Rewards overview"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Sky Tokens Rewards are what you access when you supply USDS to the Sky Token Rewards module of the decentralised Sky Protocol. Sky Token Rewards are in the form of SKY governance tokens. No minimum USDS supply amount is required. With the Sky Protocol, you can access rewards without giving up control of your supplied assets."
+msgstr ""
+
+#: src/modules/layout/components/Error.tsx
+msgid "Something went wrong"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Start getting rewards"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Start saving"
+msgstr ""
+
+#: src/modules/ui/components/BalanceCards.tsx
+msgid "Supplied to Savings"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+msgid "Suppliers"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsHistory.tsx
+#: src/modules/savings/components/SavingsHistory.tsx
+msgid "Supply"
+msgstr ""
+
+#: src/modules/ui/components/AboutSUsds.tsx
+msgid "sUSDS"
+msgstr ""
+
+#: src/modules/ui/components/AboutSUsds.tsx
+msgid "sUSDS is a savings token for eligible users. When you supply USDS to the Sky Savings Rate module, you access the Sky Savings Rate and may receive sUSDS tokens. These sUSDS tokens serve as a digital record of your USDS interaction with the SSR module and any value accrued to your position."
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+msgid "then get rewards"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryTable.tsx
+msgid "There was an error fetching this data"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+msgid "Total {0} Points rewarded"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+msgid "Total {0} rewarded"
+msgstr ""
+
+#: src/modules/upgrade/components/UpgradedDaiToUsds.tsx
+msgid "Total DAI upgraded"
+msgstr ""
+
+#: src/modules/upgrade/components/UpgradedMkrToSky.tsx
+msgid "Total MKR upgraded"
+msgstr ""
+
+#: src/modules/ui/components/UsdsSkyTotalsChart.tsx
+msgid "Total SKY"
+msgstr ""
+
+#: src/modules/ui/components/UsdsTotalSupplyCard.tsx
+msgid "Total supply of USDS"
+msgstr ""
+
+#: src/modules/rewards/components/TotalRewardsTvl.tsx
+msgid "Total TVL"
+msgstr ""
+
+#: src/modules/ui/components/UsdsSkyTotalsChart.tsx
+msgid "Total USDS"
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "trade"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Trade"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Trade and get rewards"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Trade and start saving"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Trade USDC for USDS"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Trade USDT for USDS"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Trade your {0} {1} for USDS"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Trade your {0} {1} for USDS to get rewards"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Trade your crypto tokens"
+msgstr ""
+
+#: src/modules/trade/components/TradeHistory.tsx
+msgid "Trades"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryTable.tsx
+msgid "Transactions"
+msgstr ""
+
+#: src/modules/rewards/components/history/RewardsOverviewCharts.tsx
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+#: src/modules/savings/components/SavingsChart.tsx
+msgid "TVL"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
+#: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
+msgid "Tx hash"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryTable.tsx
+msgid "Type"
+msgstr ""
+
+#: src/modules/ui/components/BalanceCards.tsx
+msgid "Unable to fetch balance"
+msgstr ""
+
+#: src/modules/ui/components/StatsCard.tsx
+msgid "Unable to fetch data"
+msgstr ""
+
+#: src/modules/ui/components/Chart.tsx
+msgid "Unable to load chart data, please try again later."
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "upgrade"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Upgrade"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+#: src/modules/app/hooks/useNotification.tsx
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Upgrade and get rewards"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Upgrade and Save"
+msgstr ""
+
+#: src/modules/app/hooks/useNotification.tsx
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Upgrade DAI to USDS"
+msgstr ""
+
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+msgid "Upgrade MKR to SKY"
+msgstr ""
+
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "Upgrade stats"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Upgrade your {0} {1} to SKY"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Upgrade your {0} {1} to USDS"
+msgstr ""
+
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Upgrade your {0} {1} to USDS to get rewards"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Upgrade your DAI"
+msgstr ""
+
+#: src/modules/balances/components/BalancesModuleShowcase.tsx
+msgid "Upgrade your DAI and MKR"
+msgstr ""
+
+#: src/modules/ui/components/AboutUsds.tsx
+msgid "USDS"
+msgstr ""
+
+#: src/modules/ui/components/AboutUsds.tsx
+msgid "USDS is the stablecoin of the decentralised Sky Protocol. It can be used in several ways, including to participate in the Sky Savings Rate and get Sky Token Rewards without giving up control. It is the upgraded version of DAI."
+msgstr ""
+
+#: src/modules/rewards/components/RewardsBalanceDetails.tsx
+msgid "USDS not supplied"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsBalanceDetails.tsx
+msgid "USDS supplied"
+msgstr ""
+
+#: src/modules/ui/components/AboutCle.tsx
+msgid "View Chronicle"
+msgstr ""
+
+#: src/modules/ui/components/AboutSky.tsx
+#: src/modules/ui/components/AboutSUsds.tsx
+#: src/modules/ui/components/AboutUsds.tsx
+msgid "View contract"
+msgstr ""
+
+#: src/components/DetailsSwitcher.tsx
+msgid "View details"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
+msgid "View transaction on CoW Explorer"
+msgstr ""
+
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
+msgid "View transaction on Etherscan"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "VPN Detected"
+msgstr ""
+
+#: src/modules/balances/components/BalancesAssets.tsx
+msgid "We couldn't load your assets. Please try again later."
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "When you supply USDS to the Sky Savings Rate module of the decentralised Sky Protocol, you access the Sky Saving Rate and may accumulate additional USDS over time. No minimum supply amount is required, and you always maintain control of your supplied assets, as this feature is non-custodial."
+msgstr ""
+
+#: src/modules/rewards/components/RewardsHistory.tsx
+msgid "Withdraw"
+msgstr ""
+
+#: src/modules/savings/components/SavingsHistory.tsx
+msgid "Withdrawal"
+msgstr ""
+
+#: src/modules/auth/components/UnauthorizedPage.tsx
+msgid "Your access is restricted. For more information, please refer to our {0}."
+msgstr ""
+
+#: src/modules/balances/components/BalancesDetails.tsx
+msgid "Your assets"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS, and your MKR to SKY. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
+msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+msgid "Your Rewards balances"
+msgstr ""
+
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+msgid "Your Rewards transaction history"
+msgstr ""
+
+#: src/modules/savings/components/SavingsDetails.tsx
+msgid "Your Savings transaction history"
+msgstr ""
+
+#: src/modules/trade/components/TradeDetails.tsx
+msgid "Your Trade transaction history"
+msgstr ""
+
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "Your Upgrade/Revert transaction history"
+msgstr ""
+
+#: src/modules/savings/components/SavingsDetails.tsx
+msgid "Your USDS balances"
+msgstr ""
+
+#: src/modules/layout/components/UnsupportedNetworkPage.tsx
+msgid "Your wallet is connected to an unsupported network"
+msgstr ""

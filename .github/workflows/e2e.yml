@@ -1,0 +1,80 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  e2e:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - test: reward-1.spec
+            vnet: true
+          - test: reward-2.spec
+            vnet: true
+          - test: upgrade.spec
+            vnet: true
+          - test: savings.spec
+            vnet: true
+          # - test: trade-1.spec
+          #   vnet: true
+          # - test: trade-2.spec
+          #   vnet: true
+          - test: landing.spec
+            vnet: false
+          - test: la-u-r.spec
+            vnet: true
+          - test: la-u-s.spec
+            vnet: true
+          # - test: la-s-r.spec
+          #   vnet: true
+          # - test: la-s-s.spec
+          #   vnet: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - run: pnpm exec playwright install --with-deps chromium
+
+      - name: Setup VNet (if required)
+        if: ${{ matrix.vnet }}
+        run: |
+          pnpm run vnet:fork:ci
+        env:
+          TENDERLY_API_KEY: ${{ secrets.TENDERLY_API_KEY }}
+
+      - name: Run E2E Test
+        run: pnpm run e2e:no-vnet ${{ matrix.test }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Teardown VNet (if required)
+        if: ${{always() && matrix.vnet}}
+        run: |
+          pnpm run vnet:delete:ci
+        env:
+          TENDERLY_API_KEY: ${{ secrets.TENDERLY_API_KEY }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-${{ matrix.test }}
+          path: playwright-report/
+          retention-days: 30
