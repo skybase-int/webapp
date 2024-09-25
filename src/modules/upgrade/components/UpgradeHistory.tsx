@@ -5,6 +5,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
+import { getEnvSubgraphUrl } from '@/lib/utils';
 
 function formatUpgradeAmount(num: bigint) {
   return formatBigInt(absBigInt(num), { compact: true });
@@ -48,7 +49,14 @@ function getTokensAndTexts(row: UpgradeHistoryRow) {
 }
 
 export function UpgradeHistory() {
-  const { data: upgradeHistory, isLoading: upgradeHistoryLoading, error } = useUpgradeHistory();
+  const subgraphUrl = getEnvSubgraphUrl();
+  const {
+    data: upgradeHistory,
+    isLoading: upgradeHistoryLoading,
+    error
+  } = useUpgradeHistory({
+    subgraphUrl
+  });
   const { i18n } = useLingui();
 
   const memoizedDates = useMemo(() => upgradeHistory?.map(u => u.blockTimestamp), [upgradeHistory]);

@@ -1,3 +1,4 @@
+import { getEnvSubgraphUrl } from '@/lib/utils';
 import {
   RewardContractInfo,
   useAvailableTokenRewardContracts,
@@ -7,12 +8,13 @@ import { useChainId } from 'wagmi';
 
 export const useTotalTvl = () => {
   const chainId = useChainId();
+  const subgraphUrl = getEnvSubgraphUrl();
   const rewardContracts = useAvailableTokenRewardContracts(chainId);
   const {
     data: rewardContractsInfo,
     isLoading,
     error
-  } = useRewardContractsInfo({ chainId, rewardContracts });
+  } = useRewardContractsInfo({ chainId, rewardContracts, subgraphUrl });
 
   const totalTvl = extractTvl(rewardContractsInfo as RewardContractInfo[]);
 

@@ -6,9 +6,17 @@ import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { SavingsSupply, ArrowDown } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
+import { getEnvSubgraphUrl } from '@/lib/utils';
 
 export function SavingsHistory() {
-  const { data: savingsHistory, isLoading: savingsHistoryLoading, error } = useSavingsHistory();
+  const subgraphUrl = getEnvSubgraphUrl();
+  const {
+    data: savingsHistory,
+    isLoading: savingsHistoryLoading,
+    error
+  } = useSavingsHistory({
+    subgraphUrl
+  });
   const { i18n } = useLingui();
 
   const memoizedDates = useMemo(() => savingsHistory?.map(s => s.blockTimestamp), [savingsHistory]);

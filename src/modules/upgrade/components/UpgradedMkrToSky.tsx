@@ -1,3 +1,4 @@
+import { getEnvSubgraphUrl } from '@/lib/utils';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
 import { useUpgradeTotals } from '@jetstreamgg/hooks';
@@ -5,7 +6,8 @@ import { formatBigInt } from '@jetstreamgg/utils';
 import { t } from '@lingui/macro';
 
 export function UpgradedMkrToSky() {
-  const { data, isLoading, error } = useUpgradeTotals();
+  const subgraphUrl = getEnvSubgraphUrl();
+  const { data, isLoading, error } = useUpgradeTotals({ subgraphUrl });
 
   return (
     <StatsCard
