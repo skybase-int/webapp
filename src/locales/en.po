@@ -38,6 +38,14 @@ msgid "About Balances"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
+msgid "About Seal"
+msgstr ""
+
+#: src/modules/seal/components/SealDetails.tsx
+msgid "About Seal module"
+msgstr ""
+
+#: src/modules/layout/components/ConnectCard.tsx
 msgid "About Sky Token Rewards"
 msgstr ""
 
@@ -131,6 +139,7 @@ msgstr ""
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 #: src/modules/rewards/components/RewardsOverview.tsx
 #: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/seal/components/SealDetails.tsx
 #: src/modules/trade/components/TradeDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
 msgid "Combined actions"
@@ -178,6 +187,7 @@ msgstr ""
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 #: src/modules/rewards/components/RewardsOverview.tsx
 #: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/seal/components/SealDetails.tsx
 #: src/modules/trade/components/TradeDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
 msgid "FAQs"
@@ -257,6 +267,10 @@ msgstr ""
 msgid "Please wait..."
 msgstr ""
 
+#: src/modules/seal/components/SealDetails.tsx
+msgid "Position 01 details"
+msgstr ""
+
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
 msgid "Rate"
 msgstr ""
@@ -299,6 +313,10 @@ msgstr ""
 
 #: src/modules/savings/components/SavingsSuppliersCard.tsx
 msgid "Savings Suppliers"
+msgstr ""
+
+#: src/lib/constants.ts
+msgid "seal"
 msgstr ""
 
 #: src/modules/app/hooks/useNotification.tsx
@@ -564,6 +582,10 @@ msgstr ""
 msgid "USDS supplied"
 msgstr ""
 
+#: src/modules/seal/components/SealDetails.tsx
+msgid "Vault stats"
+msgstr ""
+
 #: src/modules/ui/components/AboutCle.tsx
 msgid "View Chronicle"
 msgstr ""
@@ -622,6 +644,10 @@ msgstr ""
 msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
 msgstr ""
 
+#: src/modules/seal/components/SealDetails.tsx
+msgid "Your position 01"
+msgstr ""
+
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 msgid "Your Rewards balances"
 msgstr ""
@@ -632,6 +658,10 @@ msgstr ""
 
 #: src/modules/savings/components/SavingsDetails.tsx
 msgid "Your Savings transaction history"
+msgstr ""
+
+#: src/modules/seal/components/SealDetails.tsx
+msgid "Your Seal transaction history"
 msgstr ""
 
 #: src/modules/trade/components/TradeDetails.tsx
