@@ -8,10 +8,10 @@ import { useOverallSkyData } from '@jetstreamgg/hooks';
 import { formatDecimalPercentage } from '@jetstreamgg/utils';
 import { TOKENS } from '@jetstreamgg/hooks';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
-import { getEnvSubgraphUrl } from '@/lib/utils';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 export function RewardsTokenInfo({ rewardContract }: { rewardContract: RewardContract }) {
-  const subgraphUrl = getEnvSubgraphUrl();
+  const subgraphUrl = useSubgraphUrl();
   const {
     data: rewardContractInfoData,
     isLoading: rewardContractInfoIsLoading,
