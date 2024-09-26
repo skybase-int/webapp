@@ -6,10 +6,10 @@ import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { Supply, Withdraw, Reward } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
-import { getEnvSubgraphUrl } from '@/lib/utils';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 export function RewardsHistory({ rewardContract }: { rewardContract: RewardContract }) {
-  const subgraphUrl = getEnvSubgraphUrl();
+  const subgraphUrl = useSubgraphUrl();
   const {
     data: allRewardContractsHistory,
     isLoading: rewardContractHistoryLoading,

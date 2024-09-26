@@ -17,7 +17,7 @@ import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { useCustomNavigation } from '@/modules/ui/hooks/useCustomNavigation';
 import { updateParamsFromTransaction } from '@/modules/utils/updateParamsFromTransaction';
 import { capitalizeFirstLetter } from '@/lib/helpers/string/capitalizeFirstLetter';
-import { getEnvSubgraphUrl } from '@/lib/utils';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 const targetTokenFromSourceToken = (sourceToken?: string) => {
   if (sourceToken === 'DAI') return 'USDS';
@@ -27,7 +27,7 @@ const targetTokenFromSourceToken = (sourceToken?: string) => {
 
 export function UpgradeWidgetPane(sharedProps: SharedProps) {
   const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
-  const subgraphUrl = getEnvSubgraphUrl();
+  const subgraphUrl = useSubgraphUrl();
   const { linkedActionConfig, updateLinkedActionConfig, exitLinkedActionMode } = useConfigContext();
   const { mutate: refreshUpgradeHistory } = useUpgradeHistory({ subgraphUrl });
 

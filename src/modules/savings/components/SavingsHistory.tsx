@@ -6,10 +6,10 @@ import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { SavingsSupply, ArrowDown } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
-import { getEnvSubgraphUrl } from '@/lib/utils';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 export function SavingsHistory() {
-  const subgraphUrl = getEnvSubgraphUrl();
+  const subgraphUrl = useSubgraphUrl();
   const {
     data: savingsHistory,
     isLoading: savingsHistoryLoading,

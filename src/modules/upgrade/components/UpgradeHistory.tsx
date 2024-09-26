@@ -5,7 +5,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
-import { getEnvSubgraphUrl } from '@/lib/utils';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 function formatUpgradeAmount(num: bigint) {
   return formatBigInt(absBigInt(num), { compact: true });
@@ -49,7 +49,7 @@ function getTokensAndTexts(row: UpgradeHistoryRow) {
 }
 
 export function UpgradeHistory() {
-  const subgraphUrl = getEnvSubgraphUrl();
+  const subgraphUrl = useSubgraphUrl();
   const {
     data: upgradeHistory,
     isLoading: upgradeHistoryLoading,
