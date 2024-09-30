@@ -48,7 +48,7 @@ export function SealPositionDetailsSection({ positionIndex }: { positionIndex: n
     <div>
       <DetailSection
         title={
-          <div className="flex items-baseline gap-4">
+          <div className="flex items-center gap-4">
             <Heading className="my-4">
               <Trans>Position {positionIndex} details</Trans>
             </Heading>

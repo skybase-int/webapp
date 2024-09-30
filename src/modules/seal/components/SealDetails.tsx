@@ -13,6 +13,7 @@ import { SealFaq } from './SealFaq';
 import { useState } from 'react';
 import { SealPositionOverview } from './SealPositionOverview';
 import { SealPositionDetailsSection } from './SealPositionDetailsSection';
+import { SealRewardsOverview } from './SealRewardsOverview';
 
 export function SealDetails(): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -57,10 +58,9 @@ export function SealDetails(): React.ReactElement {
           </DetailSectionRow>
         </DetailSection>
       )}
-      <DetailSection title={t`Vault stats`}>
+      <DetailSection title={t`Rewards overview`}>
         <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
+          <SealRewardsOverview />
         </DetailSectionRow>
       </DetailSection>
       <DetailSection title={t`FAQs`}>
