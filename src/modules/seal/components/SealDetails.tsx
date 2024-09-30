@@ -12,6 +12,7 @@ import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { SealFaq } from './SealFaq';
 import { useState } from 'react';
 import { SealPositionOverview } from './SealPositionOverview';
+import { SealPositionDetailsSection } from './SealPositionDetailsSection';
 
 export function SealDetails(): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -31,12 +32,7 @@ export function SealDetails(): React.ReactElement {
               <SealPositionOverview positionIndex={selectedPositionIndex} />
             </DetailSectionRow>
           </DetailSection>
-          <DetailSection title={t`Position ${selectedPositionIndex} details`}>
-            <DetailSectionRow>
-              {/* TODO: Add this section */}
-              <></>
-            </DetailSectionRow>
-          </DetailSection>
+          <SealPositionDetailsSection positionIndex={selectedPositionIndex} />
         </>
       )}
       {isConnectedAndAcceptedTerms &&
