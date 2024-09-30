@@ -27,6 +27,7 @@ import { Balances } from './Balances';
 import { Info } from './Info';
 import { Close } from './Close';
 import { Seal } from './Seal';
+import { Toggle } from './Toggle';
 
 export {
   ArrowDown,
@@ -57,5 +58,6 @@ export {
   Balances,
   Info,
   Close,
-  Seal
+  Seal,
+  Toggle
 };
