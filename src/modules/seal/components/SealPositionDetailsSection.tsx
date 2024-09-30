@@ -36,9 +36,10 @@ export function SealPositionDetailsSection({ positionIndex }: { positionIndex: n
     }
   }
 
-  const riskLevel = liquidationProximityPercentage
-    ? RISK_LEVEL_THRESHOLDS.findLast(t => t.threshold >= liquidationProximityPercentage)
-    : undefined;
+  const riskLevel =
+    liquidationProximityPercentage !== undefined
+      ? RISK_LEVEL_THRESHOLDS.findLast(t => t.threshold >= (liquidationProximityPercentage || 0))
+      : undefined;
   const riskColor = riskLevel ? RISK_COLORS[riskLevel.level] : undefined;
 
   if ((!urnAddressError && !urnAddressLoading && !urnAddress) || (!vaultError && !vaultLoading && !vault))
