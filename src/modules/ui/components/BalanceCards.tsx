@@ -193,8 +193,8 @@ export function SealSealedCard({
       label={label || t`USDS borrowed`}
       toggle={toggle}
       balance={balance}
-      icon={<Withdrawn />}
-      iconEmpty={<WithdrawnEmpty />}
+      icon={<Supplied />}
+      iconEmpty={<SuppliedEmpty />}
       isLoading={isLoading}
       token={token}
       error={error}
