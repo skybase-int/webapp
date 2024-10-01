@@ -24,3 +24,24 @@ export function getFooterLinks(): { url: string; name: string }[] {
 export function filterActionsByIntent(actions: LinkedAction[], intent: string) {
   return actions.filter(x => x.intent === intent || (x as LinkedAction)?.la === intent);
 }
+
+/**
+ * Sanitizes a URL to ensure it begins with 'https:'.
+ * Some URLs are directly provided via environment variables.
+ */
+export function sanitizeUrl(url: string | undefined) {
+  if (!url) return undefined;
+  try {
+    const parsedUrl = new URL(url);
+    // Ensure that the url begins with 'https:'
+    if (parsedUrl.protocol === 'https:') {
+      return url;
+    } else {
+      // Validation failed; don't use the provided url
+      return undefined;
+    }
+  } catch (error) {
+    console.error('Error parsing url');
+    return undefined;
+  }
+}
