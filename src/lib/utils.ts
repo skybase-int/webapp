@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { LinkedAction } from '@/modules/ui/hooks/useUserSuggestedActions';
+import { ALLOWED_EXTERNAL_DOMAINS } from './constants';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -34,12 +35,25 @@ export function sanitizeUrl(url: string | undefined) {
   try {
     const parsedUrl = new URL(url);
     // Ensure that the url begins with 'https:'
-    if (parsedUrl.protocol === 'https:') {
-      return url;
-    } else {
-      // Validation failed; don't use the provided url
+    if (parsedUrl.protocol !== 'https:') {
       return undefined;
     }
+
+    // Check if the domain is in the allowed list
+    if (!ALLOWED_EXTERNAL_DOMAINS.includes(parsedUrl.hostname)) {
+      return undefined;
+    }
+
+    // Remove any potential dangerous characters from the URL
+    const sanitizedUrl = parsedUrl.toString().replace(/[^\w:/.?#&=-]/g, '');
+
+    // Encode components to prevent XSS
+    const encodedUrl = encodeURI(sanitizedUrl);
+
+    // Validate the final URL
+    new URL(encodedUrl); // This will throw if the URL is invalid
+
+    return encodedUrl;
   } catch (error) {
     console.error('Error parsing url');
     return undefined;
