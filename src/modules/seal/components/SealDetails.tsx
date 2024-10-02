@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { SealPositionOverview } from './SealPositionOverview';
 import { SealPositionDetailsSection } from './SealPositionDetailsSection';
 import { SealRewardsOverview } from './SealRewardsOverview';
+import { SealHistory } from './SealHistory';
 
 export function SealDetails(): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -53,8 +54,7 @@ export function SealDetails(): React.ReactElement {
       {isConnectedAndAcceptedTerms && (
         <DetailSection title={t`Your Seal transaction history`}>
           <DetailSectionRow>
-            {/* TODO: Add this section */}
-            <></>
+            <SealHistory />
           </DetailSectionRow>
         </DetailSection>
       )}
