@@ -1,5 +1,5 @@
 import { defineChain } from 'viem';
-import tenderlyTestnetData from '../../../../tenderlyTestnetData.json';
+import tenderlyTestnetData from '../../../../tenderlyTestnetData.json' assert { type: 'json' };
 
 export const TENDERLY_CHAIN_ID = 314310;
 // only works if hardcoded, cannot be set via env variable. Corresponds to the public RPC of `mainnet_sep_30_0`
