@@ -15,13 +15,15 @@ export default ({ mode }: { mode: string }) => {
   const RPC_PROVIDER_SEPOLIA = process.env.VITE_RPC_PROVIDER_SEPOLIA || '';
   const RPC_PROVIDER_TENDERLY = process.env.VITE_RPC_PROVIDER_TENDERLY || '';
 
+  const PROD_STYLE_SRC_VALUES =
+    "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-Y/huXlwoYkVyQlxwSVcCi1RCDGDCSVBzDt0hYP9qlTc=' 'sha256-As28pNoabqy5Dm8GUYYMZv9gCVxIw4mT8rz2JbdeZjU=' 'sha256-v7ZMAlFoy9yxllQHKlsbkCvWNO+X3Xz65Wu2wkwwVaY=' 'sha256-T+ow83qKS6RCXyWfA3I6D/4E+GwaV5INwNCKNfug+Tg=' 'sha256-jdWOF+oc0vV3BxDwETcLN1ufCz+m+CXvn2h7KTO/eio='";
   const VITE_VERCEL_PREVIEW = process.env.VITE_VERCEL_PREVIEW === 'true';
   const VERCEL_PREVIEW_URL = VITE_VERCEL_PREVIEW ? 'https://vercel.live/' : '';
   const VERCEL_CONNECT = VITE_VERCEL_PREVIEW ? 'https://vercel.live wss://ws-us3.pusher.com' : '';
   const VERCEL_IMG = VITE_VERCEL_PREVIEW ? 'https://vercel.live https://vercel.com' : '';
   const STYLE_SRC_VALUES = VITE_VERCEL_PREVIEW
     ? "https://vercel.live 'unsafe-inline'"
-    : "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-Y/huXlwoYkVyQlxwSVcCi1RCDGDCSVBzDt0hYP9qlTc=' 'sha256-As28pNoabqy5Dm8GUYYMZv9gCVxIw4mT8rz2JbdeZjU=' 'sha256-v7ZMAlFoy9yxllQHKlsbkCvWNO+X3Xz65Wu2wkwwVaY=' 'sha256-T+ow83qKS6RCXyWfA3I6D/4E+GwaV5INwNCKNfug+Tg=' 'sha256-jdWOF+oc0vV3BxDwETcLN1ufCz+m+CXvn2h7KTO/eio='";
+    : PROD_STYLE_SRC_VALUES;
   const VERCEL_FONT = VITE_VERCEL_PREVIEW ? 'https://vercel.live https://assets.vercel.com' : '';
 
   // The missing 'script-src' sha256 you see in the logs when developing is most likely due to the react refresh script tag injected automatically for dev purposes.
