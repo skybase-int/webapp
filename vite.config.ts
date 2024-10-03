@@ -19,7 +19,9 @@ export default ({ mode }: { mode: string }) => {
   const VERCEL_PREVIEW_URL = VITE_VERCEL_PREVIEW ? 'https://vercel.live/' : '';
   const VERCEL_CONNECT = VITE_VERCEL_PREVIEW ? 'https://vercel.live wss://ws-us3.pusher.com' : '';
   const VERCEL_IMG = VITE_VERCEL_PREVIEW ? 'https://vercel.live https://vercel.com' : '';
-  const VERCEL_STYLE = VITE_VERCEL_PREVIEW ? "https://vercel.live 'unsafe-inline'" : '';
+  const STYLE_SRC_VALUES = VITE_VERCEL_PREVIEW
+    ? "https://vercel.live 'unsafe-inline'"
+    : "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-Y/huXlwoYkVyQlxwSVcCi1RCDGDCSVBzDt0hYP9qlTc=' 'sha256-As28pNoabqy5Dm8GUYYMZv9gCVxIw4mT8rz2JbdeZjU=' 'sha256-v7ZMAlFoy9yxllQHKlsbkCvWNO+X3Xz65Wu2wkwwVaY=' 'sha256-T+ow83qKS6RCXyWfA3I6D/4E+GwaV5INwNCKNfug+Tg=' 'sha256-jdWOF+oc0vV3BxDwETcLN1ufCz+m+CXvn2h7KTO/eio='";
   const VERCEL_FONT = VITE_VERCEL_PREVIEW ? 'https://vercel.live https://assets.vercel.com' : '';
 
   // The missing 'script-src' sha256 you see in the logs when developing is most likely due to the react refresh script tag injected automatically for dev purposes.
@@ -30,7 +32,7 @@ export default ({ mode }: { mode: string }) => {
      'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
-    style-src 'self' ${VERCEL_STYLE} 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-Y/huXlwoYkVyQlxwSVcCi1RCDGDCSVBzDt0hYP9qlTc=' 'sha256-As28pNoabqy5Dm8GUYYMZv9gCVxIw4mT8rz2JbdeZjU=' 'sha256-v7ZMAlFoy9yxllQHKlsbkCvWNO+X3Xz65Wu2wkwwVaY=' 'sha256-T+ow83qKS6RCXyWfA3I6D/4E+GwaV5INwNCKNfug+Tg=' 'sha256-jdWOF+oc0vV3BxDwETcLN1ufCz+m+CXvn2h7KTO/eio=';
+    style-src 'self' ${STYLE_SRC_VALUES} ;
     img-src 'self' ${VERCEL_IMG} data: blob: https://explorer-api.walletconnect.com;
     font-src 'self' ${VERCEL_FONT};
     connect-src 'self'
