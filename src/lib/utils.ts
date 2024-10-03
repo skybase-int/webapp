@@ -39,8 +39,12 @@ export function sanitizeUrl(url: string | undefined) {
       return undefined;
     }
 
-    // Check if the domain is in the allowed list
-    if (!ALLOWED_EXTERNAL_DOMAINS.includes(parsedUrl.hostname)) {
+    // Check if the domain is in the allowed list. Check for subdomains too
+    if (
+      !ALLOWED_EXTERNAL_DOMAINS.some(
+        domain => parsedUrl.hostname === domain || parsedUrl.hostname.endsWith(`.${domain}`)
+      )
+    ) {
       return undefined;
     }
 
