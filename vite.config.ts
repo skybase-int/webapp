@@ -15,11 +15,14 @@ export default ({ mode }: { mode: string }) => {
   const RPC_PROVIDER_SEPOLIA = process.env.VITE_RPC_PROVIDER_SEPOLIA || '';
   const RPC_PROVIDER_TENDERLY = process.env.VITE_RPC_PROVIDER_TENDERLY || '';
 
+  const VITE_VERCEL_PREVIEW = process.env.VITE_VERCEL_PREVIEW === 'true';
+  const VERCEL_PREVIEW_URL = VITE_VERCEL_PREVIEW ? 'https://vercel.live/_next-live/' : '';
+
   // The missing 'script-src' sha256 you see in the logs when developing is most likely due to the react refresh script tag injected automatically for dev purposes.
   // Note that the 'style-src' sha256 are required
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
-    script-src 'self'
+    script-src 'self' ${VERCEL_PREVIEW_URL}
      'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
