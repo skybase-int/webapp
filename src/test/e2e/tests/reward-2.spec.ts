@@ -105,6 +105,7 @@ test('Details pane shows correct history data and layout subsections', async ({ 
     .getByText('TVL', { exact: true })
     .locator('xpath=ancestor::div[1]')
     .getByText(/^\d.*USDS$/)
+    .first()
     .innerText();
   const suppliedAmountDetails = await page
     .getByRole('heading', { name: 'USDS supplied', exact: true })
