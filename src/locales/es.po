@@ -29,6 +29,10 @@ msgstr ""
 msgid "{label}"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "{sealedToken} sealed"
+msgstr ""
+
 #: src/modules/balances/components/ModuleCard.tsx
 msgid "{title}"
 msgstr ""
@@ -42,6 +46,7 @@ msgid "About Seal"
 msgstr ""
 
 #: src/modules/seal/components/SealDetails.tsx
+#: src/modules/ui/components/AboutSealModule.tsx
 msgid "About Seal module"
 msgstr ""
 
@@ -136,6 +141,10 @@ msgstr ""
 msgid "Claim rewards"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionDetailsSection.tsx
+msgid "Collateralization ratio"
+msgstr ""
+
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 #: src/modules/rewards/components/RewardsOverview.tsx
 #: src/modules/savings/components/SavingsDetails.tsx
@@ -166,9 +175,17 @@ msgstr ""
 msgid "Copy transaction hash"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionDetailsSection.tsx
+msgid "Current price"
+msgstr ""
+
 #: src/modules/ui/components/historyTable/HistoryRow.tsx
 #: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
 msgid "Date"
+msgstr ""
+
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "Delegate"
 msgstr ""
 
 #: src/modules/upgrade/components/UpgradeHistory.tsx
@@ -227,6 +244,10 @@ msgstr ""
 msgid "Legal Terms"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionDetailsSection.tsx
+msgid "Liquidation price"
+msgstr ""
+
 #: src/modules/app/hooks/useNotification.tsx
 msgid "Looks like you need {0} to get rewards"
 msgstr ""
@@ -267,11 +288,12 @@ msgstr ""
 msgid "Please wait..."
 msgstr ""
 
-#: src/modules/seal/components/SealDetails.tsx
-msgid "Position 01 details"
+#: src/modules/seal/components/SealPositionDetailsSection.tsx
+msgid "Position {positionIndex} details"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
+#: src/modules/seal/components/SealRewardsOverview.tsx
 msgid "Rate"
 msgstr ""
 
@@ -287,6 +309,11 @@ msgstr ""
 msgid "Remaining balance"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionOverview.tsx
+#: src/modules/seal/components/SealRewardsOverview.tsx
+msgid "Reward"
+msgstr ""
+
 #: src/lib/constants.ts
 msgid "rewards"
 msgstr ""
@@ -295,12 +322,20 @@ msgstr ""
 msgid "Rewards"
 msgstr ""
 
+#: src/modules/seal/components/SealDetails.tsx
+msgid "Rewards overview"
+msgstr ""
+
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 msgid "Rewards statistics"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsSuppliersCard.tsx
 msgid "Rewards Suppliers"
+msgstr ""
+
+#: src/modules/seal/components/SealPositionDetailsSection.tsx
+msgid "Risk level"
 msgstr ""
 
 #: src/lib/constants.ts
@@ -380,6 +415,7 @@ msgid "Supplied to Savings"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
+#: src/modules/seal/components/SealRewardsOverview.tsx
 msgid "Suppliers"
 msgstr ""
 
@@ -403,6 +439,10 @@ msgstr ""
 #: src/modules/ui/components/historyTable/HistoryTable.tsx
 msgid "There was an error fetching this data"
 msgstr "Hubo un error al obtener estos datos"
+
+#: src/modules/ui/components/AboutSealModule.tsx
+msgid "TODO"
+msgstr ""
 
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
 msgid "Total {0} Points rewarded"
@@ -492,6 +532,10 @@ msgstr "Transacciones"
 msgid "TVL"
 msgstr "TVL"
 
+#: src/modules/seal/components/SealRewardsOverview.tsx
+msgid "TVL (Total Value Locked)"
+msgstr ""
+
 #: src/modules/ui/components/historyTable/HistoryRow.tsx
 #: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
 msgid "Tx hash"
@@ -570,6 +614,11 @@ msgstr ""
 msgid "USDS"
 msgstr ""
 
+#: src/modules/ui/components/BalanceCards.tsx
+#: src/modules/ui/components/BalanceCards.tsx
+msgid "USDS borrowed"
+msgstr ""
+
 #: src/modules/ui/components/AboutUsds.tsx
 msgid "USDS is the stablecoin of the decentralised Sky Protocol. It can be used in several ways, including to participate in the Sky Savings Rate and get Sky Token Rewards without giving up control. It is the upgraded version of DAI."
 msgstr ""
@@ -582,14 +631,11 @@ msgstr ""
 msgid "USDS supplied"
 msgstr ""
 
-#: src/modules/seal/components/SealDetails.tsx
-msgid "Vault stats"
-msgstr ""
-
 #: src/modules/ui/components/AboutCle.tsx
 msgid "View Chronicle"
 msgstr ""
 
+#: src/modules/ui/components/AboutSealModule.tsx
 #: src/modules/ui/components/AboutSky.tsx
 #: src/modules/ui/components/AboutSUsds.tsx
 #: src/modules/ui/components/AboutUsds.tsx
@@ -615,6 +661,10 @@ msgstr ""
 #: src/modules/balances/components/BalancesAssets.tsx
 msgid "We couldn't load your assets. Please try again later."
 msgstr "No pudimos cargar tus activos. Por favor, inténtalo de nuevo más tarde."
+
+#: src/modules/seal/components/SealRewardsOverview.tsx
+msgid "We couldn&t load the Seal module rewards. Please try again later."
+msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "When you supply USDS to the Sky Savings Rate module of the decentralised Sky Protocol, you access the Sky Saving Rate and may accumulate additional USDS over time. No minimum supply amount is required, and you always maintain control of your supplied assets, as this feature is non-custodial."
@@ -645,7 +695,7 @@ msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to acce
 msgstr ""
 
 #: src/modules/seal/components/SealDetails.tsx
-msgid "Your position 01"
+msgid "Your position {selectedPositionIndex}"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsDetailsView.tsx
