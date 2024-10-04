@@ -26,6 +26,7 @@ import { Upgrade } from './Upgrade';
 import { Balances } from './Balances';
 import { Info } from './Info';
 import { Close } from './Close';
+import { Seal } from './Seal';
 
 export {
   ArrowDown,
@@ -55,5 +56,6 @@ export {
   Upgrade,
   Balances,
   Info,
-  Close
+  Close,
+  Seal
 };

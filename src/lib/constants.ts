@@ -1,4 +1,4 @@
-import { RewardsModule, Savings, Trade, Upgrade } from '@/modules/icons';
+import { RewardsModule, Savings, Trade, Upgrade, Seal } from '@/modules/icons';
 import { Intent } from './enums';
 import { msg } from '@lingui/macro';
 import { MessageDescriptor } from '@lingui/core';
@@ -15,14 +15,15 @@ export enum QueryParams {
   Timestamp = 'timestamp'
 }
 
-export const restrictedIntents = [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT];
+export const restrictedIntents = [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT, Intent.SEAL_INTENT];
 
 export const IntentMapping = {
   [Intent.BALANCES_INTENT]: 'balances',
   [Intent.UPGRADE_INTENT]: 'upgrade',
   [Intent.TRADE_INTENT]: 'trade',
   [Intent.SAVINGS_INTENT]: 'savings',
-  [Intent.REWARDS_INTENT]: 'rewards'
+  [Intent.REWARDS_INTENT]: 'rewards',
+  [Intent.SEAL_INTENT]: 'seal'
 };
 
 export const intentTxt: Record<string, MessageDescriptor> = {
@@ -30,7 +31,8 @@ export const intentTxt: Record<string, MessageDescriptor> = {
   upgrade: msg`upgrade`,
   savings: msg`savings`,
   rewards: msg`rewards`,
-  balances: msg`balances`
+  balances: msg`balances`,
+  seal: msg`seal`
 };
 
 export const VALID_LINKED_ACTIONS = [
@@ -66,7 +68,8 @@ export const linkedActionMetadata = {
   [IntentMapping[Intent.UPGRADE_INTENT]]: { text: 'Upgrade DAI', icon: Upgrade },
   [IntentMapping[Intent.TRADE_INTENT]]: { text: 'Trade Tokens', icon: Trade },
   [IntentMapping[Intent.SAVINGS_INTENT]]: { text: 'Access Savings', icon: Savings },
-  [IntentMapping[Intent.REWARDS_INTENT]]: { text: 'Get Rewards', icon: RewardsModule }
+  [IntentMapping[Intent.REWARDS_INTENT]]: { text: 'Get Rewards', icon: RewardsModule },
+  [IntentMapping[Intent.SEAL_INTENT]]: { text: 'Seal', icon: Seal }
 };
 
 export const ALLOWED_EXTERNAL_DOMAINS = ['sky.money', 'app.sky.money', 'docs.sky.money'];
