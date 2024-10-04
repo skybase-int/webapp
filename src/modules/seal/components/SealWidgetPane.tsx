@@ -1,4 +1,4 @@
-import { SealedActivationWidget, TxStatus, WidgetStateChangeParams, SaFlow } from '@jetstreamgg/widgets';
+import { SealModuleWidget, TxStatus, WidgetStateChangeParams, SealFlow } from '@jetstreamgg/widgets';
 import { REFRESH_DELAY } from '@/lib/constants';
 import { SharedProps } from '@/modules/app/types/Widgets';
 import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
@@ -16,7 +16,7 @@ export function SealWidgetPane(sharedProps: SharedProps) {
   const onSealWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
     // After a successful linked action open flow, set the final step to "success"
     if (
-      widgetState.flow === SaFlow.OPEN &&
+      widgetState.flow === SealFlow.OPEN &&
       txStatus === TxStatus.SUCCESS &&
       linkedActionConfig.step === LinkedActionSteps.COMPLETED_CURRENT
     ) {
@@ -32,14 +32,18 @@ export function SealWidgetPane(sharedProps: SharedProps) {
       });
     }
 
-    if (hash && txStatus === TxStatus.SUCCESS && [SaFlow.OPEN, SaFlow.MANAGE].includes(widgetState.flow)) {
+    if (
+      hash &&
+      txStatus === TxStatus.SUCCESS &&
+      [SealFlow.OPEN, SealFlow.MANAGE].includes(widgetState.flow)
+    ) {
       setTimeout(() => {
         refreshSealHistory();
       }, REFRESH_DELAY);
     }
   };
   return (
-    <SealedActivationWidget
+    <SealModuleWidget
       {...sharedProps}
       onWidgetStateChange={onSealWidgetStateChange}
       externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
