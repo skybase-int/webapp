@@ -5,14 +5,17 @@ import { ExternalLink } from '@/modules/layout/components/ExternalLink';
 import { Heading, Text } from '@/modules/layout/components/Typography';
 import { getEtherscanLink } from '@jetstreamgg/utils';
 import { useChainId } from 'wagmi';
-import { sActivationAddress } from '@jetstreamgg/hooks';
+import { sealModuleAddress } from '@jetstreamgg/hooks';
 import { GradientShapeCard } from './GradientShapeCard';
 
 export const AboutSealModule = () => {
   const chainId = useChainId();
 
-  // @ts-expect-error
-  const sealEtherscanLink = getEtherscanLink(chainId, sActivationAddress[chainId], 'address');
+  const sealEtherscanLink = getEtherscanLink(
+    chainId,
+    sealModuleAddress[chainId as keyof typeof sealModuleAddress],
+    'address'
+  );
 
   return (
     <GradientShapeCard

@@ -68,7 +68,7 @@ export function SealHistory() {
     // Filter out events that don't have an amount to display
     ?.filter(s => eventsToInclude.includes(s.type))
     .map((s, index) => ({
-      id: s.transactionHash,
+      id: `${s.transactionHash}-${s.type}`,
       type: mapTypeEnumToColumn(s.type),
       highlightText: highlightedEvents.includes(s.type),
       // @ts-expect-error TODO: Update the type of the history items once we have clarity on the events to display in the table
