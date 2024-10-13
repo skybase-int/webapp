@@ -8,6 +8,13 @@ import { IntentMapping } from '@/lib/constants';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { useUserSuggestedActions } from '@/modules/ui/hooks/useUserSuggestedActions';
 import { filterActionsByIntent } from '@/lib/utils';
+import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
+import { SealFaq } from './SealFaq';
+import { useState } from 'react';
+import { SealPositionOverview } from './SealPositionOverview';
+import { SealPositionDetailsSection } from './SealPositionDetailsSection';
+import { SealRewardsOverview } from './SealRewardsOverview';
+import { SealHistory } from './SealHistory';
 
 export function SealDetails(): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -15,20 +22,21 @@ export function SealDetails(): React.ReactElement {
   const { data: actionData } = useUserSuggestedActions();
   const widget = IntentMapping.SEAL_INTENT;
 
+  // TODO: Add logic to change selected position index based on widget, or URL params
+  const [selectedPositionIndex /*, setSelectedPositionIndex*/] = useState<number | null>(0);
+
   return (
     <DetailSectionWrapper>
-      <DetailSection title={t`Your position 01`}>
-        <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
-        </DetailSectionRow>
-      </DetailSection>
-      <DetailSection title={t`Position 01 details`}>
-        <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
-        </DetailSectionRow>
-      </DetailSection>
+      {selectedPositionIndex !== null && (
+        <>
+          <DetailSection title={t`Your position ${selectedPositionIndex}`}>
+            <DetailSectionRow>
+              <SealPositionOverview positionIndex={selectedPositionIndex} />
+            </DetailSectionRow>
+          </DetailSection>
+          <SealPositionDetailsSection positionIndex={selectedPositionIndex} />
+        </>
+      )}
       {isConnectedAndAcceptedTerms &&
         !linkedActionConfig?.showLinkedAction &&
         (filterActionsByIntent(actionData?.linkedActions || [], widget).length ?? 0) > 0 && (
@@ -40,28 +48,24 @@ export function SealDetails(): React.ReactElement {
         )}
       <DetailSection title={t`About Seal module`}>
         <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
+          <AboutSealModule />
         </DetailSectionRow>
       </DetailSection>
       {isConnectedAndAcceptedTerms && (
         <DetailSection title={t`Your Seal transaction history`}>
           <DetailSectionRow>
-            {/* TODO: Add this section */}
-            <></>
+            <SealHistory />
           </DetailSectionRow>
         </DetailSection>
       )}
-      <DetailSection title={t`Vault stats`}>
+      <DetailSection title={t`Rewards overview`}>
         <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
+          <SealRewardsOverview />
         </DetailSectionRow>
       </DetailSection>
       <DetailSection title={t`FAQs`}>
         <DetailSectionRow>
-          {/* TODO: Add this section */}
-          <></>
+          <SealFaq />
         </DetailSectionRow>
       </DetailSection>
     </DetailSectionWrapper>
