@@ -12,7 +12,7 @@ import {
 import { TENDERLY_RPC_URL } from './testTenderlyChain';
 
 export const tenderly = {
-  id: 314311,
+  id: 314310,
   name: 'mainnet_aug_28_0',
   network: 'tenderly',
   nativeCurrency: {

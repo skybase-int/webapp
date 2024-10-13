@@ -1,7 +1,7 @@
 import { defineChain } from 'viem';
 import tenderlyTestnetData from '../../../../tenderlyTestnetData.json';
 
-export const TENDERLY_CHAIN_ID = 314311;
+export const TENDERLY_CHAIN_ID = 314310;
 // only works if hardcoded, cannot be set via env variable
 export const TENDERLY_RPC_URL =
   'https://virtual.mainnet.rpc.tenderly.co/bb05a98c-57d2-425c-8b2e-97431886f42c';

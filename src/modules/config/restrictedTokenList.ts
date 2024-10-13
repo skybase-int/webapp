@@ -14,7 +14,7 @@ import {
 } from '@jetstreamgg/hooks';
 import { tenderly } from '@/data/wagmi/config/config.default';
 
-const TENDERLY_CHAIN_ID = 314311;
+const TENDERLY_CHAIN_ID = 314310;
 const { usdc, usdt, eth, weth, dai, usds } = TOKENS;
 
 // TODO Add remaining mainnet tokens once they have been deployed
