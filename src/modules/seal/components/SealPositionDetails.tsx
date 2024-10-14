@@ -16,7 +16,7 @@ import { SealPositionDetailsSection } from './SealPositionDetailsSection';
 import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealHistory } from './SealHistory';
 
-export function SealDetails(): React.ReactElement {
+export function SealPositionDetails(): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
   const { linkedActionConfig } = useConfigContext();
   const { data: actionData } = useUserSuggestedActions();
