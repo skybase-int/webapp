@@ -13,7 +13,7 @@ import { AnimationLabels } from '@/modules/ui/animation/constants';
 import { useConnectedContext } from '@/modules/ui/context/ConnectedContext';
 import { FooterLinks } from '@/modules/layout/components/FooterLinks';
 import { BP, useBreakpointIndex } from '@/modules/ui/hooks/useBreakpointIndex';
-import { SealPositionDetails } from '@/modules/seal/components/SealPositionDetails';
+import { SealDetailsPane } from '@/modules/seal/components/SealDetailsPane';
 
 type DetailsPaneProps = {
   intent: Intent;
@@ -96,7 +96,7 @@ export const DetailsPane = ({ intent }: DetailsPaneProps) => {
             case Intent.SEAL_INTENT:
               return (
                 <MotionDetailsWrapper key={keys[3]}>
-                  <SealPositionDetails />
+                  <SealDetailsPane />
                 </MotionDetailsWrapper>
               );
             case Intent.BALANCES_INTENT:
