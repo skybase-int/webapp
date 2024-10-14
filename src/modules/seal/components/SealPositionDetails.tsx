@@ -12,7 +12,6 @@ import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { SealFaq } from './SealFaq';
 import { SealPositionOverview } from './SealPositionOverview';
 import { SealPositionDetailsSection } from './SealPositionDetailsSection';
-import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealHistory } from './SealHistory';
 
 export function SealPositionDetails({ positionIndex }: { positionIndex?: number }): React.ReactElement {
@@ -53,11 +52,6 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
           </DetailSectionRow>
         </DetailSection>
       )}
-      <DetailSection title={t`Rewards overview`}>
-        <DetailSectionRow>
-          <SealRewardsOverview />
-        </DetailSectionRow>
-      </DetailSection>
       <DetailSection title={t`FAQs`}>
         <DetailSectionRow>
           <SealFaq />
