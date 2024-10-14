@@ -5,14 +5,14 @@ import { SealPositionDetails } from './SealPositionDetails';
 import { ActiveSealDetailsView } from '../constants';
 
 export function SealDetailsPane() {
-  const { selectedSealPosition } = useContext(ConfigContext);
+  const { selectedSealUrnIndex } = useContext(ConfigContext);
   const view = useMemo(
-    () => (selectedSealPosition ? ActiveSealDetailsView.DETAILS : ActiveSealDetailsView.OVERVIEW),
-    [selectedSealPosition]
+    () => (selectedSealUrnIndex ? ActiveSealDetailsView.DETAILS : ActiveSealDetailsView.OVERVIEW),
+    [selectedSealUrnIndex]
   );
 
   return view === ActiveSealDetailsView.DETAILS ? (
-    <SealPositionDetails positionIndex={selectedSealPosition} />
+    <SealPositionDetails positionIndex={selectedSealUrnIndex} />
   ) : (
     <SealOverview />
   );
