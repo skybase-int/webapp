@@ -12,11 +12,12 @@ on:
           - 'main'
           - 'staging'
           - 'development'
+          - 'preprod'
   schedule:
     - cron: '23 */1 * * *'
 
 env:
-  BRANCHES: 'main staging development'
+  BRANCHES: 'main staging development preprod'
   UPSTREAM_REPO: 'jetstreamgg/webapp'
 
 jobs:
