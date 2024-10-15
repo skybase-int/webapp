@@ -11,8 +11,12 @@ import { filterActionsByIntent } from '@/lib/utils';
 import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { SealFaq } from './SealFaq';
 import { SealPositionOverview } from './SealPositionOverview';
-import { SealPositionDetailsSection } from './SealPositionDetailsSection';
 import { SealHistory } from './SealHistory';
+
+// TODO replace with import from @jetstreamgg/utils
+export function formatUrnIndex(index: bigint): string {
+  return (index + 1n).toString();
+}
 
 export function SealPositionDetails({ positionIndex }: { positionIndex?: number }): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -21,16 +25,7 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
   const widget = IntentMapping.SEAL_INTENT;
   return (
     <DetailSectionWrapper>
-      {positionIndex !== undefined && (
-        <>
-          <DetailSection title={t`Your position ${positionIndex}`}>
-            <DetailSectionRow>
-              <SealPositionOverview positionIndex={positionIndex} />
-            </DetailSectionRow>
-          </DetailSection>
-          <SealPositionDetailsSection positionIndex={positionIndex} />
-        </>
-      )}
+      {positionIndex !== undefined && <SealPositionOverview positionIndex={positionIndex} />}
       {isConnectedAndAcceptedTerms &&
         !linkedActionConfig?.showLinkedAction &&
         (filterActionsByIntent(actionData?.linkedActions || [], widget).length ?? 0) > 0 && (
