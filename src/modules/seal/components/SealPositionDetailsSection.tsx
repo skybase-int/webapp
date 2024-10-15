@@ -38,7 +38,9 @@ export function SealPositionDetailsSection({ positionIndex }: { positionIndex: n
 
   const riskLevel =
     liquidationProximityPercentage !== undefined
-      ? RISK_LEVEL_THRESHOLDS.find(t => t.threshold <= liquidationProximityPercentage)
+      ? RISK_LEVEL_THRESHOLDS.find(
+          t => !!liquidationProximityPercentage && t.threshold <= liquidationProximityPercentage
+        )
       : undefined;
   const riskColor = riskLevel ? RISK_COLORS[riskLevel.level] : undefined;
 
