@@ -8,7 +8,7 @@ export enum QueryParams {
   Widget = 'widget',
   Details = 'details',
   Reward = 'reward',
-  SealUrnIndex = 'seal_index',
+  SealUrnIndex = 'urn_index',
   SourceToken = 'source_token',
   TargetToken = 'target_token',
   LinkedAction = 'linked_action',

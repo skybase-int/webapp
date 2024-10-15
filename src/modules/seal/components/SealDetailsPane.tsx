@@ -7,7 +7,8 @@ import { ActiveSealDetailsView } from '../constants';
 export function SealDetailsPane() {
   const { selectedSealUrnIndex } = useContext(ConfigContext);
   const view = useMemo(
-    () => (selectedSealUrnIndex ? ActiveSealDetailsView.DETAILS : ActiveSealDetailsView.OVERVIEW),
+    () =>
+      selectedSealUrnIndex !== undefined ? ActiveSealDetailsView.DETAILS : ActiveSealDetailsView.OVERVIEW,
     [selectedSealUrnIndex]
   );
 

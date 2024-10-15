@@ -20,19 +20,18 @@ export function SealWidgetPane(sharedProps: SharedProps) {
   // const { mutate: refreshSealHistory } = useSealHistory();
   const [, setSearchParams] = useSearchParams();
 
-  const onSealUrnChange = (sealUrnIndex: number | undefined) => {
+  const onSealUrnChange = (urn?: { urnAddress: `0x${string}` | undefined; urnIndex: bigint | undefined }) => {
     setSearchParams(params => {
-      if (sealUrnIndex) {
+      if (urn?.urnAddress && urn?.urnIndex !== undefined) {
         params.set(QueryParams.Widget, IntentMapping[Intent.SEAL_INTENT]);
-        params.set(QueryParams.SealUrnIndex, sealUrnIndex.toString());
+        params.set(QueryParams.SealUrnIndex, urn.urnIndex.toString());
       } else {
         params.delete(QueryParams.SealUrnIndex);
       }
       return params;
     });
-    setSelectedSealUrnIndex(sealUrnIndex);
+    setSelectedSealUrnIndex(urn?.urnIndex !== undefined ? Number(urn.urnIndex) : undefined);
   };
-  console.log(onSealUrnChange);
 
   const onSealWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
     // After a successful linked action open flow, set the final step to "success"
@@ -66,7 +65,7 @@ export function SealWidgetPane(sharedProps: SharedProps) {
   return (
     <SealModuleWidget
       {...sharedProps}
-      // onSealUrnChange={onSealUrnChange}
+      onSealUrnChange={onSealUrnChange}
       onWidgetStateChange={onSealWidgetStateChange}
       externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
     />

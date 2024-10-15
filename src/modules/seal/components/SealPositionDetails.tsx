@@ -21,7 +21,7 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
   const widget = IntentMapping.SEAL_INTENT;
   return (
     <DetailSectionWrapper>
-      {!!positionIndex && (
+      {positionIndex !== undefined && (
         <>
           <DetailSection title={t`Your position ${positionIndex}`}>
             <DetailSectionRow>
