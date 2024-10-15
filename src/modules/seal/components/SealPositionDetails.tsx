@@ -10,31 +10,25 @@ import { useUserSuggestedActions } from '@/modules/ui/hooks/useUserSuggestedActi
 import { filterActionsByIntent } from '@/lib/utils';
 import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { SealFaq } from './SealFaq';
-import { useState } from 'react';
 import { SealPositionOverview } from './SealPositionOverview';
 import { SealPositionDetailsSection } from './SealPositionDetailsSection';
-import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealHistory } from './SealHistory';
 
-export function SealDetails(): React.ReactElement {
+export function SealPositionDetails({ positionIndex }: { positionIndex?: number }): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
   const { linkedActionConfig } = useConfigContext();
   const { data: actionData } = useUserSuggestedActions();
   const widget = IntentMapping.SEAL_INTENT;
-
-  // TODO: Add logic to change selected position index based on widget, or URL params
-  const [selectedPositionIndex /*, setSelectedPositionIndex*/] = useState<number | null>(0);
-
   return (
     <DetailSectionWrapper>
-      {selectedPositionIndex !== null && (
+      {positionIndex !== undefined && (
         <>
-          <DetailSection title={t`Your position ${selectedPositionIndex}`}>
+          <DetailSection title={t`Your position ${positionIndex}`}>
             <DetailSectionRow>
-              <SealPositionOverview positionIndex={selectedPositionIndex} />
+              <SealPositionOverview positionIndex={positionIndex} />
             </DetailSectionRow>
           </DetailSection>
-          <SealPositionDetailsSection positionIndex={selectedPositionIndex} />
+          <SealPositionDetailsSection positionIndex={positionIndex} />
         </>
       )}
       {isConnectedAndAcceptedTerms &&
@@ -58,11 +52,6 @@ export function SealDetails(): React.ReactElement {
           </DetailSectionRow>
         </DetailSection>
       )}
-      <DetailSection title={t`Rewards overview`}>
-        <DetailSectionRow>
-          <SealRewardsOverview />
-        </DetailSectionRow>
-      </DetailSection>
       <DetailSection title={t`FAQs`}>
         <DetailSectionRow>
           <SealFaq />

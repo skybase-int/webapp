@@ -30,6 +30,7 @@ export default ({ mode }: { mode: string }) => {
       ${RPC_PROVIDER_SEPOLIA}
       https://virtual.mainnet.rpc.tenderly.co
       https://rpc.sepolia.org
+      https://vote.makerdao.com
       https://query-subgraph-testnet.sky.money
       https://query-subgraph-staging.sky.money
       https://query-subgraph.sky.money
