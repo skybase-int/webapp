@@ -39,6 +39,7 @@ export default ({ mode }: { mode: string }) => {
       https://api.sky.money
       https://api.ipify.org
       https://info-sky.blockanalitica.com
+      https://sky-tenderly.blockanalitica.com
       https://api.cow.fi/
       wss://relay.walletconnect.com
       wss://www.walletlink.org
