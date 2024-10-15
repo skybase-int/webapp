@@ -185,13 +185,11 @@ export function SealSealedCard({
   isLoading,
   token,
   label,
-  toggle,
   error
 }: BalanceCardProps): React.ReactElement {
   return (
     <BaseBalanceCard
       label={label || t`USDS borrowed`}
-      toggle={toggle}
       balance={balance}
       icon={<Supplied />}
       iconEmpty={<SuppliedEmpty />}

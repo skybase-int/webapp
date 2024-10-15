@@ -17,6 +17,10 @@ msgstr ""
 msgid "{0}"
 msgstr ""
 
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "{0} sealed"
+msgstr ""
+
 #: src/modules/ui/components/LinkedActionCard.tsx
 msgid "{0}<0>{1} {primaryToken} </0>to <1>{secondaryToken} </1>{2}"
 msgstr ""
@@ -27,10 +31,6 @@ msgstr ""
 
 #: src/modules/app/components/WidgetNavigation.tsx
 msgid "{label}"
-msgstr ""
-
-#: src/modules/seal/components/SealPositionOverview.tsx
-msgid "{sealedToken} sealed"
 msgstr ""
 
 #: src/modules/balances/components/ModuleCard.tsx
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Claim rewards"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionDetailsSection.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "Collateralization ratio"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Copy transaction hash"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionDetailsSection.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "Current price"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Legal Terms"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionDetailsSection.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "Liquidation price"
 msgstr ""
 
@@ -298,10 +298,6 @@ msgstr ""
 #: src/modules/auth/components/UnauthorizedPage.tsx
 #: src/modules/ui/components/TermsModal.tsx
 msgid "Please wait..."
-msgstr ""
-
-#: src/modules/seal/components/SealPositionDetailsSection.tsx
-msgid "Position {positionIndex} details"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
@@ -350,7 +346,7 @@ msgstr ""
 msgid "Rewards Suppliers"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionDetailsSection.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "Risk level"
 msgstr ""
 
@@ -735,8 +731,8 @@ msgstr ""
 msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
 msgstr ""
 
-#: src/modules/seal/components/SealPositionDetails.tsx
-msgid "Your position {positionIndex}"
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "Your position {0}"
 msgstr ""
 
 #: src/modules/rewards/components/RewardsDetailsView.tsx
