@@ -1,7 +1,8 @@
+import { useSealHistoricData } from '@jetstreamgg/hooks';
+import { formatDecimalPercentage, formatNumber } from '@jetstreamgg/utils';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
-import { formatBigInt } from '@jetstreamgg/utils';
 import { t } from '@lingui/macro';
 import { HStack } from '@/modules/layout/components/HStack';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
@@ -15,10 +16,17 @@ import { SealFaq } from './SealFaq';
 
 export function SealOverview() {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
+  const { data, isLoading, error } = useSealHistoricData();
+  const mostRecentData = data?.sort(
+    (a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime()
+  )[0];
 
-  // TODO get actual numbers from API
-  const mkrSealed = formatBigInt(243235000000000000000000n);
-  const usdsDebt = formatBigInt(20306070000000000000000000n);
+  const mkrSealed = formatNumber(mostRecentData?.totalMkr ?? 0);
+  const usdsDebt = formatNumber(mostRecentData?.totalDebt ?? 0);
+  const borrowRate = mostRecentData?.borrowRate ?? 0;
+  const tvl = mostRecentData?.tvl ?? 0;
+  const numberOfUrns = mostRecentData?.numberOfUrns ?? 0;
+
   return (
     <DetailSectionWrapper>
       <DetailSection title={t`Seal Overview`}>
@@ -26,6 +34,8 @@ export function SealOverview() {
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <StatsCard
               title={t`Total MKR sealed`}
+              isLoading={isLoading}
+              error={error}
               content={
                 <TokenIconWithBalance
                   className="mt-2"
@@ -33,13 +43,11 @@ export function SealOverview() {
                   balance={mkrSealed}
                 />
               }
-              isLoading={false}
-              error={null}
             />
             <StatsCard
               title={t`Total USDS borrowed`}
-              isLoading={false}
-              error={null}
+              isLoading={isLoading}
+              error={error}
               content={
                 <TokenIconWithBalance
                   className="mt-2"
@@ -54,21 +62,21 @@ export function SealOverview() {
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <StatsCard
               title={t`Borrow Rate`}
-              isLoading={false}
-              error={null}
-              content={<Text className="mt-2">3.7%</Text>}
+              isLoading={isLoading}
+              error={error}
+              content={<Text className="mt-2">{formatDecimalPercentage(borrowRate)}</Text>}
             />
             <StatsCard
               title={t`TVL`}
-              isLoading={false}
-              error={null}
-              content={<Text className="mt-2">270.4M</Text>}
+              isLoading={isLoading}
+              error={error}
+              content={<Text className="mt-2">{`$${formatNumber(tvl)}`}</Text>}
             />
             <StatsCard
               title={t`Seal Positions`}
-              isLoading={false}
-              error={null}
-              content={<Text className="mt-2">37</Text>}
+              isLoading={isLoading}
+              error={error}
+              content={<Text className="mt-2">{numberOfUrns}</Text>}
             />
           </HStack>
         </DetailSectionRow>
