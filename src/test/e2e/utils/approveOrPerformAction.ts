@@ -8,7 +8,9 @@ export type Action =
   | 'Revert'
   | 'Trade'
   | 'Approve'
-  | 'Approve supply amount';
+  | 'Approve supply amount'
+  | 'Approve seal amount'
+  | 'Open position';
 
 type approveOrPerformActionOptions = {
   reject?: boolean;
