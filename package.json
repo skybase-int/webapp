@@ -18,7 +18,7 @@
     "prettier": "pnpm prettier-no-files src tests",
     "lint": "pnpm lint-no-files src tests",
     "test": "vitest run",
-    "e2e": "pnpm vnet:delete:all && pnpm vnet:fork && playwright test --trace on",
+    "e2e": "pnpm vnet:delete:all && pnpm vnet:fork && playwright test seal.spec.ts --trace on",
     "e2e:no-vnet": "playwright test --trace on",
     "e2e:ui": "pnpm vnet:delete:all && pnpm vnet:fork && playwright test --ui",
     "test:watch": "vitest",
