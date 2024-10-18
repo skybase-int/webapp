@@ -12,6 +12,7 @@ import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { SealFaq } from './SealFaq';
 import { SealPositionOverview } from './SealPositionOverview';
 import { SealHistory } from './SealHistory';
+import { SealChart } from './SealChart';
 
 // TODO replace with import from @jetstreamgg/utils
 export function formatUrnIndex(index: bigint): string {
@@ -35,6 +36,11 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
             </DetailSectionRow>
           </DetailSection>
         )}
+      <DetailSection title={t`Metrics`}>
+        <DetailSectionRow>
+          <SealChart />
+        </DetailSectionRow>
+      </DetailSection>
       <DetailSection title={t`About Seal module`}>
         <DetailSectionRow>
           <AboutSealModule />
