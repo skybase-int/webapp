@@ -13,6 +13,7 @@ import { useConnectedContext } from '@/modules/ui/context/ConnectedContext';
 import { SealHistory } from './SealHistory';
 import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealFaq } from './SealFaq';
+import { SealChart } from './SealChart';
 
 export function SealOverview() {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -88,6 +89,11 @@ export function SealOverview() {
           </DetailSectionRow>
         </DetailSection>
       )}
+      <DetailSection title={t`Metrics`}>
+        <DetailSectionRow>
+          <SealChart />
+        </DetailSectionRow>
+      </DetailSection>
       <DetailSection title={t`About Seal module`}>
         <DetailSectionRow>
           <AboutSealModule />
