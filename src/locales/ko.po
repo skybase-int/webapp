@@ -197,7 +197,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionOverview.tsx
+#: src/modules/seal/components/SealDelegateCard.tsx
 msgid "Delegate"
 msgstr ""
 
@@ -272,6 +272,8 @@ msgstr ""
 
 #: src/modules/rewards/components/RewardsDetailsView.tsx
 #: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/seal/components/SealOverview.tsx
+#: src/modules/seal/components/SealPositionDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
 msgid "Metrics"
 msgstr "측정항목"
@@ -323,7 +325,7 @@ msgstr ""
 msgid "Repay"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionOverview.tsx
+#: src/modules/seal/components/SealRewardCard.tsx
 #: src/modules/seal/components/SealRewardsOverview.tsx
 msgid "Reward"
 msgstr ""
@@ -566,6 +568,10 @@ msgstr "거래 내역"
 #: src/modules/seal/components/SealOverview.tsx
 msgid "TVL"
 msgstr "TVL"
+
+#: src/modules/seal/components/SealChart.tsx
+msgid "TVL (Sealed)"
+msgstr ""
 
 #: src/modules/seal/components/SealRewardsOverview.tsx
 msgid "TVL (Total Value Locked)"
