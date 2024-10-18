@@ -10,7 +10,7 @@ export type Action =
   | 'Approve'
   | 'Approve supply amount'
   | 'Approve seal amount'
-  | 'Open position';
+  | 'Continue';
 
 type approveOrPerformActionOptions = {
   reject?: boolean;

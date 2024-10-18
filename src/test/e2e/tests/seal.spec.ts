@@ -18,7 +18,7 @@ test.beforeEach(async ({ page }) => {
   await page.getByRole('tab', { name: 'Seal' }).click();
 });
 
-test('initial seal module test', async ({ page }) => {
+test('Lock MKR, select rewards, select delegate, and open position', async ({ page }) => {
   await expect(page.getByText('About Seal Rewards')).toBeVisible();
   await page.getByRole('checkbox').click();
   await page.getByRole('button', { name: 'Continue' }).click();
@@ -49,6 +49,9 @@ test('initial seal module test', async ({ page }) => {
   await expect(page.getByText('Seal rewards')).toBeVisible();
 
   await approveOrPerformAction(page, 'Approve seal amount');
-  expect(page.getByRole('heading', { name: 'Waiting for confirmation' })).toBeVisible();
-  await approveOrPerformAction(page, 'Open position');
+  expect(page.getByRole('heading', { name: 'Token access approved' })).toBeVisible();
+  await approveOrPerformAction(page, 'Continue');
+  expect(page.getByRole('heading', { name: 'Successfully opened your position' })).toBeVisible();
+  await page.getByRole('button', { name: 'Back to seal' }).click();
+  await expect(page.getByText('Position 1')).toBeVisible();
 });
