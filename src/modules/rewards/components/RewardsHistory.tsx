@@ -6,13 +6,15 @@ import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { Supply, Withdraw, Reward } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
+import { getEnvSubgraphUrl } from '@/lib/utils';
 
 export function RewardsHistory({ rewardContract }: { rewardContract: RewardContract }) {
+  const subgraphUrl = getEnvSubgraphUrl();
   const {
     data: allRewardContractsHistory,
     isLoading: rewardContractHistoryLoading,
     error
-  } = useRewardsUserHistory({ rewardContractAddress: rewardContract.contractAddress });
+  } = useRewardsUserHistory({ rewardContractAddress: rewardContract.contractAddress, subgraphUrl });
   const rewardContractHistory = allRewardContractsHistory; //TODO: filter this by the reward contract
   const { i18n } = useLingui();
 

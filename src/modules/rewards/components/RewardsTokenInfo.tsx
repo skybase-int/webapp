@@ -8,15 +8,18 @@ import { useOverallSkyData } from '@jetstreamgg/hooks';
 import { formatDecimalPercentage } from '@jetstreamgg/utils';
 import { TOKENS } from '@jetstreamgg/hooks';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
+import { getEnvSubgraphUrl } from '@/lib/utils';
 
 export function RewardsTokenInfo({ rewardContract }: { rewardContract: RewardContract }) {
+  const subgraphUrl = getEnvSubgraphUrl();
   const {
     data: rewardContractInfoData,
     isLoading: rewardContractInfoIsLoading,
     error: rewardContractInfoError
   } = useRewardContractInfo({
     chainId: rewardContract.chainId,
-    rewardContractAddress: rewardContract.contractAddress
+    rewardContractAddress: rewardContract.contractAddress,
+    subgraphUrl
   });
 
   // for CLE points, we need the data from the chart data, not the contract
@@ -27,6 +30,7 @@ export function RewardsTokenInfo({ rewardContract }: { rewardContract: RewardCon
   } = useRewardsChartInfo({
     rewardContractAddress: rewardContract.contractAddress
   });
+
   const mostRecentReward = historicRewardsTokenData
     ?.slice()
     .sort((a, b) => b.blockTimestamp - a.blockTimestamp)[0];
