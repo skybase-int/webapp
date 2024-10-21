@@ -1,5 +1,6 @@
 import { IntentMapping, QueryParams, REFRESH_DELAY } from '@/lib/constants';
 import { Intent } from '@/lib/enums';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 import { SharedProps } from '@/modules/app/types/Widgets';
 import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
@@ -9,6 +10,7 @@ import { RewardsAction, RewardsWidget, TxStatus, WidgetStateChangeParams } from 
 import { useSearchParams } from 'react-router-dom';
 
 export function RewardsWidgetPane(sharedProps: SharedProps) {
+  const subgraphUrl = useSubgraphUrl();
   const {
     selectedRewardContract,
     setSelectedRewardContract,
@@ -17,7 +19,8 @@ export function RewardsWidgetPane(sharedProps: SharedProps) {
     exitLinkedActionMode
   } = useConfigContext();
   const { mutate: refreshRewardsHistory } = useRewardsUserHistory({
-    rewardContractAddress: selectedRewardContract?.contractAddress || ''
+    rewardContractAddress: selectedRewardContract?.contractAddress || '',
+    subgraphUrl
   });
 
   const [, setSearchParams] = useSearchParams();
