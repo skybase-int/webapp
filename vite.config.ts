@@ -40,6 +40,8 @@ export default ({ mode }: { mode: string }) => {
       https://info-sky.blockanalitica.com
       https://api.cow.fi/
       wss://relay.walletconnect.com
+      wss://relay.walletconnect.org
+      https://pulse.walletconnect.org
       wss://www.walletlink.org
       https://explorer-api.walletconnect.com/
       https://enhanced-provider.rainbow.me
