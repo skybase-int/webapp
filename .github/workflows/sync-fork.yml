@@ -14,7 +14,7 @@ on:
           - 'development'
           - 'preprod'
   schedule:
-    - cron: '23 */1 * * *'
+    - cron: '23,53 * * * *'
 
 env:
   BRANCHES: 'main staging development preprod'
