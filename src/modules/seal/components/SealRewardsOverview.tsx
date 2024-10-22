@@ -9,7 +9,6 @@ import {
   useRewardContractInfo,
   useRewardContractTokens,
   useRewardsChartInfo,
-  useRewardsRate,
   useSaRewardContracts
 } from '@jetstreamgg/hooks';
 import { formatAddress, formatBigInt } from '@jetstreamgg/utils';
@@ -30,11 +29,11 @@ const SealRewardsOverviewRow = ({ contractAddress }: { contractAddress: `0x${str
     error: rewardInfoError
   } = useRewardContractInfo({ chainId, rewardContractAddress: contractAddress });
 
-  const {
-    data: rewardRate,
-    isLoading: rateLoading,
-    error: rateError
-  } = useRewardsRate({ chainId, contractAddress });
+  // const {
+  //   data: rewardRate,
+  //   isLoading: rateLoading,
+  //   error: rateError
+  // } = useRewardsRate({ chainId, contractAddress });
 
   const {
     data: historicRewardsTokenData,
@@ -64,12 +63,13 @@ const SealRewardsOverviewRow = ({ contractAddress }: { contractAddress: `0x${str
           )
         }
       />
-      <StatsCard
+      {/* Removing this for now, will put back in once we have a way to get the rate */}
+      {/* <StatsCard
         title={t`Rate`}
         isLoading={rateLoading}
         error={rateError}
         content={<Text className="mt-2">{rewardRate.formatted}</Text>}
-      />
+      /> */}
       <StatsCard
         title={t`TVL (Total Value Locked)`}
         isLoading={rewardInfoLoading}
@@ -106,7 +106,7 @@ export function SealRewardsOverview() {
         </Text>
       }
     >
-      <VStack gap={8}>
+      <VStack className="space-y-8">
         {data?.map(({ contractAddress }) => (
           <SealRewardsOverviewRow key={contractAddress} contractAddress={contractAddress} />
         ))}
