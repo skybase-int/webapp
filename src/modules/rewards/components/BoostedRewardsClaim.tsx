@@ -2,12 +2,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useBoostedRewards } from '@/modules/rewards/hooks/useBoostedRewards';
-import { Hourglass, Rewards, RewardsEmpty, Rocket } from '@/modules/icons';
+import { Rewards, RewardsEmpty, Rocket } from '@/modules/icons';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
-import { Text } from '@/modules/layout/components/Typography';
 import { Trans } from '@lingui/macro';
 import { useAccount } from 'wagmi';
 import { formatBigInt } from '@jetstreamgg/utils';
+import { mapIntentToQueryParam } from '@/lib/constants';
+import { Intent } from '@/lib/enums';
+import { Link } from 'react-router-dom';
 
 export const BoostedRewardsClaim = () => {
   const { address } = useAccount();
@@ -26,14 +28,11 @@ export const BoostedRewardsClaim = () => {
               <Trans>Boosted Rewards</Trans>
             </CardTitle>
             <Rocket className="ml-1 mr-2" height="16" width="18" />
-            {/* TODO: Implement boosted rewards claim functionality once they're available */}
-            <Button size="xs" variant="chip" disabled={true} onClick={() => {}}>
-              <Trans>Claim all</Trans>
+            <Button size="xs" variant="chip" className="bg-primary" asChild>
+              <Link to={`/?widget=${mapIntentToQueryParam(Intent.REWARDS_INTENT)}`}>
+                <Trans>Claim all</Trans>
+              </Link>
             </Button>
-            <Text className="ml-2 text-sm font-normal leading-tight text-textSecondary">
-              <Trans>Coming soon</Trans>
-            </Text>
-            <Hourglass className="ml-1" height="16" width="11" />
           </div>
           {isLoading ? (
             <Skeleton className="h5 w-16" />
