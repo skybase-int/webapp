@@ -20,7 +20,7 @@ export default ({ mode }: { mode: string }) => {
     script-src 'self'
       'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
       'sha256-yQRA8WDk6/dyZs5nbfR1Woit7QYhVq/CjdDLSKvdP4g='
-      'sha256-3bWH8KxHCH28NRUxfynGOsPzQk8/5Vdawfvg476fLJk='
+      'nonce-3bWH8KxHCH28NRUxfynGOsPzQk85Vdawfvg476fLJk'
       https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
@@ -93,6 +93,9 @@ export default ({ mode }: { mode: string }) => {
             {
               injectTo: 'head',
               tag: 'script',
+              attrs: {
+                nonce: '3bWH8KxHCH28NRUxfynGOsPzQk85Vdawfvg476fLJk',
+              },
               children: `
                 const cookie3Options = {"siteId":"4e20d42b-14ed-45a0-8062-436098ed1358","additionalTracking":true,"cookielessEnabled":true};
                 window._paq = window._paq || [];
