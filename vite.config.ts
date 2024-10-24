@@ -19,9 +19,6 @@ export default ({ mode }: { mode: string }) => {
     default-src 'self';
     script-src 'self'
       'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
-      'sha256-hZu64SLAnosOCpr6XnPS3qMtChvpSD7OTkt4Y2Gdj/I='
-      'sha256-yCpEg6En9cEUsLGqET9CEthciLBB0ua65rtPEZrYEQY='
-      'sha256-lncnAi0b4EPgUhWNjbgRtfeX+SewQTLRvcKyanpIhiU='
       https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
@@ -101,8 +98,6 @@ export default ({ mode }: { mode: string }) => {
                   var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                   g.async = true;
                   g.src = 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js';
-                  g.integrity = 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT';
-                  g.crossOrigin = 'anonymous';
                   s.parentNode.insertBefore(g, s);
                 })();
               `
