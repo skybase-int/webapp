@@ -83,7 +83,7 @@ export function SealOverview() {
         </DetailSectionRow>
       </DetailSection>
       {isConnectedAndAcceptedTerms && (
-        <DetailSection title={t`Your Seal transaction history`}>
+        <DetailSection title={t`Your Seal Engine transaction history`}>
           <DetailSectionRow>
             <SealHistory />
           </DetailSectionRow>
