@@ -49,6 +49,7 @@ export default ({ mode }: { mode: string }) => {
       wss://www.walletlink.org
       https://explorer-api.walletconnect.com/
       https://enhanced-provider.rainbow.me
+      https://a.markfi.xyz/
       cloudflareinsights.com;
     frame-src 'self'
       https://verify.walletconnect.com
