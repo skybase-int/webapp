@@ -19,7 +19,8 @@ export default ({ mode }: { mode: string }) => {
     default-src 'self';
     script-src 'self'
       'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
-      'sha256-hn4YWuYW9zMYNpj9vMLY8LSyOyQfl54wKXSXnGw+BgE='
+      'sha256-yQRA8WDk6/dyZs5nbfR1Woit7QYhVq/CjdDLSKvdP4g='
+      'sha256-3bWH8KxHCH28NRUxfynGOsPzQk8/5Vdawfvg476fLJk='
       https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
