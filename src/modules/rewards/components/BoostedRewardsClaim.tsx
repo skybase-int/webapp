@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useBoostedRewards } from '@/modules/rewards/hooks/useBoostedRewards';
+import { useBoostedRewards } from '@jetstreamgg/hooks';
 import { Rewards, RewardsEmpty, Rocket } from '@/modules/icons';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
 import { Trans } from '@lingui/macro';
@@ -13,9 +13,9 @@ import { Link } from 'react-router-dom';
 
 export const BoostedRewardsClaim = () => {
   const { address } = useAccount();
-  const { data, isLoading, error } = useBoostedRewards({ address });
+  const { data, isLoading, error } = useBoostedRewards(address);
 
-  if (!address || !data || error || !data?.qualified) {
+  if (!address || !data || error || !data?.has_rewards || data?.is_claimed) {
     return null;
   }
 
@@ -39,11 +39,11 @@ export const BoostedRewardsClaim = () => {
           ) : (
             <TokenIconWithBalance
               token={{ symbol: 'SKY', name: 'New Governance Token' }}
-              balance={formatBigInt(data.rewards)}
+              balance={formatBigInt(data.amount || 0n)}
             />
           )}
         </div>
-        {data?.rewards && data?.rewards > 0 ? <Rewards /> : <RewardsEmpty />}
+        {data?.amount && data?.amount > 0 ? <Rewards /> : <RewardsEmpty />}
       </Card>
     </div>
   );
