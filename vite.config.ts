@@ -21,6 +21,8 @@ export default ({ mode }: { mode: string }) => {
       'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
       'sha256-hZu64SLAnosOCpr6XnPS3qMtChvpSD7OTkt4Y2Gdj/I='
       'sha256-yCpEg6En9cEUsLGqET9CEthciLBB0ua65rtPEZrYEQY='
+      'sha256-lncnAi0b4EPgUhWNjbgRtfeX+SewQTLRvcKyanpIhiU='
+      https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
