@@ -19,6 +19,8 @@ export default ({ mode }: { mode: string }) => {
     default-src 'self';
     script-src 'self'
       'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
+      'sha256-hZu64SLAnosOCpr6XnPS3qMtChvpSD7OTkt4Y2Gdj/I='
+      'sha256-yCpEg6En9cEUsLGqET9CEthciLBB0ua65rtPEZrYEQY='
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
