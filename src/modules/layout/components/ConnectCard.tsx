@@ -26,7 +26,7 @@ export function ConnectCard({ intent }: { intent: Intent }) {
       ? t`Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS. Unlocking all the Sky Protocol has to offer, without giving up control, is easy. `
       : t`Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS, and your MKR to SKY. Unlocking all the Sky Protocol has to offer, without giving up control, is easy. `,
     [Intent.TRADE_INTENT]: t`Directly trade eligible tokens for Sky ecosystem tokens using permissionless and non-custodial rails. With the Sky.money interface, it’s easy to access the decentralised Sky Protocol to trade, via smart contracts on the blockchain instead of relying on centralised entities.`,
-    [Intent.SEAL_INTENT]: 'TODO'
+    [Intent.SEAL_INTENT]: t`Sealing MKR into the Seal Engine enables you to access Seal Rewards by creating a position through which you generate and borrow USDS against those tokens.`
   };
 
   return (
