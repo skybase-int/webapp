@@ -15,7 +15,7 @@ export function ConnectCard({ intent }: { intent: Intent }) {
     [Intent.SAVINGS_INTENT]: t`About the Sky Savings Rate`,
     [Intent.UPGRADE_INTENT]: t`Ready to upgrade and explore?`,
     [Intent.TRADE_INTENT]: t`About Trade`,
-    [Intent.SEAL_INTENT]: t`About Seal`
+    [Intent.SEAL_INTENT]: t`About Seal Engine`
   };
 
   const contentText = {

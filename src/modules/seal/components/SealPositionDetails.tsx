@@ -41,7 +41,7 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
           <SealChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Seal Engine`}>
+      <DetailSection title={t`About Seal Rewards`}>
         <DetailSectionRow>
           <AboutSealModule />
         </DetailSectionRow>

@@ -94,7 +94,7 @@ export function SealOverview() {
           <SealChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Seal module`}>
+      <DetailSection title={t`About Seal Rewards`}>
         <DetailSectionRow>
           <AboutSealModule />
         </DetailSectionRow>
