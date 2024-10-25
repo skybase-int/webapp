@@ -20,6 +20,7 @@ export default ({ mode }: { mode: string }) => {
     script-src 'self'
       'unsafe-inline'
       https://cdn.markfi.xyz
+      https://cdn.cookie3.co
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
