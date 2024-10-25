@@ -92,7 +92,7 @@ export default ({ mode }: { mode: string }) => {
               injectTo: 'head',
               tag: 'script',
               children: `
-                const cookie3Options = {"siteId": 4e20d42b-14ed-45a0-8062-436098ed1358,"additionalTracking":true,"cookielessEnabled":true};
+                const cookie3Options = {"siteId": "4e20d42b-14ed-45a0-8062-436098ed1358","additionalTracking":true,"cookielessEnabled":true};
                 window._paq = window._paq || [];
                 (function () {
                     var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
