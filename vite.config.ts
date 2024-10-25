@@ -17,7 +17,11 @@ export default ({ mode }: { mode: string }) => {
 
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline';
+    script-src 'self'
+      'unsafe-inline'
+      https://cdn.markfi.xyz
+      https://static.cloudflareinsights.com
+      https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: blob: https://explorer-api.walletconnect.com;
     font-src 'self';
