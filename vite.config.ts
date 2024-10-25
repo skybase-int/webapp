@@ -17,13 +17,7 @@ export default ({ mode }: { mode: string }) => {
 
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
-    script-src 'self'
-      'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
-      'sha256-yQRA8WDk6/dyZs5nbfR1Woit7QYhVq/CjdDLSKvdP4g='
-      'nonce-3bWH8KxHCH28NRUxfynGOsPzQk85Vdawfvg476fLJk'
-      https://cdn.markfi.xyz
-      https://static.cloudflareinsights.com
-      https://challenges.cloudflare.com;
+    script-src 'self' 'unsafe-inline';
     style-src 'self' 'unsafe-inline';
     img-src 'self' data: blob: https://explorer-api.walletconnect.com;
     font-src 'self';
