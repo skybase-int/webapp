@@ -19,7 +19,6 @@ export default ({ mode }: { mode: string }) => {
     default-src 'self';
     script-src 'self'
       'unsafe-inline'
-      https://cdn.markfi.xyz
       https://cdn.cookie3.co
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
@@ -47,7 +46,6 @@ export default ({ mode }: { mode: string }) => {
       wss://www.walletlink.org
       https://explorer-api.walletconnect.com/
       https://enhanced-provider.rainbow.me
-      https://a.markfi.xyz/
       https://c.staging.cookie3.co/
       cloudflareinsights.com;
     frame-src 'self'
@@ -98,24 +96,9 @@ export default ({ mode }: { mode: string }) => {
                 window._paq = window._paq || [];
                 (function () {
                     var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                    g.async = true; g.src = 'https://cdn.markfi.xyz/scripts/analytics/latest/cookie3.analytics.min.js';
+                    g.async = true; g.src = 'https://cdn.cookie3.co/scripts/analytics/latest/cookie3.analytics.min.js';
                     s.parentNode.insertBefore(g, s);
                 })();
-              `
-            },
-            {
-              injectTo: 'head',
-              tag: 'script',
-              attrs: {
-                async: true,
-                src: 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
-                integrity: 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
-                crossOrigin: 'anonymous',
-                strategy: 'lazyOnload',
-                siteId: '4e20d42b-14ed-45a0-8062-436098ed1358'
-              },
-              children: `
-                const cookie3Options = {"siteId":"4e20d42b-14ed-45a0-8062-436098ed1358","additionalTracking":true,"cookielessEnabled":true};
               `
             }
           ]
