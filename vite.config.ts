@@ -48,6 +48,7 @@ export default ({ mode }: { mode: string }) => {
       https://explorer-api.walletconnect.com/
       https://enhanced-provider.rainbow.me
       https://a.markfi.xyz/
+      https://c.staging.cookie3.co/
       cloudflareinsights.com;
     frame-src 'self'
       https://verify.walletconnect.com
