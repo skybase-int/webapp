@@ -19,7 +19,7 @@ Seal reward rates are determined by Sky ecosystem governance.
     
 The debt ceiling and borrow rate are determined by Sky ecosystem governance through a process of decentralised, community-driven onchain voting. Borrow rate fees accumulate automatically per block and get added to the total debt.
 
-Opening a USDS borrow position is subject to liquidation risk in the following scenario: If at any time the value of your sealed collateral drops below the required threshold and your position becomes undercollateralised, the smart contract automatically liquidates it and auctions your collateral. Any leftover collateral can be claimed through the Unified Auctions portal. `
+Opening a USDS borrow position is subject to liquidation risk in the following scenario: If at any time the value of your sealed collateral drops below the required threshold and your position becomes undercollateralised, the smart contract automatically liquidates it and auctions your collateral. Any leftover collateral can be claimed through the [Unified Auctions portal](https://unified-auctions.makerdao.com/). `
   },
   {
     question: 'How is the borrow rate determined?',
@@ -29,7 +29,7 @@ Opening a USDS borrow position is subject to liquidation risk in the following s
   {
     question: 'What happens if my borrow position is liquidated?',
     answer:
-      'Opening a USDS borrow position is subject to liquidation risk in the following scenario: If at any time the value of your sealed collateral drops below the required threshold and your position becomes undercollateralised, the smart contract automatically liquidates it and auctions your collateral. Any leftover collateral can be claimed through the Unified Auctions portal. '
+      'Opening a USDS borrow position is subject to liquidation risk in the following scenario: If at any time the value of your sealed collateral drops below the required threshold and your position becomes undercollateralised, the smart contract automatically liquidates it and auctions your collateral. Any leftover collateral can be claimed through the [Unified Auctions portal](https://unified-auctions.makerdao.com/). '
   },
   {
     question: 'What’s the difference between Sky Token Rewards and Seal Rewards?',
@@ -56,6 +56,6 @@ Delegates in receipt of voting power can never directly access any tokens delega
   {
     question: 'Where can I learn about Sky ecosystem governance?',
     answer:
-      'For a deep dive into the facets and checks and balances of Sky ecosystem governance, please refer to the Sky Forum, the Sky Voting Portal and the Sky Atlas—the source of truth behind the Sky project, superseding and overriding all other competing rules or decisions.'
+      'For a deep dive into the facets and checks and balances of Sky ecosystem governance, please refer to the [Sky Forum](https://forum.sky.money/), the [Sky Voting Portal](https://vote.makerdao.com/) and the [Sky Atlas](https://mips.makerdao.com/mips/details/MIP101)—the source of truth behind the Sky project, superseding and overriding all other competing rules or decisions.'
   }
 ];
