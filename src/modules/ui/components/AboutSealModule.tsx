@@ -26,12 +26,14 @@ export const AboutSealModule = () => {
     >
       <div className="w-[80%] space-y-2 lg:w-1/2">
         <Heading>
-          <Trans>About Seal module</Trans>
+          <Trans>About Seal Rewards</Trans>
         </Heading>
         <Text variant="small">
           <Trans>
-            {/* TODO: Add copy */}
-            TODO
+            Seal Rewards are accessed when you supply MKR to the Seal Engine of the decentralised Sky
+            Protocol. Your supplied MKR tokens, as well as any rewards accumulated, automatically enter a
+            non-custodial smart contract, which allows you to always remain in control of your supplied
+            assets. The types of Seal Rewards and rates are determined by Sky ecosystem governance.
           </Trans>
         </Text>
       </div>
