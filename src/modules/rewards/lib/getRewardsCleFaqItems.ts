@@ -22,6 +22,6 @@ export const getRewardsCleFaqItems = (): Item[] => [
   {
     question: 'Where can I see the current total distribution of Chronicle Points?',
     answer:
-      'Users can see the current distribution of Chronicle Points on the [Sky Ecosystem dashboard](https://info.sky.money/).'
+      'Users can see the current distribution of Chronicle Points on the [Sky Ecosystem dashboard](https://info.sky.money/rewards/0x10ab606b067c9c461d8893c47c7512472e19e2ce/).'
   }
 ];
