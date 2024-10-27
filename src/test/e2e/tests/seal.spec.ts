@@ -31,27 +31,28 @@ test('Lock MKR, select rewards, select delegate, and open position', async ({ pa
   await page.getByTestId('widget-button').click();
 
   // select rewards
-  await expect(page.getByText('Select token rewards')).toBeVisible();
+  await expect(page.getByText('Choose your reward token')).toBeVisible();
   await page.getByRole('button', { name: 'USDS' }).click();
   await expect(page.getByTestId('widget-button')).toBeEnabled();
   await page.getByTestId('widget-button').click();
 
   // select delegate
-  await expect(page.getByText('Select delegate')).toBeVisible();
+  await expect(page.getByText('Choose your delegate')).toBeVisible();
   await page.getByRole('button', { name: '0x278' }).click();
   await expect(page.getByTestId('widget-button')).toBeEnabled();
   await page.getByTestId('widget-button').click();
 
   // confirm position
-  await expect(page.getByText('Confirm position')).toBeVisible();
+  await expect(page.getByText('Confirm your position')).toBeVisible();
   await expect(page.getByTestId('widget-container').getByText('Sealing')).toBeVisible();
   await expect(page.getByText('100 MKR')).toBeVisible();
-  await expect(page.getByTestId('widget-container').getByText('Seal rewards')).toBeVisible();
+  await expect(page.getByTestId('widget-container').getByText('Seal reward')).toBeVisible();
 
   await approveOrPerformAction(page, 'Approve seal amount');
   expect(page.getByRole('heading', { name: 'Token access approved' })).toBeVisible();
   await approveOrPerformAction(page, 'Continue');
-  expect(page.getByRole('heading', { name: 'Successfully opened your position' })).toBeVisible();
-  await page.getByRole('button', { name: 'Back to seal' }).click();
+  expect(page.getByRole('heading', { name: 'Success!' })).toBeVisible();
+  await expect(page.getByText("You've sealed 100 MKR. Your new position is open.")).toBeVisible();
+  await page.getByRole('button', { name: 'Manage your position(s)' }).click();
   await expect(page.getByText('Position 1')).toBeVisible();
 });
