@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Lock MKR, select rewards, select delegate, and open position', async ({ page }) => {
-  await expect(page.getByText('About Seal Rewards')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'About Seal Rewards' }).nth(1)).toBeVisible();
   await page.getByRole('checkbox').click();
   await page.getByRole('button', { name: 'Continue' }).click();
   await expect(page.getByTestId('supply-first-input-lse-balance')).toHaveText('100 MKR');
@@ -44,9 +44,9 @@ test('Lock MKR, select rewards, select delegate, and open position', async ({ pa
 
   // confirm position
   await expect(page.getByText('Confirm position')).toBeVisible();
-  await expect(page.getByText('Sealing')).toBeVisible();
+  await expect(page.getByTestId('widget-container').getByText('Sealing')).toBeVisible();
   await expect(page.getByText('100 MKR')).toBeVisible();
-  await expect(page.getByText('Seal rewards')).toBeVisible();
+  await expect(page.getByTestId('widget-container').getByText('Seal rewards')).toBeVisible();
 
   await approveOrPerformAction(page, 'Approve seal amount');
   expect(page.getByRole('heading', { name: 'Token access approved' })).toBeVisible();
