@@ -8,6 +8,13 @@ import { deleteSearchParams } from '@/modules/utils/deleteSearchParams';
 import { Intent } from '@/lib/enums';
 
 export function SealWidgetPane(sharedProps: SharedProps) {
+  let termsLink: any[] = [];
+  try {
+    termsLink = JSON.parse(import.meta.env.VITE_TERMS_LINK);
+  } catch (error) {
+    console.error('Error parsing terms link');
+  }
+
   const {
     linkedActionConfig,
     updateLinkedActionConfig,
@@ -62,12 +69,20 @@ export function SealWidgetPane(sharedProps: SharedProps) {
       }, REFRESH_DELAY);
     }
   };
+
+  const hasTermsLink = Array.isArray(termsLink) && termsLink.length > 0;
+  if (!hasTermsLink) {
+    console.error('No terms link found');
+    return null;
+  }
+
   return (
     <SealModuleWidget
       {...sharedProps}
       onSealUrnChange={onSealUrnChange}
       onWidgetStateChange={onSealWidgetStateChange}
       externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
+      termsLink={termsLink[0]}
     />
   );
 }
