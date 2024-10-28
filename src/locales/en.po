@@ -772,8 +772,11 @@ msgid "Your Savings transaction history"
 msgstr ""
 
 #: src/modules/seal/components/SealOverview.tsx
-#: src/modules/seal/components/SealPositionDetails.tsx
 msgid "Your Seal Engine transaction history"
+msgstr ""
+
+#: src/modules/seal/components/SealPositionDetails.tsx
+msgid "Your Seal position transaction history"
 msgstr ""
 
 #: src/modules/trade/components/TradeDetails.tsx
