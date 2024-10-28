@@ -54,8 +54,8 @@ const mapTypeEnumToTokenSymbol = (type: TransactionTypeEnum) => {
 
 const highlightedEvents = [TransactionTypeEnum.SEAL, TransactionTypeEnum.SEAL_SKY, TransactionTypeEnum.REPAY];
 
-export function SealHistory() {
-  const { data: sealHistory, isLoading: sealHistoryLoading, error } = useSealHistory();
+export function SealHistory({ index }: { index?: number }) {
+  const { data: sealHistory, isLoading: sealHistoryLoading, error } = useSealHistory({ index });
   const { i18n } = useLingui();
 
   const memoizedDates = useMemo(() => sealHistory?.map(s => s.blockTimestamp), [sealHistory]);
