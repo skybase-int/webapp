@@ -4,7 +4,7 @@
   "version": "0.1.4",
   "private": true,
   "scripts": {
-    "dev": "vite --host --config vite.config.ts",
+    "dev": "vite --host --config vite.config.ts --port 3001",
     "dev:restricted": "VITE_RESTRICTED_BUILD=true vite --host --config vite.config.ts",
     "build:restricted": "VITE_RESTRICTED_BUILD=true pnpm build",
     "dev:mock": "VITE_USE_MOCK_WALLET=true pnpm dev",
@@ -43,9 +43,9 @@
     ]
   },
   "dependencies": {
-    "@jetstreamgg/hooks": "3.0.35",
+    "@jetstreamgg/hooks": "3.0.36",
     "@jetstreamgg/utils": "2.0.6",
-    "@jetstreamgg/widgets": "3.0.52",
+    "@jetstreamgg/widgets": "3.0.53",
     "@lingui/detect-locale": "^4.7.0",
     "@lingui/macro": "^4.7.0",
     "@lingui/react": "^4.7.0",

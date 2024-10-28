@@ -49,7 +49,7 @@ export function SealPositionDetails({ positionIndex }: { positionIndex?: number 
       {isConnectedAndAcceptedTerms && (
         <DetailSection title={t`Your Seal Engine transaction history`}>
           <DetailSectionRow>
-            <SealHistory />
+            <SealHistory index={positionIndex} />
           </DetailSectionRow>
         </DetailSection>
       )}
