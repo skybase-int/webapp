@@ -4,7 +4,7 @@
   "version": "0.1.4",
   "private": true,
   "scripts": {
-    "dev": "vite --host --config vite.config.ts --port 3001",
+    "dev": "vite --host --config vite.config.ts",
     "dev:restricted": "VITE_RESTRICTED_BUILD=true vite --host --config vite.config.ts",
     "build:restricted": "VITE_RESTRICTED_BUILD=true pnpm build",
     "dev:mock": "VITE_USE_MOCK_WALLET=true pnpm dev",
