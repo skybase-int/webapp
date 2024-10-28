@@ -20,6 +20,8 @@ jobs:
             vnet: true
           - test: savings.spec
             vnet: true
+          - test: seal.spec
+            vnet: true
           # - test: trade-1.spec
           #   vnet: true
           # - test: trade-2.spec
@@ -65,6 +67,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           VITE_ENV_NAME: development
+          VITE_TERMS_LINK: '[{"url":"https://legal-terms","name":"Terms of Use"}]'
 
       - name: Teardown VNet (if required)
         if: ${{always() && matrix.vnet}}
