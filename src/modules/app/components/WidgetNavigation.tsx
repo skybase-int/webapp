@@ -90,7 +90,7 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
     ? { height: `calc(100vh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
     : { height: `${height - topOffset - (showLinkedAction ? laExtraHeight : 0)}px` };
   const tabGlowClasses =
-    'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light';
+    'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light before:opacity-100 hover:before:opacity-100';
 
   // Memoized scroll function
   const scrollToTop = useCallback(() => {
@@ -121,12 +121,18 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
         <TabsList
           className={`${isMobile ? 'space-x-1' : ''} sticky top-0 z-20 flex w-full justify-around rounded-none rounded-t-3xl border-b p-3 backdrop-blur-2xl md:border-none md:p-0 md:backdrop-filter-none`}
         >
-          {widgetContent.map(([widgetIntent, label, icon]) => (
+          {widgetContent.map(([widgetIntent, label, icon, , options]) => (
             <TabsTrigger
               key={widgetIntent}
               variant="icons"
               value={widgetIntent}
-              className={intent === widgetIntent ? cn(tabGlowClasses, 'px-1 md:px-2') : 'px-1 md:px-2'}
+              className={cn(
+                'px-1 md:px-2',
+                'before:opacity-0',
+                'disabled:cursor-not-allowed disabled:opacity-50 disabled:before:opacity-0 disabled:hover:before:opacity-0',
+                intent === widgetIntent && tabGlowClasses
+              )}
+              disabled={options?.disabled || false}
             >
               {!isMobile && icon({ color: intent === widgetIntent ? 'white' : 'rgba(198, 194, 255, 0.8)' })}
               <Text variant="small">

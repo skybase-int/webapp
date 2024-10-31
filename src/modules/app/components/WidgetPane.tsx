@@ -26,7 +26,13 @@ import { SealWidgetPane } from '@/modules/seal/components/SealWidgetPane';
 import { base, mainnet, sepolia } from 'wagmi/chains';
 import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';
 
-export type WidgetContent = [Intent, string, (props: IconProps) => JSX.Element, JSX.Element][];
+export type WidgetContent = [
+  Intent,
+  string,
+  (props: IconProps) => React.ReactNode,
+  React.ReactNode | null,
+  { disabled?: boolean }?
+][];
 
 type WidgetPaneProps = {
   intent: Intent;
@@ -49,9 +55,19 @@ const CHAIN_WIDGET_MAP: Record<number, Intent[]> = {
     Intent.UPGRADE_INTENT,
     Intent.SEAL_INTENT
   ],
-  [base.id]: [Intent.BALANCES_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
-  [tenderlyBase.id]: [Intent.BALANCES_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
+  [base.id]: [Intent.BALANCES_INTENT, Intent.REWARDS_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
+  [tenderlyBase.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.TRADE_INTENT
+  ],
   [sepolia.id]: [Intent.BALANCES_INTENT, Intent.TRADE_INTENT]
+};
+
+const COMING_SOON_MAP: Record<number, Intent[]> = {
+  [base.id]: [Intent.REWARDS_INTENT],
+  [tenderlyBase.id]: [Intent.REWARDS_INTENT]
 };
 
 export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
@@ -110,7 +126,22 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
     [Intent.UPGRADE_INTENT, 'Upgrade', Upgrade, withErrorBoundary(<UpgradeWidgetPane {...sharedProps} />)],
     [Intent.TRADE_INTENT, 'Trade', Trade, withErrorBoundary(<TradeWidgetPane {...sharedProps} />)],
     [Intent.SEAL_INTENT, 'Seal', Seal, withErrorBoundary(<SealWidgetPane {...sharedProps} />)]
-  ];
+  ].map(([intent, label, icon, component]) => {
+    const comingSoon = COMING_SOON_MAP[chainId]?.includes(intent as Intent);
+    return [
+      intent as Intent,
+      label as string,
+      icon as (props: IconProps) => React.ReactNode,
+      comingSoon ? null : (component as React.ReactNode),
+      comingSoon ? { disabled: true } : undefined
+    ] as const satisfies [
+      Intent,
+      string,
+      (props: IconProps) => React.ReactNode,
+      React.ReactNode | null,
+      { disabled?: boolean }?
+    ];
+  });
 
   return (
     <WidgetNavigation
