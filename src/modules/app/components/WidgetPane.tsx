@@ -134,12 +134,6 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
       icon as (props: IconProps) => React.ReactNode,
       comingSoon ? null : (component as React.ReactNode),
       comingSoon ? { disabled: true } : undefined
-    ] as const satisfies [
-      Intent,
-      string,
-      (props: IconProps) => React.ReactNode,
-      React.ReactNode | null,
-      { disabled?: boolean }?
     ];
   });
 
