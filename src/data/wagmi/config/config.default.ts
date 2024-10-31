@@ -34,7 +34,7 @@ export const tenderly = {
   }
 };
 
-const tenderlyBase = {
+export const tenderlyBase = {
   id: TENDERLY_BASE_CHAIN_ID,
   name: 'base_oct_9_0',
   network: 'tenderly base',
