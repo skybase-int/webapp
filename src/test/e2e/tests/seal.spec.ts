@@ -72,10 +72,9 @@ test('Lock MKR, select rewards, select delegate, and open position', async ({ pa
   await expect(page.getByText('Your position 1')).toBeVisible();
   // await expect(page.getByTestId('borrow-input-lse-balance')).toHaveText('Limit 0 <> 17,5933 USDS');
 
-  // TODO: Insufficient balance error appears, but it shouldn't. Awaiting fix for this
   // borrow more
-  // await page.getByTestId('borrow-input-lse').fill('100');
-  // await expect(page.getByText('Insufficient collateral')).toBeVisible();
+  await page.getByTestId('borrow-input-lse').fill('100');
+  await expect(page.getByText('Insufficient collateral')).not.toBeVisible();
 
   // repay all
 
