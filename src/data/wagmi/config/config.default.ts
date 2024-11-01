@@ -56,7 +56,8 @@ export const wagmiConfigDev = createConfig({
     [mainnet.id]: http(import.meta.env.VITE_RPC_PROVIDER_MAINNET || ''),
     [tenderly.id]: http(import.meta.env.VITE_RPC_PROVIDER_TENDERLY || ''),
     [sepolia.id]: http(import.meta.env.VITE_RPC_PROVIDER_SEPOLIA || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });
 
 //TODO: use this for production
@@ -65,5 +66,6 @@ export const wagmiConfigMainnet = createConfig({
   connectors,
   transports: {
     [mainnet.id]: http(import.meta.env.VITE_RPC_PROVIDER_MAINNET || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });
