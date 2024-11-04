@@ -23,12 +23,51 @@ import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { defaultConfig } from '@/modules/config/default-config';
 import { useChainId } from 'wagmi';
 import { SealWidgetPane } from '@/modules/seal/components/SealWidgetPane';
+import { base, mainnet, sepolia } from 'wagmi/chains';
+import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';
 
-export type WidgetContent = [Intent, string, (props: IconProps) => JSX.Element, JSX.Element][];
+export type WidgetContent = [
+  Intent,
+  string,
+  (props: IconProps) => React.ReactNode,
+  React.ReactNode | null,
+  { disabled?: boolean }?
+][];
 
 type WidgetPaneProps = {
   intent: Intent;
   children?: React.ReactNode;
+};
+
+const CHAIN_WIDGET_MAP: Record<number, Intent[]> = {
+  [mainnet.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.UPGRADE_INTENT,
+    Intent.TRADE_INTENT,
+    Intent.SEAL_INTENT
+  ],
+  [tenderly.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.UPGRADE_INTENT,
+    Intent.SEAL_INTENT
+  ],
+  [base.id]: [Intent.BALANCES_INTENT, Intent.REWARDS_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
+  [tenderlyBase.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.TRADE_INTENT
+  ],
+  [sepolia.id]: [Intent.BALANCES_INTENT, Intent.TRADE_INTENT]
+};
+
+const COMING_SOON_MAP: Record<number, Intent[]> = {
+  [base.id]: [Intent.REWARDS_INTENT],
+  [tenderlyBase.id]: [Intent.REWARDS_INTENT]
 };
 
 export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
@@ -87,13 +126,28 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
     [Intent.UPGRADE_INTENT, 'Upgrade', Upgrade, withErrorBoundary(<UpgradeWidgetPane {...sharedProps} />)],
     [Intent.TRADE_INTENT, 'Trade', Trade, withErrorBoundary(<TradeWidgetPane {...sharedProps} />)],
     [Intent.SEAL_INTENT, 'Seal', Seal, withErrorBoundary(<SealWidgetPane {...sharedProps} />)]
-  ];
+  ].map(([intent, label, icon, component]) => {
+    const comingSoon = COMING_SOON_MAP[chainId]?.includes(intent as Intent);
+    return [
+      intent as Intent,
+      label as string,
+      icon as (props: IconProps) => React.ReactNode,
+      comingSoon ? null : (component as React.ReactNode),
+      comingSoon ? { disabled: true } : undefined
+    ];
+  });
 
   return (
     <WidgetNavigation
-      widgetContent={widgetContent.filter(([intent]) =>
-        isRestricted ? !restrictedIntents.includes(intent) : true
-      )}
+      widgetContent={widgetContent.filter(([widgetIntent]) => {
+        // First check if restricted build
+        if (isRestricted && restrictedIntents.includes(widgetIntent)) {
+          return false;
+        }
+        // Then check if widget is supported on current chain
+        const supportedIntents = CHAIN_WIDGET_MAP[chainId] || [];
+        return supportedIntents.includes(widgetIntent);
+      })}
       intent={intent}
     >
       {children}
