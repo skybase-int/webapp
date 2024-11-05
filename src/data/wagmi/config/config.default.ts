@@ -20,6 +20,8 @@ export const tenderly = {
   id: TENDERLY_CHAIN_ID,
   name: 'mainnet_sep_30_0',
   network: 'tenderly',
+  // This is used by RainbowKit to display a chain icon for small screens
+  iconUrl: 'tokens/weth.svg',
   nativeCurrency: {
     decimals: 18,
     name: 'Ethereum',
@@ -38,6 +40,8 @@ export const tenderlyBase = {
   id: TENDERLY_BASE_CHAIN_ID,
   name: 'base_oct_9_0',
   network: 'tenderly base',
+  // This is used by RainbowKit to display a chain icon for small screens. TODO: update to Base icon once available
+  iconUrl: 'tokens/weth.svg',
   nativeCurrency: {
     decimals: 18,
     name: 'Ethereum',
