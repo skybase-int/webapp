@@ -10,11 +10,13 @@ export type Action =
   | 'Approve'
   | 'Approve supply amount'
   | 'Approve seal amount'
-  | 'Continue';
+  | 'Continue'
+  | 'Confirm';
 
 type approveOrPerformActionOptions = {
   reject?: boolean;
   buttonName?: 'Retry' | 'Continue';
+  buttonPosition?: number;
 };
 
 export const approveOrPerformAction = async (
@@ -22,11 +24,11 @@ export const approveOrPerformAction = async (
   action: Action,
   options?: approveOrPerformActionOptions
 ) => {
-  const { reject = false, buttonName = 'Continue' } = options || {};
+  const { reject = false, buttonName = 'Continue', buttonPosition = 0 } = options || {};
 
-  const actionButton = page.locator(
-    `role=button >> text=/^(${action}|Approve ${action.toLowerCase()} amount)$/`
-  );
+  const actionButton = page
+    .locator(`role=button >> text=/^(${action}|Approve ${action.toLowerCase()} amount)$/`)
+    .nth(buttonPosition);
   await actionButton.waitFor({ state: 'attached' }); // Ensure the button is in the DOM
   await expect(actionButton).toBeEnabled(); // Wait for the button to be enabled
   const buttonText = await actionButton.innerText(); // Get the text of the button
