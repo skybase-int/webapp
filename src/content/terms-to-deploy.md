@@ -1,6 +1,6 @@
 # Skybase International Terms of Use
 
-**Last updated: 15 September 2024**
+**Last updated: 22 October 2024**
 
 ## **Introduction**
 
