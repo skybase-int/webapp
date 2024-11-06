@@ -90,6 +90,11 @@ export function SealOverview() {
           </HStack>
         </DetailSectionRow>
       </DetailSection>
+      <DetailSection title={t`Rewards overview`}>
+        <DetailSectionRow>
+          <SealRewardsOverview />
+        </DetailSectionRow>
+      </DetailSection>
       {isConnectedAndAcceptedTerms && (
         <DetailSection title={t`Your Seal Engine transaction history`}>
           <DetailSectionRow>
@@ -105,11 +110,6 @@ export function SealOverview() {
       <DetailSection title={t`About Seal Rewards`}>
         <DetailSectionRow>
           <AboutSealModule />
-        </DetailSectionRow>
-      </DetailSection>
-      <DetailSection title={t`Rewards overview`}>
-        <DetailSectionRow>
-          <SealRewardsOverview />
         </DetailSectionRow>
       </DetailSection>
       <DetailSection title={t`FAQs`}>
