@@ -3,13 +3,14 @@ import '../mock-rpc-call.ts';
 import '../mock-vpn-check.ts';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 import { setErc20Balance } from '../utils/setBalance.ts';
-import { mkrAddress } from '@jetstreamgg/hooks';
+import { mkrAddress, usdsAddress } from '@jetstreamgg/hooks';
 import { TENDERLY_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts';
 // import { withdrawAllAndReset } from '../utils/rewards.ts';
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
 
 test.beforeAll(async () => {
   await setErc20Balance(mkrAddress[TENDERLY_CHAIN_ID], '100');
+  await setErc20Balance(usdsAddress[TENDERLY_CHAIN_ID], '1');
 });
 
 test.beforeEach(async ({ page }) => {
@@ -90,39 +91,40 @@ test('Lock MKR, select rewards, select delegate, and open position', async ({ pa
   await expect(page.getByText('Position 1')).toBeVisible();
 
   // repay all
-  // await page.getByRole('button', { name: 'Manage Position' }).click();
-  // await expect(page.getByText('Your position 1')).toBeVisible();
-  // await expect(page.getByTestId('borrow-input-lse-balance')).toHaveText('Limit 0 <> 15,493 USDS');
+  await page.getByRole('button', { name: 'Manage Position' }).click();
+  await expect(page.getByText('Your position 1')).toBeVisible();
+  await expect(page.getByTestId('borrow-input-lse-balance')).toHaveText('Limit 0 <> 15,493 USDS');
 
-  // // switch tabs
-  // await page.getByRole('tab', { name: 'Unseal and pay back' }).click();
-  // await expect(page.getByTestId('repay-input-lse-balance')).toHaveText('Limit 0 <> 28,100, or 38,100 USDS');
+  // switch tabs
+  await page.getByRole('tab', { name: 'Unseal and pay back' }).click();
+  await expect(page.getByTestId('repay-input-lse-balance')).toHaveText('Limit 0 <> 28,100, or 38,100 USDS');
 
-  // // click repay 100% button
-  // await page.getByRole('button', { name: '100%' }).nth(1).click();
-  // // due to stability fee accumulation, the exact repay amount will change based on time
-  // const repayValue = Number(await page.getByTestId('repay-input-lse').inputValue());
-  // expect(repayValue).toBeGreaterThan(38100);
-  // expect(repayValue).toBeLessThan(38101);
-  // await page.getByTestId('widget-button').click();
+  // click repay 100% button
+  await page.getByRole('button', { name: '100%' }).nth(1).click();
 
-  // // skip the rewards and delegates and confirm position
-  // await expect(page.getByText('Choose your reward token')).toBeVisible();
-  // await page.getByRole('button', { name: 'skip' }).click();
-  // await expect(page.getByText('Choose your delegate')).toBeVisible();
-  // await page.getByRole('button', { name: 'skip' }).click();
+  // due to stability fee accumulation, the exact repay amount will change based on time
+  const repayValue = Number(await page.getByTestId('repay-input-lse').inputValue());
+  expect(repayValue).toBeGreaterThan(38100);
+  expect(repayValue).toBeLessThan(38101);
+  await page.getByTestId('widget-button').click();
 
-  // await expect(page.getByText('Confirm your position').nth(0)).toBeVisible();
+  // skip the rewards and delegates and confirm position
+  await expect(page.getByText('Choose your reward token')).toBeVisible();
+  await page.getByRole('button', { name: 'skip' }).click();
+  await expect(page.getByText('Choose your delegate')).toBeVisible();
+  await page.getByRole('button', { name: 'skip' }).click();
 
-  // // need to approve
-  // await approveOrPerformAction(page, 'Approve repay amount');
-  // expect(page.getByRole('heading', { name: 'Token access approved' })).toBeVisible();
+  await expect(page.getByText('Confirm your position').nth(0)).toBeVisible();
 
-  // await approveOrPerformAction(page, 'Continue');
-  // expect(page.getByRole('heading', { name: 'Success!' })).toBeVisible();
-  // await expect(page.getByText("You've borrowed 100 USDS. Your position is updated.")).toBeVisible();
-  // await page.getByRole('button', { name: 'Manage your position(s)' }).click();
-  // await expect(page.getByText('Position 1')).toBeVisible();
+  // need to approve
+  await approveOrPerformAction(page, 'Approve repay amount');
+  expect(page.getByRole('heading', { name: 'Token access approved' })).toBeVisible();
+
+  await approveOrPerformAction(page, 'Continue');
+  expect(page.getByRole('heading', { name: 'Success!' })).toBeVisible();
+  await expect(page.getByText("You've repaid 38,100 USDS to exit your position.")).toBeVisible();
+  await page.getByRole('button', { name: 'Manage your position(s)' }).click();
+  await expect(page.getByText('Position 1')).toBeVisible();
 
   // unseal all
   await page.getByRole('button', { name: 'Manage Position' }).click();
