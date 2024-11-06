@@ -10,6 +10,7 @@ export type Action =
   | 'Approve'
   | 'Approve supply amount'
   | 'Approve seal amount'
+  | 'Approve repay amount'
   | 'Continue'
   | 'Confirm';
 
