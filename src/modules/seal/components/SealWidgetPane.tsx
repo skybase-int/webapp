@@ -20,7 +20,7 @@ export function SealWidgetPane(sharedProps: SharedProps) {
     linkedActionConfig,
     updateLinkedActionConfig,
     exitLinkedActionMode,
-    // selectedSealUrnIndex,
+    selectedSealUrnIndex,
     setSelectedSealUrnIndex
   } = useConfigContext();
   // TODO: Implemet `useSealHistory` hook
@@ -90,7 +90,7 @@ export function SealWidgetPane(sharedProps: SharedProps) {
       {...sharedProps}
       onSealUrnChange={onSealUrnChange}
       onWidgetStateChange={onSealWidgetStateChange}
-      externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
+      externalWidgetState={{ amount: linkedActionConfig?.inputAmount, urnIndex: selectedSealUrnIndex }}
       termsLink={termsLink[0]}
     />
   );
