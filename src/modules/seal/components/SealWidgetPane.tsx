@@ -47,6 +47,11 @@ export function SealWidgetPane(sharedProps: SharedProps) {
     setSelectedSealUrnIndex(
       urnIndexParam ? (isNaN(Number(urnIndexParam)) ? undefined : Number(urnIndexParam)) : undefined
     );
+
+    // Reset when unmounting
+    return () => {
+      setSelectedSealUrnIndex(undefined);
+    };
   }, []);
 
   const onSealWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
