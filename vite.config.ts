@@ -19,7 +19,7 @@ export default ({ mode }: { mode: string }) => {
     default-src 'self';
     script-src 'self'
       'unsafe-inline'
-      https://cdn.cookie3.co
+      https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
@@ -102,10 +102,10 @@ export default ({ mode }: { mode: string }) => {
                 "src": 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
                 "integrity": 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
                 "crossorigin": 'anonymous',
-                "async": true,
+                "async": 'true',
                 "strategy": 'lazyOnload',
                 "site-id": '4e20d42b-14ed-45a0-8062-436098ed1358',
-                "data-chain-tracking-enabled": true,
+                "data-chain-tracking-enabled": 'true',
                 "data-nscript": 'lazyOnload'
               }
             }
