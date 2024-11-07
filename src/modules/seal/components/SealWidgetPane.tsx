@@ -6,19 +6,27 @@ import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { useSearchParams } from 'react-router-dom';
 import { deleteSearchParams } from '@/modules/utils/deleteSearchParams';
 import { Intent } from '@/lib/enums';
+import { useEffect } from 'react';
 
 export function SealWidgetPane(sharedProps: SharedProps) {
+  let termsLink: any[] = [];
+  try {
+    termsLink = JSON.parse(import.meta.env.VITE_TERMS_LINK);
+  } catch (error) {
+    console.error('Error parsing terms link');
+  }
+
   const {
     linkedActionConfig,
     updateLinkedActionConfig,
     exitLinkedActionMode,
-    // selectedSealUrnIndex,
+    selectedSealUrnIndex,
     setSelectedSealUrnIndex
   } = useConfigContext();
   // TODO: Implemet `useSealHistory` hook
   const refreshSealHistory = () => {};
   // const { mutate: refreshSealHistory } = useSealHistory();
-  const [, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const onSealUrnChange = (urn?: { urnAddress: `0x${string}` | undefined; urnIndex: bigint | undefined }) => {
     setSearchParams(params => {
@@ -32,6 +40,19 @@ export function SealWidgetPane(sharedProps: SharedProps) {
     });
     setSelectedSealUrnIndex(urn?.urnIndex !== undefined ? Number(urn.urnIndex) : undefined);
   };
+
+  // Reset detail pane urn index when widget is mounted
+  useEffect(() => {
+    const urnIndexParam = searchParams.get(QueryParams.SealUrnIndex);
+    setSelectedSealUrnIndex(
+      urnIndexParam ? (isNaN(Number(urnIndexParam)) ? undefined : Number(urnIndexParam)) : undefined
+    );
+
+    // Reset when unmounting
+    return () => {
+      setSelectedSealUrnIndex(undefined);
+    };
+  }, []);
 
   const onSealWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
     // After a successful linked action open flow, set the final step to "success"
@@ -62,12 +83,20 @@ export function SealWidgetPane(sharedProps: SharedProps) {
       }, REFRESH_DELAY);
     }
   };
+
+  const hasTermsLink = Array.isArray(termsLink) && termsLink.length > 0;
+  if (!hasTermsLink) {
+    console.error('No terms link found');
+    return null;
+  }
+
   return (
     <SealModuleWidget
       {...sharedProps}
       onSealUrnChange={onSealUrnChange}
       onWidgetStateChange={onSealWidgetStateChange}
-      externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
+      externalWidgetState={{ amount: linkedActionConfig?.inputAmount, urnIndex: selectedSealUrnIndex }}
+      termsLink={termsLink[0]}
     />
   );
 }

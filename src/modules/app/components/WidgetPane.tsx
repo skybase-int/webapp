@@ -57,7 +57,7 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
   const actionForToken = useActionForToken();
   const rewardsUrl = useRetainedQueryParams(`/?widget=${mapIntentToQueryParam(Intent.REWARDS_INTENT)}`);
   const savingsUrl = useRetainedQueryParams(`/?widget=${mapIntentToQueryParam(Intent.SAVINGS_INTENT)}`);
-
+  const sealUrl = useRetainedQueryParams(`/?widget=${mapIntentToQueryParam(Intent.SEAL_INTENT)}`);
   const navigate = useNavigate();
 
   const widgetContent: WidgetContent = [
@@ -72,6 +72,7 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
           actionForToken={actionForToken}
           onClickRewardsCard={() => navigate(rewardsUrl)}
           onClickSavingsCard={() => navigate(savingsUrl)}
+          onClickSealCard={() => navigate(sealUrl)}
           customTokenList={defaultConfig.balancesTokenList[chainId]}
         />
       )

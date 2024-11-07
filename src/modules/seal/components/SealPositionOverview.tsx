@@ -60,14 +60,14 @@ export function SealPositionOverview({
             <SealSealedCard
               label={t`${SealToken.MKR} sealed`}
               token={{ name: 'Maker', symbol: SealToken.MKR }}
-              balance={formatBigInt(data?.mkrLocked || 0n)}
-              isLoading={isLoading}
-              error={error}
+              balance={formatBigInt(vault?.collateralAmount || 0n)}
+              isLoading={vaultLoading}
+              error={vaultError}
             />
             <SealBorrowedCard
-              isLoading={isLoading}
-              error={error}
-              balance={data?.usdsDebt || 0n}
+              isLoading={vaultLoading}
+              error={vaultError}
+              balance={vault?.debtValue || 0n}
               token={{ name: 'USDS', symbol: 'USDS' }}
             />
             {data?.selectedReward && (

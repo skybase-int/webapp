@@ -3,17 +3,18 @@ import { formatDecimalPercentage, formatNumber } from '@jetstreamgg/utils';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
-import { t } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import { HStack } from '@/modules/layout/components/HStack';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
-import { Text } from '@/modules/layout/components/Typography';
+import { Heading, Text } from '@/modules/layout/components/Typography';
 import { AboutSealModule } from '@/modules/ui/components/AboutSealModule';
 import { useConnectedContext } from '@/modules/ui/context/ConnectedContext';
 import { SealHistory } from './SealHistory';
 import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealFaq } from './SealFaq';
 import { SealChart } from './SealChart';
+import { PopoverRateInfo } from '@/modules/ui/components/PopoverRateInfo';
 
 export function SealOverview() {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -30,7 +31,7 @@ export function SealOverview() {
 
   return (
     <DetailSectionWrapper>
-      <DetailSection title={t`Seal Overview`}>
+      <DetailSection title={t`Seal Engine Overview`}>
         <DetailSectionRow>
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <StatsCard
@@ -62,7 +63,14 @@ export function SealOverview() {
         <DetailSectionRow>
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <StatsCard
-              title={t`Borrow Rate`}
+              title={
+                <HStack gap={1} className="items-center">
+                  <Heading tag="h3" className="text-sm font-normal leading-tight text-textSecondary">
+                    <Trans>Borrow Rate</Trans>
+                  </Heading>
+                  <PopoverRateInfo type="sbr" />
+                </HStack>
+              }
               isLoading={isLoading}
               error={error}
               content={<Text className="mt-2">{formatDecimalPercentage(borrowRate)}</Text>}
@@ -82,8 +90,13 @@ export function SealOverview() {
           </HStack>
         </DetailSectionRow>
       </DetailSection>
+      <DetailSection title={t`Rewards overview`}>
+        <DetailSectionRow>
+          <SealRewardsOverview />
+        </DetailSectionRow>
+      </DetailSection>
       {isConnectedAndAcceptedTerms && (
-        <DetailSection title={t`Your Seal transaction history`}>
+        <DetailSection title={t`Your Seal Engine transaction history`}>
           <DetailSectionRow>
             <SealHistory />
           </DetailSectionRow>
@@ -94,14 +107,9 @@ export function SealOverview() {
           <SealChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Seal module`}>
+      <DetailSection title={t`About Seal Rewards`}>
         <DetailSectionRow>
           <AboutSealModule />
-        </DetailSectionRow>
-      </DetailSection>
-      <DetailSection title={t`Rewards overview`}>
-        <DetailSectionRow>
-          <SealRewardsOverview />
         </DetailSectionRow>
       </DetailSection>
       <DetailSection title={t`FAQs`}>
