@@ -99,14 +99,14 @@ export default ({ mode }: { mode: string }) => {
               injectTo: 'head',
               tag: 'script',
               attrs: {
-                src: 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
-                integrity: 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
-                crossorigin: 'anonymous',
-                async: true,
-                strategy: 'lazyOnload',
-                site-id: '4e20d42b-14ed-45a0-8062-436098ed1358',
-                data-chain-tracking-enabled: true,
-                data-nscript: 'lazyOnload'
+                "src": 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
+                "integrity": 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
+                "crossorigin": 'anonymous',
+                "async": true,
+                "strategy": 'lazyOnload',
+                "site-id": '4e20d42b-14ed-45a0-8062-436098ed1358',
+                "data-chain-tracking-enabled": true,
+                "data-nscript": 'lazyOnload'
               }
             }
           ]
