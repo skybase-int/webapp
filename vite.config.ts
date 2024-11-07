@@ -103,7 +103,7 @@ export default ({ mode }: { mode: string }) => {
                 'crossorigin': 'anonymous',
                 'async': 'true',
                 'strategy': 'lazyOnload',
-                'site-id': '4e20d42b-14ed-45a0-8062-436098ed1358',
+                'site-id': process.env.VITE_COOKIE3_SITE_ID || '',
                 'data-chain-tracking-enabled': 'true',
                 'data-nscript': 'lazyOnload'
               }
