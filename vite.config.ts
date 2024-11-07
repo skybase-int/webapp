@@ -15,9 +15,13 @@ export default ({ mode }: { mode: string }) => {
   const RPC_PROVIDER_SEPOLIA = process.env.VITE_RPC_PROVIDER_SEPOLIA || '';
   const RPC_PROVIDER_TENDERLY = process.env.VITE_RPC_PROVIDER_TENDERLY || '';
 
+  // Generate a random nonce ID
+  const nonceId = Math.random().toString(36).substring(7);
+
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
     script-src 'self'
+      nonce-${nonceId}
       https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
