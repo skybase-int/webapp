@@ -18,7 +18,7 @@ export default ({ mode }: { mode: string }) => {
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
     script-src 'self'
-      'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='
+      https://cdn.markfi.xyz
       https://static.cloudflareinsights.com
       https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
@@ -47,6 +47,7 @@ export default ({ mode }: { mode: string }) => {
       wss://www.walletlink.org
       https://explorer-api.walletconnect.com/
       https://enhanced-provider.rainbow.me
+      https://a.markfi.xyz/
       cloudflareinsights.com;
     frame-src 'self'
       https://verify.walletconnect.com
@@ -97,18 +98,15 @@ export default ({ mode }: { mode: string }) => {
               injectTo: 'head',
               tag: 'script',
               attrs: {
-                integrity: 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
-                crossOrigin: 'anonymous'
-              },
-              children: `
-                const cookie3Options = {"siteId":"4e20d42b-14ed-45a0-8062-436098ed1358","additionalTracking":true,"cookielessEnabled":true};
-                window._paq = window._paq || [];
-                (function () {
-                    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                    g.async = true; g.src = 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js';
-                    s.parentNode.insertBefore(g, s);
-                })();
-              `
+                'src': 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
+                'integrity': 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
+                'crossorigin': 'anonymous',
+                'async': 'true',
+                'strategy': 'lazyOnload',
+                'site-id': '4e20d42b-14ed-45a0-8062-436098ed1358',
+                'data-chain-tracking-enabled': 'true',
+                'data-nscript': 'lazyOnload'
+              }
             }
           ]
         }
