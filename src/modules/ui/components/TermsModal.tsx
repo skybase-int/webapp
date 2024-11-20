@@ -92,6 +92,10 @@ export function TermsModal() {
 
   const handleCheckboxChange = (checkedState: CheckedState) => {
     setIsChecked(checkedState === true);
+    if (checkedState === true) {
+      setSignStatus('signing');
+      signMessage({ message: import.meta.env.VITE_TERMS_MESSAGE_TO_SIGN });
+    }
   };
 
   return (
