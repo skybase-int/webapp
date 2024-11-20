@@ -17,6 +17,8 @@ export function SealWidgetPane(sharedProps: SharedProps) {
   }
 
   const {
+    userConfig,
+    updateUserConfig,
     linkedActionConfig,
     updateLinkedActionConfig,
     exitLinkedActionMode,
@@ -54,7 +56,17 @@ export function SealWidgetPane(sharedProps: SharedProps) {
     };
   }, []);
 
-  const onSealWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
+  const onSealWidgetStateChange = ({
+    hash,
+    txStatus,
+    widgetState,
+    displayToken
+  }: WidgetStateChangeParams) => {
+    // Return early so we don't trigger the linked action code below
+    if (displayToken && displayToken !== userConfig?.sealToken) {
+      return updateUserConfig({ ...userConfig, sealToken: displayToken?.symbol });
+    }
+
     // After a successful linked action open flow, set the final step to "success"
     if (
       widgetState.flow === SealFlow.OPEN &&

@@ -50,7 +50,8 @@ export const StepMap: Record<LinkedActionSteps, StepIndicatorStates[]> = {
 // Default user config
 const defaultUserConfig: UserConfig = {
   locale: undefined,
-  intent: Intent.BALANCES_INTENT
+  intent: Intent.BALANCES_INTENT,
+  sealToken: 'MKR'
 };
 
 const defaultLinkedActionConfig = {
