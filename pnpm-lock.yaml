@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@jetstreamgg/hooks':
-        specifier: 3.0.41
-        version: 3.0.41(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+        specifier: 3.1.0
+        version: 3.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@jetstreamgg/utils':
-        specifier: 2.0.6
-        version: 2.0.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+        specifier: 2.1.0
+        version: 2.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@jetstreamgg/widgets':
-        specifier: 3.0.62
-        version: 3.0.62(a33zb5mviywkwqupuauhfgwwpy)
+        specifier: 3.1.0
+        version: 3.1.0(a33zb5mviywkwqupuauhfgwwpy)
       '@lingui/detect-locale':
         specifier: ^4.7.0
         version: 4.7.0
@@ -2171,8 +2171,8 @@ packages:
     resolution: {integrity: sha512-u3UPsIilWKOM3F9CXtrG8LEJmNxwoCQC/XVj4IKYXvvpx7QIi/Kg1LI5uDmDpKlac62NUtX7eLjRh+jVZcLOzw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  '@jetstreamgg/hooks@3.0.41':
-    resolution: {integrity: sha512-2qIwg9hUf776LaAWKY37lYAL3PawsJtkiyRPaafSZd7JuauG6GvPv/3kMvZoJlKOApqz/DeNRc7LTy/GgLvPOA==}
+  '@jetstreamgg/hooks@3.1.0':
+    resolution: {integrity: sha512-KoKyMfB3KXycY9IfsGRkdGQ7jVWtC88qzOSWQHEds1BKs3gGSSojipLDFwUNMOyesbzmjZpxLby3fwB/g3wiyQ==}
     peerDependencies:
       '@tanstack/react-query': ^5.17.15
       '@wagmi/core': ^2.13.8
@@ -2181,8 +2181,8 @@ packages:
       viem: ^2.21.19
       wagmi: ^2.12.17
 
-  '@jetstreamgg/utils@2.0.6':
-    resolution: {integrity: sha512-53qQAztKWevAgqCkfSNtQtpQaaFK57Hef9Uym6eBHYS92vzu04CKGj/73/71YHAPC9d6hSFZROlgkc1z1aM5FA==}
+  '@jetstreamgg/utils@2.1.0':
+    resolution: {integrity: sha512-1c910CPtp9c+RTPj/uCIWYQL9OVRUK7n+Sq5xcRWmm1FpYeRHilgCzTrUb10Rkv5PG5zNusSpa+ElmZkGzDS+w==}
     peerDependencies:
       '@tanstack/react-query': ^5.17.15
       react: ^18.2.0
@@ -2190,8 +2190,8 @@ packages:
       viem: ^2.21.19
       wagmi: ^2.12.17
 
-  '@jetstreamgg/widgets@3.0.62':
-    resolution: {integrity: sha512-Ba0HE5wsUI3m2N8pK9NzQ55JoOCq2F2pw6yx0ul3xuAKkP1qqXx9t7ZbFXBuZxJ0TClgMqicKs8lY8wmGMwrWw==}
+  '@jetstreamgg/widgets@3.1.0':
+    resolution: {integrity: sha512-finVlxcN+Y6oScw9Ri1h/Ltv/m2f22+cjqtVSnkwJ3bJPOt96RYQ5UvvezDA3DVpR95fSzXJST6rU6qpXkAneg==}
     peerDependencies:
       '@emotion/react': ^11
       '@emotion/styled': ^11
@@ -11948,9 +11948,9 @@ snapshots:
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
-  '@jetstreamgg/hooks@3.0.41(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
+  '@jetstreamgg/hooks@3.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
     dependencies:
-      '@jetstreamgg/utils': 2.0.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/utils': 2.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@tanstack/react-query': 5.17.15(react@18.2.0)
       '@wagmi/core': 2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))
       front-matter: 4.0.2
@@ -11965,7 +11965,7 @@ snapshots:
       - encoding
       - utf-8-validate
 
-  '@jetstreamgg/utils@2.0.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
+  '@jetstreamgg/utils@2.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
     dependencies:
       '@tanstack/react-query': 5.17.15(react@18.2.0)
       date-fns: 2.30.0
@@ -11979,12 +11979,12 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@jetstreamgg/widgets@3.0.62(a33zb5mviywkwqupuauhfgwwpy)':
+  '@jetstreamgg/widgets@3.1.0(a33zb5mviywkwqupuauhfgwwpy)':
     dependencies:
       '@emotion/react': 11.11.4(@types/react@18.2.6)(react@18.2.0)
       '@emotion/styled': 11.11.5(@emotion/react@11.11.4(@types/react@18.2.6)(react@18.2.0))(@types/react@18.2.6)(react@18.2.0)
-      '@jetstreamgg/hooks': 3.0.41(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
-      '@jetstreamgg/utils': 2.0.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/hooks': 3.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.13.8(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/utils': 2.1.0(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.12.17(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react-native@0.74.2(@babel/core@7.25.7)(@babel/preset-env@7.24.7(@babel/core@7.25.7))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(rollup@4.18.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@lingui/detect-locale': 4.7.0
       '@lingui/macro': 4.7.0(@lingui/react@4.7.0(react@18.2.0))(babel-plugin-macros@3.1.0)(typescript@5.2.2)
       '@lingui/react': 4.7.0(react@18.2.0)
@@ -12444,7 +12444,7 @@ snapshots:
       '@motionone/easing': 10.17.0
       '@motionone/types': 10.17.0
       '@motionone/utils': 10.17.0
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/dom@10.17.0':
     dependencies:
@@ -12453,23 +12453,23 @@ snapshots:
       '@motionone/types': 10.17.0
       '@motionone/utils': 10.17.0
       hey-listen: 1.0.8
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/easing@10.17.0':
     dependencies:
       '@motionone/utils': 10.17.0
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/generators@10.17.0':
     dependencies:
       '@motionone/types': 10.17.0
       '@motionone/utils': 10.17.0
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/svelte@10.16.4':
     dependencies:
       '@motionone/dom': 10.17.0
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/types@10.17.0': {}
 
@@ -12477,12 +12477,12 @@ snapshots:
     dependencies:
       '@motionone/types': 10.17.0
       hey-listen: 1.0.8
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@motionone/vue@10.16.4':
     dependencies:
       '@motionone/dom': 10.17.0
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   '@noble/curves@1.2.0':
     dependencies:
@@ -18702,7 +18702,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   lru-cache@10.4.3: {}
 
@@ -19343,7 +19343,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   nocache@3.0.4: {}
 
