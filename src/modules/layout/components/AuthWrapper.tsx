@@ -8,7 +8,8 @@ export const AuthWrapper = ({ children }: { children: ReactNode }) => {
   const [enabled, setEnabled] = useState(false);
   const { address } = useAccount();
 
-  const skipAuthCheck = import.meta.env.VITE_SKIP_AUTH_CHECK === 'true';
+  const skipAuthCheck =
+    import.meta.env.VITE_ENV_NAME !== 'production' && import.meta.env.VITE_SKIP_AUTH_CHECK === 'true';
 
   useAccountEffect({
     onConnect({ address }) {
