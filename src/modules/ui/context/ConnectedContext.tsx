@@ -17,7 +17,8 @@ export const ConnectedProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const { isConnected, address } = useAccount();
   const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
   const [isCheckingTerms, setIsCheckingTerms] = useState(false);
-  const skipAuthCheck = import.meta.env.VITE_SKIP_AUTH_CHECK === 'true';
+  const skipAuthCheck =
+    import.meta.env.VITE_ENV_NAME !== 'production' && import.meta.env.VITE_SKIP_AUTH_CHECK === 'true';
 
   const checkTermsAcceptance = async (address: string) => {
     setIsCheckingTerms(true);
