@@ -18,6 +18,7 @@ msgid "{0}"
 msgstr ""
 
 #: src/modules/seal/components/SealPositionOverview.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "{0} sealed"
 msgstr ""
 
@@ -492,12 +493,12 @@ msgstr ""
 msgid "Total {0} rewarded"
 msgstr ""
 
-#: src/modules/upgrade/components/UpgradedDaiToUsds.tsx
-msgid "Total DAI upgraded"
+#: src/modules/seal/components/SealOverview.tsx
+msgid "Total {0} sealed"
 msgstr ""
 
-#: src/modules/seal/components/SealOverview.tsx
-msgid "Total MKR sealed"
+#: src/modules/upgrade/components/UpgradedDaiToUsds.tsx
+msgid "Total DAI upgraded"
 msgstr ""
 
 #: src/modules/upgrade/components/UpgradedMkrToSky.tsx
