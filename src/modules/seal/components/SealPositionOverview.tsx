@@ -116,7 +116,7 @@ export function SealPositionOverview({
               }
             />
             <StatsCard
-              title={t`Liquidation price`}
+              title={displayToken === SealToken.MKR ? t`MKR Liquidation price` : t`SKY Liquidation price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
               content={
@@ -131,7 +131,7 @@ export function SealPositionOverview({
               }
             />
             <StatsCard
-              title={t`Current price`}
+              title={displayToken === SealToken.MKR ? t`Current MKR price` : t`Current SKY price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
               content={
