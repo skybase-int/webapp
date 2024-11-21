@@ -10,7 +10,7 @@ import { LoadingErrorWrapper } from './LoadingErrorWrapper';
 import { Text } from '@/modules/layout/components/Typography';
 
 interface BalanceCardProps {
-  balance: bigint | string;
+  balance: bigint | string | number;
   isLoading: boolean;
   token: {
     symbol: string;

@@ -14,11 +14,6 @@ import { SealPositionOverview } from './SealPositionOverview';
 import { SealHistory } from './SealHistory';
 import { SealChart } from './SealChart';
 
-// TODO replace with import from @jetstreamgg/utils
-export function formatUrnIndex(index: bigint): string {
-  return (index + 1n).toString();
-}
-
 export function SealPositionDetails({ positionIndex }: { positionIndex?: number }): React.ReactElement {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
   const { linkedActionConfig } = useConfigContext();
