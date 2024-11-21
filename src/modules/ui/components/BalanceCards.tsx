@@ -10,7 +10,7 @@ import { LoadingErrorWrapper } from './LoadingErrorWrapper';
 import { Text } from '@/modules/layout/components/Typography';
 
 interface BalanceCardProps {
-  balance: bigint | string | number;
+  balance: bigint | string;
   isLoading: boolean;
   token: {
     symbol: string;
@@ -64,7 +64,7 @@ function BaseBalanceCard({
           <BaseBalanceCardContent label={label} toggle={toggle}>
             <TokenIconWithBalance
               token={token}
-              balance={typeof balance === 'string' ? balance : formatBigInt(balance || 0n)}
+              balance={typeof balance === 'string' ? balance : formatBigInt(balance)}
             />
           </BaseBalanceCardContent>
         </LoadingErrorWrapper>
