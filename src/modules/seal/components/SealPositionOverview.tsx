@@ -119,13 +119,31 @@ export function SealPositionOverview({
               title={t`Liquidation price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
-              content={<Text className="mt-2">${formatBigInt(vault?.liquidationPrice || 0n)}</Text>}
+              content={
+                <Text className="mt-2">
+                  $
+                  {formatBigInt(
+                    displayToken === SealToken.MKR
+                      ? vault?.liquidationPrice || 0n
+                      : math.calculateMKRtoSKYPrice(vault?.liquidationPrice || 0n)
+                  )}
+                </Text>
+              }
             />
             <StatsCard
               title={t`Current price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
-              content={<Text className="mt-2">${formatBigInt(vault?.delayedPrice || 0n)}</Text>}
+              content={
+                <Text className="mt-2">
+                  $
+                  {formatBigInt(
+                    displayToken === SealToken.MKR
+                      ? vault?.delayedPrice || 0n
+                      : math.calculateMKRtoSKYPrice(vault?.delayedPrice || 0n)
+                  )}
+                </Text>
+              }
             />
           </HStack>
         </VStack>
