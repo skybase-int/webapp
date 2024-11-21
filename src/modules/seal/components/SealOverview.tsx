@@ -17,6 +17,7 @@ import { SealChart } from './SealChart';
 import { PopoverRateInfo } from '@/modules/ui/components/PopoverRateInfo';
 import { useMemo } from 'react';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
+import { SealToken } from '../constants';
 
 export function SealOverview() {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
@@ -48,16 +49,16 @@ export function SealOverview() {
               isLoading={isLoading}
               error={error}
               content={
-                userConfig?.sealToken === 'SKY' ? (
+                userConfig?.sealToken === SealToken.SKY ? (
                   <TokenIconWithBalance
                     className="mt-2"
-                    token={{ name: 'SKY', symbol: 'SKY' }}
+                    token={{ name: SealToken.SKY, symbol: SealToken.SKY }}
                     balance={skySealed}
                   />
                 ) : (
                   <TokenIconWithBalance
                     className="mt-2"
-                    token={{ name: 'MKR', symbol: 'MKR' }}
+                    token={{ name: SealToken.MKR, symbol: SealToken.MKR }}
                     balance={mkrSealed}
                   />
                 )

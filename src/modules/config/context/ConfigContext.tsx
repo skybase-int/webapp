@@ -9,6 +9,7 @@ import { Intent } from '@/lib/enums';
 // import { z } from 'zod';
 import { RewardContract } from '@jetstreamgg/hooks';
 import { ALLOWED_EXTERNAL_DOMAINS } from '@/lib/constants';
+import { SealToken } from '@/modules/seal/constants';
 
 type LinkedActionConfig = {
   inputAmount?: string;
@@ -51,7 +52,7 @@ export const StepMap: Record<LinkedActionSteps, StepIndicatorStates[]> = {
 const defaultUserConfig: UserConfig = {
   locale: undefined,
   intent: Intent.BALANCES_INTENT,
-  sealToken: 'MKR'
+  sealToken: SealToken.MKR
 };
 
 const defaultLinkedActionConfig = {
