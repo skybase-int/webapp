@@ -52,7 +52,7 @@ export function SealPositionOverview({
 
   const mkrSealed = formatBigInt(vault?.collateralAmount || 0n);
   const skySealed = useMemo(() => {
-    return vault?.collateralAmount ? math.calculateConversion(TOKENS.mkr, vault?.collateralAmount || 0n) : 0;
+    return vault?.collateralAmount ? math.calculateConversion(TOKENS.mkr, vault?.collateralAmount || 0n) : 0n;
   }, [vault?.collateralAmount]);
 
   const displayToken = useMemo(() => {
