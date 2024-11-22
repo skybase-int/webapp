@@ -30,18 +30,10 @@ export const AboutSealModule = () => {
         </Heading>
         <Text variant="small">
           <Trans>
-            Seal Rewards can be accessed when you supply MKR or SKY to the Seal Engine of the decentralised
-            Sky Protocol. Currently, all Seal Rewards take the form of USDS. Eventually, subject to Sky
-            ecosystem governance approval, Seal Rewards may also be available in the form of Sky Star tokens,
-            including SPK, the governance token of the Spark decentralised community. You can choose the
-            reward that you would like to receive.
-            <br />
-            <br />
-            Your supplied MKR tokens, as well as any rewards accumulated, automatically enter a non-custodial
-            smart contract, which allows you to always remain in control of your supplied assets.
-            <br />
-            <br />
-            Seal reward rates are determined by Sky ecosystem decentralised governance.
+            Seal Rewards can be accessed when you supply MKR or SKY to the Seal Engine of the decentralised,
+            non-custodial Sky Protocol. Currently, all Seal Rewards take the form of USDS. Eventually, subject
+            to Sky ecosystem governance approval, Seal Rewards may also be available in the form of Sky Star
+            tokens.
           </Trans>
         </Text>
       </div>
