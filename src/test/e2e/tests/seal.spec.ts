@@ -199,6 +199,6 @@ test('Lock MKR, select rewards, select delegate, and open position', async ({ pa
   await approveOrPerformAction(page, 'Continue');
   expect(page.getByRole('heading', { name: 'Success!' })).toBeVisible();
   await expect(
-    page.getByText("You've borrowed 38,000 USDS by sealing 100 SKY. Your new position is open.")
+    page.getByText("You've borrowed 38,000 USDS by sealing 100,000,000 SKY. Your new position is open.")
   ).toBeVisible();
 });
