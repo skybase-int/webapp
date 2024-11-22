@@ -18,6 +18,7 @@ msgid "{0}"
 msgstr ""
 
 #: src/modules/seal/components/SealPositionOverview.tsx
+#: src/modules/seal/components/SealPositionOverview.tsx
 msgid "{0} sealed"
 msgstr ""
 
@@ -186,7 +187,11 @@ msgid "Copy transaction hash"
 msgstr ""
 
 #: src/modules/seal/components/SealPositionOverview.tsx
-msgid "Current price"
+msgid "Current MKR price"
+msgstr ""
+
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "Current SKY price"
 msgstr ""
 
 #: src/modules/ui/components/historyTable/HistoryRow.tsx
@@ -255,10 +260,6 @@ msgstr ""
 msgid "Legal Terms"
 msgstr ""
 
-#: src/modules/seal/components/SealPositionOverview.tsx
-msgid "Liquidation price"
-msgstr ""
-
 #: src/modules/app/hooks/useNotification.tsx
 msgid "Looks like you need {0} to get rewards"
 msgstr ""
@@ -273,6 +274,10 @@ msgstr ""
 #: src/modules/seal/components/SealPositionDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
 msgid "Metrics"
+msgstr ""
+
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "MKR Liquidation price"
 msgstr ""
 
 #: src/modules/auth/components/UnauthorizedPage.tsx
@@ -410,6 +415,10 @@ msgstr ""
 msgid "SKY is a native governance token of the decentralised Sky ecosystem and the upgraded version of MKR. You can upgrade your MKR to SKY at the rate of 1:24,000, trade SKY for USDS and, soon, use it to accumulate Activation Token Rewards and participate in Sky ecosystem governance."
 msgstr ""
 
+#: src/modules/seal/components/SealPositionOverview.tsx
+msgid "SKY Liquidation price"
+msgstr ""
+
 #: src/modules/balances/components/BalancesDetails.tsx
 msgid "Sky Protocol activity"
 msgstr ""
@@ -492,12 +501,12 @@ msgstr ""
 msgid "Total {0} rewarded"
 msgstr ""
 
-#: src/modules/upgrade/components/UpgradedDaiToUsds.tsx
-msgid "Total DAI upgraded"
+#: src/modules/seal/components/SealOverview.tsx
+msgid "Total {0} sealed"
 msgstr ""
 
-#: src/modules/seal/components/SealOverview.tsx
-msgid "Total MKR sealed"
+#: src/modules/upgrade/components/UpgradedDaiToUsds.tsx
+msgid "Total DAI upgraded"
 msgstr ""
 
 #: src/modules/upgrade/components/UpgradedMkrToSky.tsx
