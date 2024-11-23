@@ -28,7 +28,7 @@ export function BalancesDetails() {
       )}
       {/* only render this section on desktop */}
       {isConnectedAndAcceptedTerms && isDesktop && (
-        <DetailSection title={t`Your assets`}>
+        <DetailSection title={t`Your funds`}>
           <DetailSectionRow>
             <BalancesAssets />
           </DetailSectionRow>

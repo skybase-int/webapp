@@ -120,7 +120,7 @@ msgid "balances"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "Balances displays all of your Sky-related assets. When you connect your crypto wallet to Sky.money to access the decentralised Sky Protocol, only the tokens in the wallet that are relevant to the app are listed. With all of your Sky assets visible in one place, you can better self-manage your assets Sky.money is non-custodial and permissionless."
+msgid "Balances displays all of your Sky-related funds. When you connect your crypto wallet to Sky.money to access the decentralised Sky Protocol, only the tokens in the wallet that are relevant to the app are listed. With all of your Sky funds visible in one place, you can better self-manage your funds Sky.money is non-custodial and permissionless."
 msgstr ""
 
 #: src/modules/rewards/components/BoostedRewardsClaim.tsx
@@ -144,7 +144,7 @@ msgid "Chronicle"
 msgstr ""
 
 #: src/modules/ui/components/AboutCle.tsx
-msgid "Chronicle Points are not a native feature of the Sky Protocol. Skybase International does not control or guarantee the availability, distribution or allocation of Chronicle Points or any other Chronicle assets. The Chronicle project operates independently of Sky.money and Skybase International. Please be aware that any engagement with Chronicle is at your own risk, and we bear no responsibility for any outcomes associated with this third-party system, or any assets associated with it."
+msgid "Chronicle Points are not a native feature of the Sky Protocol. Skybase International does not control or guarantee the availability, distribution or allocation of Chronicle Points or any other Chronicle funds. The Chronicle project operates independently of Sky.money and Skybase International. Please be aware that any engagement with Chronicle is at your own risk, and we bear no responsibility for any outcomes associated with this third-party system, or any funds associated with it."
 msgstr ""
 
 #: src/modules/rewards/components/BoostedRewardsClaim.tsx
@@ -389,7 +389,7 @@ msgid "Seal Positions"
 msgstr ""
 
 #: src/modules/ui/components/AboutSealModule.tsx
-msgid "Seal Rewards are accessed when you supply MKR to the Seal Engine of the decentralised Sky Protocol. Your supplied MKR tokens, as well as any rewards accumulated, automatically enter a non-custodial smart contract, which allows you to always remain in control of your supplied assets. The types of Seal Rewards and rates are determined by Sky ecosystem governance."
+msgid "Seal Rewards are accessed when you supply MKR to the Seal Engine of the decentralised Sky Protocol. Your supplied MKR tokens, as well as any rewards accumulated, automatically enter a non-custodial smart contract, which allows you to always remain in control of your supplied funds. The types of Seal Rewards and rates are determined by Sky ecosystem governance."
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
@@ -449,7 +449,7 @@ msgid "Sky Token Rewards overview"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "Sky Tokens Rewards are what you access when you supply USDS to the Sky Token Rewards module of the decentralised Sky Protocol. Sky Token Rewards are in the form of SKY governance tokens. No minimum USDS supply amount is required. With the Sky Protocol, you can access rewards without giving up control of your supplied assets."
+msgid "Sky Tokens Rewards are what you access when you supply USDS to the Sky Token Rewards module of the decentralised Sky Protocol. Sky Token Rewards are in the form of SKY governance tokens. No minimum USDS supply amount is required. With the Sky Protocol, you can access rewards without giving up control of your supplied funds."
 msgstr ""
 
 #: src/modules/layout/components/Error.tsx
@@ -730,7 +730,7 @@ msgid "VPN Detected"
 msgstr ""
 
 #: src/modules/balances/components/BalancesAssets.tsx
-msgid "We couldn't load your assets. Please try again later."
+msgid "We couldn't load your funds. Please try again later."
 msgstr ""
 
 #: src/modules/seal/components/SealRewardsOverview.tsx
@@ -738,7 +738,7 @@ msgid "We couldn&t load the Seal module rewards. Please try again later."
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "When you supply USDS to the Sky Savings Rate module of the decentralised Sky Protocol, you access the Sky Saving Rate and may accumulate additional USDS over time. No minimum supply amount is required, and you always maintain control of your supplied assets, as this feature is non-custodial."
+msgid "When you supply USDS to the Sky Savings Rate module of the decentralised Sky Protocol, you access the Sky Saving Rate and may accumulate additional USDS over time. No minimum supply amount is required, and you always maintain control of your supplied funds, as this feature is non-custodial."
 msgstr ""
 
 #: src/modules/rewards/components/RewardsHistory.tsx
@@ -753,16 +753,16 @@ msgstr ""
 msgid "Your access is restricted. For more information, please refer to our {0}."
 msgstr ""
 
-#: src/modules/balances/components/BalancesDetails.tsx
-msgid "Your assets"
-msgstr ""
-
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS, and your MKR to SKY. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
+msgstr ""
+
+#: src/modules/balances/components/BalancesDetails.tsx
+msgid "Your funds"
 msgstr ""
 
 #: src/modules/seal/components/SealPositionOverview.tsx
