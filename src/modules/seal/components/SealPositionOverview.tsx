@@ -1,6 +1,13 @@
 import { HStack } from '@/modules/layout/components/HStack';
-import { RiskLevel, useSealPosition, useUrnAddress, useVault, ZERO_ADDRESS } from '@jetstreamgg/hooks';
-import { formatBigInt, WAD_PRECISION } from '@jetstreamgg/utils';
+import {
+  RiskLevel,
+  TOKENS,
+  useSealPosition,
+  useUrnAddress,
+  useVault,
+  ZERO_ADDRESS
+} from '@jetstreamgg/hooks';
+import { formatBigInt, math, WAD_PRECISION } from '@jetstreamgg/utils';
 import { t, Trans } from '@lingui/macro';
 import { SealToken } from '../constants';
 import { SealPositionRewardsCard } from './SealPositionRewardsCard';
@@ -12,9 +19,15 @@ import { formatUnits } from 'viem';
 import { cn } from '@/lib/utils';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
-import { formatUrnIndex } from './SealPositionDetails';
 import { SealDelegateCard } from './SealDelegateCard';
 import { SealRewardCard } from './SealRewardCard';
+import { useMemo } from 'react';
+import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
+
+// TODO replace with import from @jetstreamgg/utils
+export function formatUrnIndex(index: bigint): string {
+  return (index + 1n).toString();
+}
 
 const RISK_COLORS = {
   [RiskLevel.LIQUIDATION]: { text: 'text-red-400', bg: 'bg-red-400' },
@@ -28,6 +41,7 @@ export function SealPositionOverview({
 }: {
   positionIndex: number;
 }): React.ReactElement | null {
+  const { userConfig } = useConfigContext();
   const { data, isLoading, error } = useSealPosition({ urnIndex: positionIndex });
   const { data: urnAddress, isLoading: urnAddressLoading } = useUrnAddress(BigInt(positionIndex));
   const { data: vault, isLoading: vaultLoading, error: vaultError } = useVault(urnAddress || ZERO_ADDRESS);
@@ -35,6 +49,15 @@ export function SealPositionOverview({
   if (!error && !isLoading && !data) return null;
 
   const riskColor = vault?.riskLevel ? RISK_COLORS[vault?.riskLevel] : undefined;
+
+  const mkrSealed = formatBigInt(vault?.collateralAmount || 0n);
+  const skySealed = useMemo(() => {
+    return vault?.collateralAmount ? math.calculateConversion(TOKENS.mkr, vault?.collateralAmount || 0n) : 0n;
+  }, [vault?.collateralAmount]);
+
+  const displayToken = useMemo(() => {
+    return userConfig?.sealToken === SealToken.MKR ? SealToken.MKR : SealToken.SKY;
+  }, [userConfig?.sealToken]);
 
   return (
     <DetailSection
@@ -58,9 +81,9 @@ export function SealPositionOverview({
         <VStack className="gap-8">
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <SealSealedCard
-              label={t`${SealToken.MKR} sealed`}
-              token={{ name: 'Maker', symbol: SealToken.MKR }}
-              balance={formatBigInt(vault?.collateralAmount || 0n)}
+              label={displayToken === SealToken.MKR ? t`${SealToken.MKR} sealed` : t`${SealToken.SKY} sealed`}
+              token={{ name: 'Maker', symbol: displayToken }}
+              balance={displayToken === SealToken.MKR ? mkrSealed : skySealed}
               isLoading={vaultLoading}
               error={vaultError}
             />
@@ -93,16 +116,34 @@ export function SealPositionOverview({
               }
             />
             <StatsCard
-              title={t`Liquidation price`}
+              title={displayToken === SealToken.MKR ? t`MKR Liquidation price` : t`SKY Liquidation price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
-              content={<Text className="mt-2">${formatBigInt(vault?.liquidationPrice || 0n)}</Text>}
+              content={
+                <Text className="mt-2">
+                  $
+                  {formatBigInt(
+                    displayToken === SealToken.MKR
+                      ? vault?.liquidationPrice || 0n
+                      : math.calculateMKRtoSKYPrice(vault?.liquidationPrice || 0n)
+                  )}
+                </Text>
+              }
             />
             <StatsCard
-              title={t`Current price`}
+              title={displayToken === SealToken.MKR ? t`Current MKR price` : t`Current SKY price`}
               isLoading={urnAddressLoading || vaultLoading}
               error={urnAddressLoading ? null : vaultError}
-              content={<Text className="mt-2">${formatBigInt(vault?.delayedPrice || 0n)}</Text>}
+              content={
+                <Text className="mt-2">
+                  $
+                  {formatBigInt(
+                    displayToken === SealToken.MKR
+                      ? vault?.delayedPrice || 0n
+                      : math.calculateMKRtoSKYPrice(vault?.delayedPrice || 0n)
+                  )}
+                </Text>
+              }
             />
           </HStack>
         </VStack>

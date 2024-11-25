@@ -1,5 +1,5 @@
 import { useSealHistoricData } from '@jetstreamgg/hooks';
-import { formatDecimalPercentage, formatNumber } from '@jetstreamgg/utils';
+import { formatDecimalPercentage, formatNumber, math } from '@jetstreamgg/utils';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
@@ -15,15 +15,25 @@ import { SealRewardsOverview } from './SealRewardsOverview';
 import { SealFaq } from './SealFaq';
 import { SealChart } from './SealChart';
 import { PopoverRateInfo } from '@/modules/ui/components/PopoverRateInfo';
+import { useMemo } from 'react';
+import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
+import { SealToken } from '../constants';
 
 export function SealOverview() {
   const { isConnectedAndAcceptedTerms } = useConnectedContext();
+  const { userConfig } = useConfigContext();
   const { data, isLoading, error } = useSealHistoricData();
   const mostRecentData = data?.sort(
     (a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime()
   )[0];
 
   const mkrSealed = formatNumber(mostRecentData?.totalMkr ?? 0);
+  const skySealed = useMemo(() => {
+    return formatNumber(
+      mostRecentData?.totalMkr ? mostRecentData?.totalMkr * Number(math.MKR_TO_SKY_PRICE_RATIO) : 0
+    );
+  }, [mostRecentData?.totalMkr]);
+
   const usdsDebt = formatNumber(mostRecentData?.totalDebt ?? 0);
   const borrowRate = mostRecentData?.borrowRate ?? 0;
   const tvl = mostRecentData?.tvl ?? 0;
@@ -35,15 +45,23 @@ export function SealOverview() {
         <DetailSectionRow>
           <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
             <StatsCard
-              title={t`Total MKR sealed`}
+              title={t`Total ${userConfig?.sealToken} sealed`}
               isLoading={isLoading}
               error={error}
               content={
-                <TokenIconWithBalance
-                  className="mt-2"
-                  token={{ name: 'MKR', symbol: 'MKR' }}
-                  balance={mkrSealed}
-                />
+                userConfig?.sealToken === SealToken.SKY ? (
+                  <TokenIconWithBalance
+                    className="mt-2"
+                    token={{ name: SealToken.SKY, symbol: SealToken.SKY }}
+                    balance={skySealed}
+                  />
+                ) : (
+                  <TokenIconWithBalance
+                    className="mt-2"
+                    token={{ name: SealToken.MKR, symbol: SealToken.MKR }}
+                    balance={mkrSealed}
+                  />
+                )
               }
             />
             <StatsCard
