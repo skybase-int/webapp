@@ -56,7 +56,7 @@ export function BalancesAssets() {
       error={balanceError}
       errorComponent={
         <Text variant="large" className="text-center text-text">
-          <Trans>We couldn't load your assets. Please try again later.</Trans>
+          <Trans>We couldn't load your funds. Please try again later.</Trans>
         </Text>
       }
     >
