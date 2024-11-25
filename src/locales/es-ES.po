@@ -120,7 +120,7 @@ msgid "balances"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "Balances displays all of your Sky-related funds. When you connect your crypto wallet to Sky.money to access the decentralised Sky Protocol, only the tokens in the wallet that are relevant to the app are listed. With all of your Sky funds visible in one place, you can better self-manage your funds Sky.money is non-custodial and permissionless."
+msgid "Balances displays all of your Sky-related funds. When you connect your crypto wallet to Sky.money to access the decentralised Sky Protocol, only the tokens in the wallet that are relevant to the app are listed. With all of your Sky funds visible in one place, you can better self-manage your funds. Sky.money is non-custodial and permissionless."
 msgstr ""
 
 #: src/modules/rewards/components/BoostedRewardsClaim.tsx
