@@ -16,7 +16,7 @@ export enum QueryParams {
   Timestamp = 'timestamp'
 }
 
-export const restrictedIntents = [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT, Intent.SEAL_INTENT];
+export const restrictedIntents = [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT];
 
 export const IntentMapping = {
   [Intent.BALANCES_INTENT]: 'balances',
