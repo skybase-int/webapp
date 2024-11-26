@@ -21,9 +21,9 @@ export const AboutCle = () => {
           <Trans>
             Chronicle Points are not a native feature of the Sky Protocol. Skybase International does not
             control or guarantee the availability, distribution or allocation of Chronicle Points or any other
-            Chronicle assets. The Chronicle project operates independently of Sky.money and Skybase
+            Chronicle funds. The Chronicle project operates independently of Sky.money and Skybase
             International. Please be aware that any engagement with Chronicle is at your own risk, and we bear
-            no responsibility for any outcomes associated with this third-party system, or any assets
+            no responsibility for any outcomes associated with this third-party system, or any funds
             associated with it.
           </Trans>
         </Text>
