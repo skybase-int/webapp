@@ -12,7 +12,7 @@ export const getRewardsCleFaqItems = (): Item[] => [
   {
     question: 'What are Chronicle Points, and how do they work?',
     answer:
-      'Use the Sky.money app to access [Chronicle Points](https://www.youtube.com/watch?v=CYsC7Nrm2Vs), which might later be claimable for Chronicle tokens at a rate of 10 points = 1 CLE token. The total supply of CLE tokens will be 10 billion. Chronicle Points are being emitted at a rate of 3.75 billion per year. Any future opportunities to convert Chronicle Points into CLE tokens, if offered, would be managed independently by Chronicle’s own applications.'
+      'Eligible users can use the Sky.money web app to access [Chronicle Points](https://www.youtube.com/watch?v=CYsC7Nrm2Vs), which may ultimately become claimable for Chronicle tokens at a rate of 10 points for every 1 CLE token. The total supply of CLE tokens is anticipated to be 10 billion. Chronicle Points are emitted at a rate of 3.75 billion per year. If offered, any future opportunities to convert Chronicle Points into CLE tokens would be managed independently by Chronicle’s own applications.'
   },
   {
     question:
@@ -22,6 +22,6 @@ export const getRewardsCleFaqItems = (): Item[] => [
   {
     question: 'Where can I see the current total distribution of Chronicle Points?',
     answer:
-      'Users can see the current distribution of Chronicle Points on the [Sky Ecosystem dashboard](https://info.sky.money/rewards/0x10ab606b067c9c461d8893c47c7512472e19e2ce/).'
+      'Users can view the current distribution of Chronicle Points on the [Sky Ecosystem dashboard](https://info.sky.money/rewards/0x10ab606b067c9c461d8893c47c7512472e19e2ce/).'
   }
 ];
