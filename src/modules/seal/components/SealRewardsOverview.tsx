@@ -6,28 +6,21 @@ import { LoadingStatCard } from '@/modules/ui/components/LoadingStatCard';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIcon } from '@/modules/ui/components/TokenIcon';
 import {
-  useRewardContractInfo,
   useRewardContractTokens,
   useRewardsChartInfo,
-  useSaRewardContracts
+  useSaRewardContracts,
+  useSealHistoricData
 } from '@jetstreamgg/hooks';
-import { formatAddress, formatBigInt } from '@jetstreamgg/utils';
+import { formatAddress, formatNumber } from '@jetstreamgg/utils';
 import { t, Trans } from '@lingui/macro';
-import { useChainId } from 'wagmi';
+import { useMemo } from 'react';
 
 const SealRewardsOverviewRow = ({ contractAddress }: { contractAddress: `0x${string}` }) => {
-  const chainId = useChainId();
   const {
     data: rewardContractTokens,
     isLoading: tokensLoading,
     error: tokensError
   } = useRewardContractTokens(contractAddress);
-
-  const {
-    data: rewardInfo,
-    isLoading: rewardInfoLoading,
-    error: rewardInfoError
-  } = useRewardContractInfo({ chainId, rewardContractAddress: contractAddress });
 
   // const {
   //   data: rewardRate,
@@ -42,9 +35,27 @@ const SealRewardsOverviewRow = ({ contractAddress }: { contractAddress: `0x${str
   } = useRewardsChartInfo({
     rewardContractAddress: contractAddress
   });
-  const mostRecentReward = historicRewardsTokenData
-    ?.slice()
-    .sort((a, b) => b.blockTimestamp - a.blockTimestamp)[0];
+  const mostRecentReward = useMemo(
+    () => historicRewardsTokenData?.slice().sort((a, b) => b.blockTimestamp - a.blockTimestamp)[0],
+    [historicRewardsTokenData]
+  );
+
+  //Get the MKR price from the seal historic data endpoint, since that is used for the total seal TVL
+  //and we want the farm TVLs to sum up to the total seal TVL
+  const {
+    data: sealHistoricData,
+    isLoading: sealHistoricIsLoading,
+    error: sealHistoricError
+  } = useSealHistoricData();
+  const mostRecentSealData = useMemo(
+    () =>
+      sealHistoricData?.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime())[0],
+    [sealHistoricData]
+  );
+  const mkrPrice = mostRecentSealData?.mkrPrice ? Number(mostRecentSealData.mkrPrice) : 0;
+
+  const totalSupplied = mostRecentReward?.totalSupplied ? parseFloat(mostRecentReward.totalSupplied) : 0;
+  const totalSuppliedInDollars = !isNaN(totalSupplied) && !isNaN(mkrPrice) ? totalSupplied * mkrPrice : 0;
 
   return (
     <HStack gap={2} className="scrollbar-thin w-full overflow-auto">
@@ -72,9 +83,9 @@ const SealRewardsOverviewRow = ({ contractAddress }: { contractAddress: `0x${str
       /> */}
       <StatsCard
         title={t`TVL (Total Value Locked)`}
-        isLoading={rewardInfoLoading}
-        error={rewardInfoError}
-        content={<Text className="mt-2">{formatBigInt(rewardInfo?.totalSupplied || 0n)}</Text>}
+        isLoading={historicRewardsTokenIsLoading || sealHistoricIsLoading}
+        error={historicRewardsTokenError || sealHistoricError}
+        content={<Text className="mt-2">{`$${formatNumber(totalSuppliedInDollars)}`}</Text>}
       />
       <StatsCard
         title={t`Suppliers`}

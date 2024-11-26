@@ -37,7 +37,8 @@ test('Supply and withdraw from Savings', async ({ page }) => {
   const withdrawButton = page.getByTestId('widget-button');
   await expect(withdrawButton).toHaveText('Withdraw');
   await withdrawButton.click();
-  await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+
+  await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
   //TODO: why is the finish button disabled?
   await page.getByRole('button', { name: 'Back to Savings' }).click();
 });
@@ -68,7 +69,7 @@ test('withdraw with insufficient savings balance', async ({ page }) => {
   // If there's no withdraw button after clicking 100%, it means we don't any USDS supplied
   if (withdrawButton) {
     await withdrawButton.click();
-    await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+    await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
     // await expect(page.locator('text=successfully withdrew')).toHaveCount(2);
     await page.getByRole('button', { name: 'Back to Savings' }).click();
   }
