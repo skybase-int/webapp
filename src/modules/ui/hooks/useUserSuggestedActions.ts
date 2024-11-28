@@ -225,23 +225,17 @@ const fetchUserSuggestedActions = (
 
   const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
   if (isRestricted) {
-    // if restricted build, remove get rewards and save actions; remove upgrade actions for mkr sky
+    // if restricted build, remove get rewards and save actions
     const restrictedSuggestedActions = suggestedActions.filter(
       action =>
-        action.intent !== IntentMapping.REWARDS_INTENT &&
-        action.intent !== IntentMapping.SAVINGS_INTENT &&
-        (action.primaryToken === 'MKR' || action.secondaryToken === 'SKY')
+        action.intent !== IntentMapping.REWARDS_INTENT && action.intent !== IntentMapping.SAVINGS_INTENT
     );
     const restrictedLinkedActions = linkedActions.filter(
       action =>
         action.intent !== IntentMapping.REWARDS_INTENT &&
         action.la !== IntentMapping.REWARDS_INTENT &&
         action.intent !== IntentMapping.SAVINGS_INTENT &&
-        action.la !== IntentMapping.SAVINGS_INTENT &&
-        !(
-          action.intent === IntentMapping.UPGRADE_INTENT &&
-          (action.primaryToken === 'MKR' || action.secondaryToken === 'SKY')
-        )
+        action.la !== IntentMapping.SAVINGS_INTENT
     );
 
     return {

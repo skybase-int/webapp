@@ -27,7 +27,7 @@ export function BalancesModuleShowcase() {
       <ModuleCard
         intent={Intent.UPGRADE_INTENT}
         module={t`Upgrade`}
-        title={isRestricted ? t`Upgrade your DAI` : t`Upgrade your DAI and MKR`}
+        title={t`Upgrade your DAI and MKR`}
         className="bg-sky-pink"
       />
       <ModuleCard

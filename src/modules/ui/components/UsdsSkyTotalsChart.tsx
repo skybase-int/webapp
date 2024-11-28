@@ -16,7 +16,6 @@ export function UsdsSkyTotalsChart() {
   const [activeChart, setActiveChart] = useState<ChartName>(ChartName.USDS);
   const [timeFrame, setTimeFrame] = useState<TimeFrame>('w');
   const chainId = useChainId();
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
 
   const nstTokenAddress = usdsAddress[chainId as keyof typeof usdsAddress];
   const skyTokenAddress = skyAddress[chainId as keyof typeof skyAddress];
@@ -64,14 +63,12 @@ export function UsdsSkyTotalsChart() {
         <div className="mb-4 flex">
           <Tabs value={activeChart} onValueChange={value => setActiveChart(value as ChartName)}>
             <TabsList className="flex">
-              <TabsTrigger position={isRestricted ? 'whole' : 'left'} value={ChartName.USDS}>
+              <TabsTrigger position="left" value={ChartName.USDS}>
                 <Trans>Total USDS</Trans>
               </TabsTrigger>
-              {!isRestricted && (
-                <TabsTrigger position="right" value={ChartName.SKY}>
-                  <Trans>Total SKY</Trans>
-                </TabsTrigger>
-              )}
+              <TabsTrigger position="right" value={ChartName.SKY}>
+                <Trans>Total SKY</Trans>
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
