@@ -49,17 +49,15 @@ export const useActionForToken = () => {
               };
           break;
         case 'mkr':
-          action = isRestricted
-            ? undefined
-            : {
-                label: t`Upgrade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} to SKY`,
-                actionUrl: getRetainedQueryParams(
-                  `?${Widget}=${UPGRADE}&${InputAmount}=${balance}&${SourceToken}=MKR`,
-                  retainedParams,
-                  searchParams
-                ),
-                image: `/tokens/actions/${lowerSymbol}.png`
-              };
+          action = {
+            label: t`Upgrade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} to SKY`,
+            actionUrl: getRetainedQueryParams(
+              `?${Widget}=${UPGRADE}&${InputAmount}=${balance}&${SourceToken}=MKR`,
+              retainedParams,
+              searchParams
+            ),
+            image: `/tokens/actions/${lowerSymbol}.png`
+          };
           break;
         case 'usds':
           action = isRestricted
