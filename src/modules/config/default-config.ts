@@ -2,7 +2,7 @@
 
 import { defaultConfig as widgetsConfig } from '@jetstreamgg/widgets';
 import { SiteConfig } from './types/site-config';
-import { restrictedTokenList } from './restrictedTokenList';
+import { restrictedTokenList, restrictedTokenListTrade } from './restrictedTokenList';
 
 const restrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
 
@@ -16,7 +16,7 @@ export const defaultConfig: SiteConfig = {
   favicon: '/images/sky.svg',
   ...(restrictedBuild
     ? {
-        tradeTokenList: restrictedTokenList,
+        tradeTokenList: restrictedTokenListTrade,
         balancesTokenList: restrictedTokenList
       }
     : {})
