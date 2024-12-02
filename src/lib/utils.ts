@@ -45,6 +45,7 @@ export function sanitizeUrl(url: string | undefined) {
         domain => parsedUrl.hostname === domain || parsedUrl.hostname.endsWith(`.${domain}`)
       )
     ) {
+      console.log(`"${parsedUrl.hostname}" not found in allow list, returning undefined`);
       return undefined;
     }
 
