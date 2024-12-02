@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import { useAccount } from 'wagmi';
 import { useRestrictedAddressCheck, useVpnCheck } from '@jetstreamgg/hooks';
+import { sanitizeUrl } from '@/lib/utils';
 
 interface ConnectedContextType {
   isConnectedAndAcceptedTerms: boolean;
@@ -59,7 +60,7 @@ export const ConnectedProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const checkTermsAcceptance = async (address: string) => {
     setIsCheckingTerms(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_TERMS_ENDPOINT}/check`, {
+      const response = await fetch(sanitizeUrl(`${import.meta.env.VITE_TERMS_ENDPOINT}/check`) || '', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
