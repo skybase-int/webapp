@@ -1,5 +1,5 @@
 {
-  "name": "@jetstreamgg/phase-one-app",
+  "name": "@jetstreamgg/webapp",
   "type": "module",
   "version": "0.1.4",
   "private": true,
@@ -43,9 +43,9 @@
     ]
   },
   "dependencies": {
-    "@jetstreamgg/hooks": "3.0.23",
-    "@jetstreamgg/utils": "2.0.5",
-    "@jetstreamgg/widgets": "3.0.34",
+    "@jetstreamgg/hooks": "3.1.2",
+    "@jetstreamgg/utils": "2.1.0",
+    "@jetstreamgg/widgets": "3.1.6",
     "@lingui/detect-locale": "^4.7.0",
     "@lingui/macro": "^4.7.0",
     "@lingui/react": "^4.7.0",
@@ -61,12 +61,12 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@rainbow-me/rainbowkit": "^2.1.3",
+    "@rainbow-me/rainbowkit": "2.2.0",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tanstack/react-query": "5.17.15",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.0.9",
-    "@wagmi/core": "2.12.0",
+    "@wagmi/core": "2.15.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "copy-to-clipboard": "^3.3.3",
@@ -83,12 +83,12 @@
     "recharts": "^2.10.4",
     "rehype-sanitize": "^6.0.0",
     "tailwind-variants": "^0.2.0",
-    "viem": "2.7.20",
+    "viem": "2.21.19",
     "vite": "5.2.13",
-    "wagmi": "2.12.0"
+    "wagmi": "2.13.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
+    "@babel/core": "^7.25.7",
     "@lingui/cli": "^4.7.0",
     "@lingui/conf": "^4.7.0",
     "@lingui/core": "^4.7.0",

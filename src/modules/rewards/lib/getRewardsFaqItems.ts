@@ -3,14 +3,14 @@ export const getRewardsFaqItems = () => [
     question: 'What are Sky Token Rewards, and how do they work?',
     answer: `When you supply USDS to the Sky Token Rewards module through the Sky Protocol, you receive Sky Token Rewards over time in the form of Sky governance tokens.
 
-The USDS, as well as the rewards received, are supplied to a non-custodial smart contract that represents the USDS pool of assets. That means no intermediary has custody of your supplied funds.
+The USDS, as well as the rewards received, are supplied to a non-custodial smart contract that represents the USDS pool of funds. That means no intermediary has custody of your supplied funds.
 
 Soon, you may be able to use SKY to access Activation Token Rewards and to participate in Sky ecosystem governance through a system of decentralised onchain voting.`
   },
   {
     question: 'How much USDS do I have to supply to accumulate Sky Token Rewards?',
     answer:
-      'Eligible users can supply any amount of USDS to the Sky Token Rewards module to begin getting Sky Token Rewards. There is no minimum amount required. Eligible users can also withdraw your USDS anytime. With the Sky Protocol, you can receive rewards without giving up control of your supplied assets.'
+      'Eligible users can supply any amount of USDS to the Sky Token Rewards module to begin getting Sky Token Rewards. There is no minimum amount required. Eligible users can also withdraw your USDS anytime. With the Sky Protocol, you can receive rewards without giving up control of your supplied funds.'
   },
   {
     question: 'How is the Sky Token Rewards rate calculated?',
@@ -20,7 +20,7 @@ Soon, you may be able to use SKY to access Activation Token Rewards and to parti
 
 • The market price of the token rewarded
 
-• The user's proportional supply within the total pool of assets linked to the Sky Token Rewards module
+• The user's proportional supply within the total pool of funds linked to the Sky Token Rewards module
 
 Sky.money does not control the issuance, determination, or distribution of these rewards.`
   },

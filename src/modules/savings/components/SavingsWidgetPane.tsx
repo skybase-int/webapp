@@ -6,10 +6,12 @@ import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { useSearchParams } from 'react-router-dom';
 import { deleteSearchParams } from '@/modules/utils/deleteSearchParams';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 export function SavingsWidgetPane(sharedProps: SharedProps) {
+  const subgraphUrl = useSubgraphUrl();
   const { linkedActionConfig, updateLinkedActionConfig, exitLinkedActionMode } = useConfigContext();
-  const { mutate: refreshSavingsHistory } = useSavingsHistory();
+  const { mutate: refreshSavingsHistory } = useSavingsHistory({ subgraphUrl });
   const [, setSearchParams] = useSearchParams();
 
   const onSavingsWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {

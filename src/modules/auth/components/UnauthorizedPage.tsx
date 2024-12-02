@@ -11,13 +11,13 @@ type AuthData = {
   addressAllowed?: boolean;
   authIsLoading?: boolean;
   address?: string;
-  authError: Error;
+  authError?: Error;
 };
 
 type VpnData = {
   isConnectedToVpn?: boolean;
   vpnIsLoading?: boolean;
-  vpnError: Error;
+  vpnError?: Error;
 };
 
 type UnauthorizedPageProps = {
