@@ -9,11 +9,11 @@ import {
   coinbaseWallet,
   injectedWallet
 } from '@rainbow-me/rainbowkit/wallets';
-import { TENDERLY_RPC_URL } from './testTenderlyChain';
+import { TENDERLY_CHAIN_ID, TENDERLY_RPC_URL } from './testTenderlyChain';
 
 export const tenderly = {
-  id: 314311,
-  name: 'mainnet_aug_28_0',
+  id: TENDERLY_CHAIN_ID,
+  name: 'mainnet_sep_30_0',
   network: 'tenderly',
   nativeCurrency: {
     decimals: 18,
@@ -56,7 +56,8 @@ export const wagmiConfigDev = createConfig({
     [mainnet.id]: http(import.meta.env.VITE_RPC_PROVIDER_MAINNET || ''),
     [tenderly.id]: http(import.meta.env.VITE_RPC_PROVIDER_TENDERLY || ''),
     [sepolia.id]: http(import.meta.env.VITE_RPC_PROVIDER_SEPOLIA || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });
 
 //TODO: use this for production
@@ -65,5 +66,6 @@ export const wagmiConfigMainnet = createConfig({
   connectors,
   transports: {
     [mainnet.id]: http(import.meta.env.VITE_RPC_PROVIDER_MAINNET || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });

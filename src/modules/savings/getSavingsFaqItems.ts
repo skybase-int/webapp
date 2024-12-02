@@ -7,12 +7,12 @@ When you supply USDS to the Sky Savings Rate module, you access the SSR and may 
 
 The decentralised Sky Protocol dynamically adds USDS tokens to the pool every few seconds, in accordance with the Sky Savings Rate. As those tokens auto-accumulate in the pool over time, the value of the sUSDS you hold may gradually increase.
 
-So, when you choose to redeem your sUSDS for USDS—which you can do anytime—the total USDS you will receive will equal the amount you originally supplied, plus any additional USDS accumulated. With the Sky Protocol, you're always in full control of your supplied assets, as this feature is non-custodial.`
+So, when you choose to redeem your sUSDS for USDS—which you can do anytime—the total USDS you will receive will equal the amount you originally supplied, plus any additional USDS accumulated. With the Sky Protocol, you're always in full control of your supplied funds, as this feature is non-custodial.`
   },
   {
     question: 'Does it cost anything to access the Sky Savings Rate?',
     answer:
-      'Accessing the Sky Savings Rate via the Sky Protocol is free. However, any time you supply or withdraw assets to/from the Sky Savings Rate module, you will incur a transaction fee— called a gas fee—for using the Ethereum blockchain network. That fee is not controlled, imposed or received by Sky.money or the Sky Protocol.'
+      'Accessing the Sky Savings Rate via the Sky Protocol is free. However, any time you supply or withdraw funds to/from the Sky Savings Rate module, you will incur a transaction fee— called a gas fee—for using the Ethereum blockchain network. That fee is not controlled, imposed or received by Sky.money or the Sky Protocol.'
   },
   {
     question: 'What is USDS?',
@@ -30,7 +30,7 @@ So, when you choose to redeem your sUSDS for USDS—which you can do anytime—t
 
 The decentralised Sky Protocol dynamically adds USDS tokens to the pool every few seconds, in accordance with the Sky Savings Rate. As those tokens auto-accumulate in the pool over time, the value of the sUSDS you hold may gradually increase.
 
-So, when you choose to redeem your sUSDS for USDS—which you can do anytime—the total USDS you will receive will equal the amount you originally supplied, plus any rewards accumulated. With the Sky Protocol, you can savings without giving up control of your supplied assets.`
+So, when you choose to redeem your sUSDS for USDS—which you can do anytime—the total USDS you will receive will equal the amount you originally supplied, plus any rewards accumulated. With the Sky Protocol, you can savings without giving up control of your supplied funds.`
   },
   {
     question: 'Can I trade sUSDS on the open market?',

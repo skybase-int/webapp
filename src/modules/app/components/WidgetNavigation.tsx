@@ -13,6 +13,7 @@ import { QueryParams, mapIntentToQueryParam } from '@/lib/constants';
 import { LinkedActionWrapper } from '@/modules/ui/components/LinkedActionWrapper';
 import { useSearchParams } from 'react-router-dom';
 import { deleteSearchParams } from '@/modules/utils/deleteSearchParams';
+import { cn } from '@/lib/utils';
 
 interface WidgetNavigationProps {
   widgetContent: WidgetContent;
@@ -79,14 +80,14 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
   const laExtraHeight = isMobile ? 61 : 100; // LA Wrapper and action button height
   const baseTabContentClasses = 'md:h-full md:flex-1';
   const tabContentClasses = isRewardsOverview
-    ? `${baseTabContentClasses} p-6 pb-0 md:p-3 md:pb-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pb-4 xl:pr-1.5`
-    : `${baseTabContentClasses} p-6 md:p-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pr-1.5`;
+    ? `${baseTabContentClasses} p-6 pr-3.5 pb-0 md:p-3 md:pb-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pb-4 xl:pr-1.5`
+    : `${baseTabContentClasses} p-6 pr-3.5 md:p-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pr-1.5`;
   // If it's mobile, use the widget navigation row height + the height of the webiste header
   // as we're using 100vh for the content style, if not, just use the height of the navigation row
   const headerHeight = (isMobile ? 63 + 56 : 66) + (contentMarginTop + contentPaddingTop) * 4;
   const topOffset = headerHeight;
   const style = isMobile
-    ? { height: `calc(100vh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
+    ? { height: `calc(100dvh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
     : { height: `${height - topOffset - (showLinkedAction ? laExtraHeight : 0)}px` };
   const tabGlowClasses =
     'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light';
@@ -118,14 +119,14 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
       <motion.div layout transition={{ layout: { duration: 0 } }}>
         {/* TODO justify-around only when restricted */}
         <TabsList
-          className={`${isMobile ? 'space-x-2' : ''} sticky top-0 z-20 flex w-full justify-around rounded-none rounded-t-3xl border-b p-3 backdrop-blur-2xl md:border-none md:p-0 md:backdrop-filter-none`}
+          className={`${isMobile ? 'space-x-1' : ''} sticky top-0 z-20 flex w-full justify-around rounded-none rounded-t-3xl border-b p-3 backdrop-blur-2xl md:border-none md:p-0 md:backdrop-filter-none`}
         >
           {widgetContent.map(([widgetIntent, label, icon]) => (
             <TabsTrigger
               key={widgetIntent}
               variant="icons"
               value={widgetIntent}
-              className={intent === widgetIntent ? tabGlowClasses : ''}
+              className={intent === widgetIntent ? cn(tabGlowClasses, 'px-1 md:px-2') : 'px-1 md:px-2'}
             >
               {!isMobile && icon({ color: intent === widgetIntent ? 'white' : 'rgba(198, 194, 255, 0.8)' })}
               <Text variant="small">

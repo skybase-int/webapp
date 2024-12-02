@@ -3,9 +3,11 @@ import { formatBigInt } from '@jetstreamgg/utils';
 import { t } from '@lingui/macro';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
+import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
 
 export function UpgradedDaiToUsds() {
-  const { data, isLoading, error } = useUpgradeTotals();
+  const subgraphUrl = useSubgraphUrl();
+  const { data, isLoading, error } = useUpgradeTotals({ subgraphUrl });
 
   return (
     <StatsCard

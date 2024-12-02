@@ -3,7 +3,7 @@ import '../mock-rpc-call.ts';
 import '../mock-vpn-check.ts';
 import { setErc20Balance } from '../utils/setBalance.ts';
 import { usdsAddress } from '@jetstreamgg/hooks';
-import { TENDERLY_CHAIN_ID } from '../utils/constants.ts';
+import { TENDERLY_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts';
 import { interceptAndRejectTransactions } from '../utils/rejectTransaction.ts';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
@@ -37,7 +37,8 @@ test('Supply and withdraw from Savings', async ({ page }) => {
   const withdrawButton = page.getByTestId('widget-button');
   await expect(withdrawButton).toHaveText('Withdraw');
   await withdrawButton.click();
-  await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+
+  await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
   //TODO: why is the finish button disabled?
   await page.getByRole('button', { name: 'Back to Savings' }).click();
 });
@@ -68,7 +69,7 @@ test('withdraw with insufficient savings balance', async ({ page }) => {
   // If there's no withdraw button after clicking 100%, it means we don't any USDS supplied
   if (withdrawButton) {
     await withdrawButton.click();
-    await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+    await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
     // await expect(page.locator('text=successfully withdrew')).toHaveCount(2);
     await page.getByRole('button', { name: 'Back to Savings' }).click();
   }
