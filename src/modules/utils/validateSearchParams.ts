@@ -5,7 +5,8 @@ import {
   IntentMapping,
   VALID_LINKED_ACTIONS,
   CHAIN_WIDGET_MAP,
-  mapQueryParamToIntent
+  mapQueryParamToIntent,
+  COMING_SOON_MAP
 } from '@/lib/constants';
 import { Intent } from '@/lib/enums';
 import { defaultConfig } from '../config/default-config';
@@ -32,7 +33,8 @@ export const validateSearchParams = (
     if (
       key === QueryParams.Widget &&
       (!Object.values(IntentMapping).includes(value.toLowerCase()) ||
-        !CHAIN_WIDGET_MAP[chainId].includes(mapQueryParamToIntent(value)))
+        !CHAIN_WIDGET_MAP[chainId].includes(mapQueryParamToIntent(value)) ||
+        COMING_SOON_MAP[chainId].includes(mapQueryParamToIntent(value)))
     ) {
       searchParams.delete(key);
     }

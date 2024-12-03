@@ -3,7 +3,7 @@ import { WidgetPane } from './WidgetPane';
 import { DetailsPane } from './DetailsPane';
 import { AppContainer } from './AppContainer';
 import { useSearchParams } from 'react-router-dom';
-import { CHAIN_WIDGET_MAP, QueryParams, mapQueryParamToIntent } from '@/lib/constants';
+import { CHAIN_WIDGET_MAP, COMING_SOON_MAP, QueryParams, mapQueryParamToIntent } from '@/lib/constants';
 import { Intent } from '@/lib/enums';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { validateLinkedActionSearchParams, validateSearchParams } from '@/modules/utils/validateSearchParams';
@@ -73,7 +73,12 @@ export function MainApp() {
       // If user selected intent is not available for the current network, default to the balances intent
       intent:
         validatedWidgetParam ??
-        CHAIN_WIDGET_MAP[chainId].find(intent => intent === mapQueryParamToIntent(userConfig.intent)) ??
+        // Use the user config intent if found in the chain widget map, but not on the coming soon map for the given network
+        CHAIN_WIDGET_MAP[chainId].find(
+          intent =>
+            intent === mapQueryParamToIntent(userConfig.intent) &&
+            !COMING_SOON_MAP[chainId].includes(mapQueryParamToIntent(userConfig.intent))
+        ) ??
         Intent.BALANCES_INTENT
     });
   }, [widgetParam, userConfig.intent]);

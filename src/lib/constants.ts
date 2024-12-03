@@ -55,6 +55,11 @@ export const CHAIN_WIDGET_MAP: Record<number, Intent[]> = {
   [sepolia.id]: [Intent.BALANCES_INTENT, Intent.TRADE_INTENT]
 };
 
+export const COMING_SOON_MAP: Record<number, Intent[]> = {
+  [base.id]: [Intent.REWARDS_INTENT],
+  [tenderlyBase.id]: [Intent.REWARDS_INTENT]
+};
+
 export const intentTxt: Record<string, MessageDescriptor> = {
   trade: msg`trade`,
   upgrade: msg`upgrade`,
