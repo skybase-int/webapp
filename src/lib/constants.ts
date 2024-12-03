@@ -2,6 +2,8 @@ import { RewardsModule, Savings, Trade, Upgrade, Seal } from '@/modules/icons';
 import { Intent } from './enums';
 import { msg } from '@lingui/macro';
 import { MessageDescriptor } from '@lingui/core';
+import { base, mainnet, sepolia } from 'viem/chains';
+import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';
 
 export enum QueryParams {
   Locale = 'lang',
@@ -25,6 +27,32 @@ export const IntentMapping = {
   [Intent.SAVINGS_INTENT]: 'savings',
   [Intent.REWARDS_INTENT]: 'rewards',
   [Intent.SEAL_INTENT]: 'seal'
+};
+
+export const CHAIN_WIDGET_MAP: Record<number, Intent[]> = {
+  [mainnet.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.UPGRADE_INTENT,
+    Intent.TRADE_INTENT,
+    Intent.SEAL_INTENT
+  ],
+  [tenderly.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.UPGRADE_INTENT,
+    Intent.SEAL_INTENT
+  ],
+  [base.id]: [Intent.BALANCES_INTENT, Intent.REWARDS_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
+  [tenderlyBase.id]: [
+    Intent.BALANCES_INTENT,
+    Intent.REWARDS_INTENT,
+    Intent.SAVINGS_INTENT,
+    Intent.TRADE_INTENT
+  ],
+  [sepolia.id]: [Intent.BALANCES_INTENT, Intent.TRADE_INTENT]
 };
 
 export const intentTxt: Record<string, MessageDescriptor> = {
