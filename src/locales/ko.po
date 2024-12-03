@@ -170,6 +170,10 @@ msgstr ""
 msgid "Combined actions"
 msgstr ""
 
+#: src/modules/app/components/WidgetNavigation.tsx
+msgid "Coming soon"
+msgstr ""
+
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "Connect wallet"
 msgstr ""
