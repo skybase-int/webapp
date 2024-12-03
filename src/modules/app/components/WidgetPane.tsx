@@ -31,6 +31,7 @@ export type WidgetContent = [
   string,
   (props: IconProps) => React.ReactNode,
   React.ReactNode | null,
+  boolean,
   { disabled?: boolean }?
 ][];
 
@@ -133,6 +134,7 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
       label as string,
       icon as (props: IconProps) => React.ReactNode,
       comingSoon ? null : (component as React.ReactNode),
+      comingSoon,
       comingSoon ? { disabled: true } : undefined
     ];
   });

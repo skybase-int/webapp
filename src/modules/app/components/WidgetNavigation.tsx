@@ -121,24 +121,30 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
         <TabsList
           className={`${isMobile ? 'space-x-1' : ''} sticky top-0 z-20 flex w-full justify-around rounded-none rounded-t-3xl border-b p-3 backdrop-blur-2xl md:border-none md:p-0 md:backdrop-filter-none`}
         >
-          {widgetContent.map(([widgetIntent, label, icon, , options]) => (
-            <TabsTrigger
-              key={widgetIntent}
-              variant="icons"
-              value={widgetIntent}
-              className={cn(
-                'px-1 md:px-2',
-                'before:opacity-0',
-                'disabled:cursor-not-allowed disabled:opacity-50 disabled:before:opacity-0 disabled:hover:before:opacity-0',
-                intent === widgetIntent && tabGlowClasses
-              )}
-              disabled={options?.disabled || false}
-            >
-              {!isMobile && icon({ color: intent === widgetIntent ? 'white' : 'rgba(198, 194, 255, 0.8)' })}
-              <Text variant="small">
-                <Trans>{label}</Trans>
-              </Text>
-            </TabsTrigger>
+          {widgetContent.map(([widgetIntent, label, icon, , comingSoon, options]) => (
+            <div key={widgetIntent}>
+              <TabsTrigger
+                variant="icons"
+                value={widgetIntent}
+                className={cn(
+                  'px-1 md:px-2',
+                  'before:opacity-0',
+                  'disabled:cursor-not-allowed disabled:opacity-50 disabled:before:opacity-0 disabled:hover:before:opacity-0',
+                  intent === widgetIntent && tabGlowClasses
+                )}
+                disabled={options?.disabled || false}
+              >
+                {!isMobile && icon({ color: intent === widgetIntent ? 'white' : 'rgba(198, 194, 255, 0.8)' })}
+                <Text variant="small">
+                  <Trans>{label}</Trans>
+                </Text>
+                {comingSoon && (
+                  <Text variant="small" className="text-nowrap text-[9px]">
+                    <Trans>Coming soon</Trans>
+                  </Text>
+                )}
+              </TabsTrigger>
+            </div>
           ))}
         </TabsList>
         <LinkedActionWrapper />
