@@ -34,7 +34,7 @@ export const validateSearchParams = (
       key === QueryParams.Widget &&
       (!Object.values(IntentMapping).includes(value.toLowerCase()) ||
         !CHAIN_WIDGET_MAP[chainId].includes(mapQueryParamToIntent(value)) ||
-        COMING_SOON_MAP[chainId].includes(mapQueryParamToIntent(value)))
+        COMING_SOON_MAP[chainId]?.includes(mapQueryParamToIntent(value)))
     ) {
       searchParams.delete(key);
     }
