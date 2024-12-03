@@ -8,7 +8,7 @@ import { Intent } from '@/lib/enums';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { validateLinkedActionSearchParams, validateSearchParams } from '@/modules/utils/validateSearchParams';
 import { useAvailableTokenRewardContracts } from '@jetstreamgg/hooks';
-import { useChainId } from 'wagmi';
+import { useChainId, useChains, useSwitchChain } from 'wagmi';
 import { BP, useBreakpointIndex } from '@/modules/ui/hooks/useBreakpointIndex';
 import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
 
@@ -25,6 +25,10 @@ export function MainApp() {
 
   const { intent } = userConfig;
   const chainId = useChainId();
+  const chains = useChains();
+  const { switchChain } = useSwitchChain();
+
+  const configNetworks = chains.map(chain => chain.name);
 
   const rewardContracts = useAvailableTokenRewardContracts(chainId);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,6 +41,7 @@ export function MainApp() {
   const linkedAction = searchParams.get(QueryParams.LinkedAction) || undefined;
   const inputAmount = searchParams.get(QueryParams.InputAmount) || undefined;
   const timestamp = searchParams.get(QueryParams.Timestamp) || undefined;
+  const network = searchParams.get(QueryParams.Network) || undefined;
 
   // step is initialized as 0 and will evaluate to false, setting the first step to 1
   const step = linkedAction ? linkedActionConfig.step || 1 : 0;
@@ -51,7 +56,8 @@ export function MainApp() {
           rewardContracts,
           widgetParam || '',
           setSelectedRewardContract,
-          chainId
+          chainId,
+          configNetworks
         );
         // Runs second validation for linked-action-specific criteria
         const validatedLinkedActionParams = validateLinkedActionSearchParams(validatedParams);
@@ -60,6 +66,15 @@ export function MainApp() {
       { replace: true }
     );
   }, [searchParams, rewardContracts, setSelectedRewardContract, widgetParam]);
+
+  useEffect(() => {
+    if (network) {
+      const parsedChainId = chains.find(chain => chain.name.toLowerCase() === network.toLowerCase())?.id;
+      if (parsedChainId) {
+        switchChain({ chainId: parsedChainId });
+      }
+    }
+  }, [network]);
 
   useEffect(() => {
     // Updates the active widget pane in the config
