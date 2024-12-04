@@ -9,6 +9,8 @@ import { base } from 'viem/chains';
 import { ChevronDown } from 'lucide-react';
 import { tenderlyBase } from '@/data/wagmi/config/config.default';
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { QueryParams } from '@/lib/constants';
 
 const getChainIcon = (chainId: number, className?: string) =>
   [base.id, tenderlyBase.id].includes(chainId) ? (
@@ -23,9 +25,23 @@ export function ChainModal({ iconVariant }: { iconVariant?: boolean }) {
   const client = useClient();
   const chains = useChains();
   const { switchChain, variables: switchChainVariables, isPending: isSwitchChainPending } = useSwitchChain();
-
+  const [, setSearchParams] = useSearchParams();
   const handleSwitchChain = (chainId: number) => {
-    switchChain({ chainId }, { onSettled: () => setOpen(false) });
+    switchChain(
+      { chainId },
+      {
+        onSuccess: (_, { chainId: newChainId }) => {
+          const newChainName = chains.find(c => c.id === newChainId)?.name;
+          if (newChainName) {
+            setSearchParams(params => {
+              params.set(QueryParams.Network, newChainName.toLowerCase());
+              return params;
+            });
+          }
+        },
+        onSettled: () => setOpen(false)
+      }
+    );
   };
 
   return (
