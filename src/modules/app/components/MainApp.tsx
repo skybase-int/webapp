@@ -26,7 +26,19 @@ export function MainApp() {
   const { intent } = userConfig;
   const chainId = useChainId();
   const chains = useChains();
-  const { switchChain } = useSwitchChain();
+  const { switchChain } = useSwitchChain({
+    mutation: {
+      onError: err => {
+        // If the user rejects the network switch request, remove the network query param
+        if (err.name === 'UserRejectedRequestError') {
+          setSearchParams(params => {
+            params.delete(QueryParams.Network);
+            return params;
+          });
+        }
+      }
+    }
+  });
 
   const configNetworks = chains.map(chain => chain.name);
 
