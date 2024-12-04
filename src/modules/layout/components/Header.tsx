@@ -4,6 +4,7 @@ import { HEADER_HEIGHT } from './constants';
 import { defaultConfig } from '../../config/default-config';
 import { CustomConnectButton } from './CustomConnectButton';
 import { MockConnectButton } from './MockConnectButton';
+import { ChainModal } from '@/modules/ui/components/ChainModal';
 // import { LanguageSelector } from '../../config/components/LanguageSelector';
 
 const useMock = import.meta.env.VITE_USE_MOCK_WALLET === 'true';
@@ -20,6 +21,7 @@ export function Header(): React.ReactElement {
           </div>
         </Link>
         <div className="flex items-center gap-3">
+          <ChainModal />
           <CustomConnectButton />
           {useMock ? <MockConnectButton /> : null}
           {/* <LanguageSelector /> */}
