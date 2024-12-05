@@ -29,7 +29,12 @@ export const UnsupportedNetworkPage = ({ children }: { children: React.ReactNode
                 {/* This will display buttons for all supported networks for the current Wagmi config.
                  * For production this would only use Mainnet and Base */}
                 {chains.map(({ name, id }) => (
-                  <Button key={id} onClick={() => switchChain({ chainId: id })}>
+                  <Button
+                    variant="connect"
+                    className="border-transparent bg-primary hover:border-transparent focus:border-transparent"
+                    key={id}
+                    onClick={() => switchChain({ chainId: id })}
+                  >
                     Switch to {name}
                   </Button>
                 ))}
