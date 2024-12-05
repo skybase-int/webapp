@@ -16,8 +16,7 @@ export const validateSearchParams = (
   rewardContracts: RewardContract[],
   widget: string,
   setSelectedRewardContract: (rewardContract?: RewardContract) => void,
-  chainId: number,
-  configNetworks: string[]
+  chainId: number
 ) => {
   searchParams.forEach((value, key) => {
     // removes any query param not found in QueryParams
@@ -37,10 +36,6 @@ export const validateSearchParams = (
         !CHAIN_WIDGET_MAP[chainId].includes(mapQueryParamToIntent(value)) ||
         COMING_SOON_MAP[chainId]?.includes(mapQueryParamToIntent(value)))
     ) {
-      searchParams.delete(key);
-    }
-
-    if (key === QueryParams.Network && !configNetworks.some(n => n.toLowerCase() === value)) {
       searchParams.delete(key);
     }
 

@@ -55,8 +55,6 @@ export function MainApp() {
     }
   });
 
-  const configNetworks = chains.map(chain => chain.name);
-
   const rewardContracts = useAvailableTokenRewardContracts(chainId);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -83,8 +81,7 @@ export function MainApp() {
           rewardContracts,
           widgetParam || '',
           setSelectedRewardContract,
-          chainId,
-          configNetworks
+          chainId
         );
         // Runs second validation for linked-action-specific criteria
         const validatedLinkedActionParams = validateLinkedActionSearchParams(validatedParams);
