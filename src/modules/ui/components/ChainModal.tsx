@@ -3,7 +3,7 @@ import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTrigger } from 
 import { Text } from '@/modules/layout/components/Typography';
 import { Trans } from '@lingui/macro';
 import { useChainId, useChains, useClient, useSwitchChain } from 'wagmi';
-import { BaseChain, BaseNetwork, Close, MainnetChain, MainnetNetwork } from '@/modules/icons';
+import { MainnetChain, BaseChain, Close } from '@/modules/icons';
 import { cn } from '@/lib/utils';
 import { base } from 'viem/chains';
 import { ChevronDown } from 'lucide-react';
@@ -19,7 +19,7 @@ const getChainIcon = (chainId: number, className?: string) =>
     <MainnetChain className={className} />
   );
 
-export function ChainModal({ iconVariant }: { iconVariant?: boolean }) {
+export function ChainModal({ iconOnly }: { iconOnly?: boolean }) {
   const [open, setOpen] = useState(false);
   const chainId = useChainId();
   const client = useClient();
@@ -47,17 +47,22 @@ export function ChainModal({ iconVariant }: { iconVariant?: boolean }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        {iconVariant ? (
-          <div className="cursor-pointer">
-            {[base.id, tenderlyBase.id].includes(chainId) ? <BaseNetwork /> : <MainnetNetwork />}
-          </div>
-        ) : (
-          <Button variant="connect" className="flex items-center gap-1.5 px-2.5 py-2">
-            {getChainIcon(chainId, 'h-6 w-6')}
-            <Text className="text-text">{client?.chain.name || 'Ethereum'}</Text>
-            <ChevronDown width={14} height={14} />
-          </Button>
-        )}
+        <Button
+          variant="connect"
+          className={cn(
+            'flex items-center gap-1.5 px-2.5 py-2',
+            iconOnly &&
+              'border-transparent bg-primary bg-blend-overlay px-[9px] hover:border-transparent hover:bg-white/10 hover:[--gradient-opacity:100%] focus:border-transparent focus:bg-white/15 focus:[--gradient-opacity:100%]'
+          )}
+        >
+          {getChainIcon(chainId, iconOnly ? 'h-5 w-5' : 'h-6 w-6')}
+          {!iconOnly && (
+            <>
+              <Text className="text-text">{client?.chain.name || 'Ethereum'}</Text>
+              <ChevronDown width={14} height={14} />
+            </>
+          )}
+        </Button>
       </DialogTrigger>
       <DialogContent
         className="bg-containerDark p-4 sm:min-w-[400px] sm:p-4"
