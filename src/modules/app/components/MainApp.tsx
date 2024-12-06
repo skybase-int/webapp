@@ -101,9 +101,9 @@ export function MainApp() {
           return params;
         });
     } else {
-      // If the network param doesn't match the current chain, switch chains
+      // If the network param is set, switch chains if necessary
       const parsedChainId = chains.find(chain => chain.name.toLowerCase() === network.toLowerCase())?.id;
-      if (parsedChainId && parsedChainId !== chainId) {
+      if (parsedChainId) {
         switchChain({ chainId: parsedChainId });
       }
     }
