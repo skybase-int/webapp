@@ -1,6 +1,13 @@
 import { RewardContract } from '@jetstreamgg/hooks';
 import { SUPPORTED_TOKEN_SYMBOLS } from '@jetstreamgg/widgets';
-import { QueryParams, IntentMapping, VALID_LINKED_ACTIONS } from '@/lib/constants';
+import {
+  QueryParams,
+  IntentMapping,
+  VALID_LINKED_ACTIONS,
+  CHAIN_WIDGET_MAP,
+  mapQueryParamToIntent,
+  COMING_SOON_MAP
+} from '@/lib/constants';
 import { Intent } from '@/lib/enums';
 import { defaultConfig } from '../config/default-config';
 
@@ -8,7 +15,8 @@ export const validateSearchParams = (
   searchParams: URLSearchParams,
   rewardContracts: RewardContract[],
   widget: string,
-  setSelectedRewardContract: (rewardContract?: RewardContract) => void
+  setSelectedRewardContract: (rewardContract?: RewardContract) => void,
+  chainId: number
 ) => {
   searchParams.forEach((value, key) => {
     // removes any query param not found in QueryParams
@@ -22,7 +30,12 @@ export const validateSearchParams = (
     }
 
     // removes widget param is value is not valid
-    if (key === QueryParams.Widget && !Object.values(IntentMapping).includes(value.toLowerCase())) {
+    if (
+      key === QueryParams.Widget &&
+      (!Object.values(IntentMapping).includes(value.toLowerCase()) ||
+        !CHAIN_WIDGET_MAP[chainId].includes(mapQueryParamToIntent(value)) ||
+        COMING_SOON_MAP[chainId]?.includes(mapQueryParamToIntent(value)))
+    ) {
       searchParams.delete(key);
     }
 
