@@ -3,7 +3,7 @@ import { WidgetPane } from './WidgetPane';
 import { DetailsPane } from './DetailsPane';
 import { AppContainer } from './AppContainer';
 import { useSearchParams } from 'react-router-dom';
-import { QueryParams, mapQueryParamToIntent } from '@/lib/constants';
+import { CHAIN_WIDGET_MAP, COMING_SOON_MAP, QueryParams, mapQueryParamToIntent } from '@/lib/constants';
 import { Intent } from '@/lib/enums';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { validateLinkedActionSearchParams, validateSearchParams } from '@/modules/utils/validateSearchParams';
@@ -50,7 +50,8 @@ export function MainApp() {
           params,
           rewardContracts,
           widgetParam || '',
-          setSelectedRewardContract
+          setSelectedRewardContract,
+          chainId
         );
         // Runs second validation for linked-action-specific criteria
         const validatedLinkedActionParams = validateLinkedActionSearchParams(validatedParams);
@@ -69,7 +70,17 @@ export function MainApp() {
 
     updateUserConfig({
       ...userConfig,
-      intent: validatedWidgetParam ?? userConfig.intent
+      // If user selected intent is not available for the current network, default to the balances intent
+      intent:
+        validatedWidgetParam ??
+        // Use the user config intent if found in the chain widget map, but not on the coming soon map for the given network
+        CHAIN_WIDGET_MAP[chainId].find(
+          intent =>
+            intent === mapQueryParamToIntent(userConfig.intent) &&
+            // If there is no coming soon map for the current network, default to true
+            (!COMING_SOON_MAP[chainId]?.includes(mapQueryParamToIntent(userConfig.intent)) ?? true)
+        ) ??
+        Intent.BALANCES_INTENT
     });
   }, [widgetParam, userConfig.intent]);
 

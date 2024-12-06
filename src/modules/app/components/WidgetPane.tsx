@@ -4,7 +4,7 @@ import { Intent } from '@/lib/enums';
 import { useLingui } from '@lingui/react';
 import { useCustomConnectModal } from '@/modules/ui/hooks/useCustomConnectModal';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
-import { mapIntentToQueryParam, restrictedIntents } from '@/lib/constants';
+import { CHAIN_WIDGET_MAP, COMING_SOON_MAP, mapIntentToQueryParam, restrictedIntents } from '@/lib/constants';
 import { WidgetNavigation } from '@/modules/app/components/WidgetNavigation';
 import { withErrorBoundary } from '@/modules/utils/withErrorBoundary';
 import { DualSwitcher } from '@/components/DualSwitcher';
@@ -23,8 +23,6 @@ import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { defaultConfig } from '@/modules/config/default-config';
 import { useChainId } from 'wagmi';
 import { SealWidgetPane } from '@/modules/seal/components/SealWidgetPane';
-import { base, mainnet, sepolia } from 'wagmi/chains';
-import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';
 
 export type WidgetContent = [
   Intent,
@@ -38,37 +36,6 @@ export type WidgetContent = [
 type WidgetPaneProps = {
   intent: Intent;
   children?: React.ReactNode;
-};
-
-const CHAIN_WIDGET_MAP: Record<number, Intent[]> = {
-  [mainnet.id]: [
-    Intent.BALANCES_INTENT,
-    Intent.REWARDS_INTENT,
-    Intent.SAVINGS_INTENT,
-    Intent.UPGRADE_INTENT,
-    Intent.TRADE_INTENT,
-    Intent.SEAL_INTENT
-  ],
-  [tenderly.id]: [
-    Intent.BALANCES_INTENT,
-    Intent.REWARDS_INTENT,
-    Intent.SAVINGS_INTENT,
-    Intent.UPGRADE_INTENT,
-    Intent.SEAL_INTENT
-  ],
-  [base.id]: [Intent.BALANCES_INTENT, Intent.REWARDS_INTENT, Intent.SAVINGS_INTENT, Intent.TRADE_INTENT],
-  [tenderlyBase.id]: [
-    Intent.BALANCES_INTENT,
-    Intent.REWARDS_INTENT,
-    Intent.SAVINGS_INTENT,
-    Intent.TRADE_INTENT
-  ],
-  [sepolia.id]: [Intent.BALANCES_INTENT, Intent.TRADE_INTENT]
-};
-
-const COMING_SOON_MAP: Record<number, Intent[]> = {
-  [base.id]: [Intent.REWARDS_INTENT],
-  [tenderlyBase.id]: [Intent.REWARDS_INTENT]
 };
 
 export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {

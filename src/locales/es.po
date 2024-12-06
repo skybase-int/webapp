@@ -480,6 +480,10 @@ msgstr ""
 msgid "sUSDS is a savings token for eligible users. When you supply USDS to the Sky Savings Rate module, you access the Sky Savings Rate and may receive sUSDS tokens. These sUSDS tokens serve as a digital record of your USDS interaction with the SSR module and any value accrued to your position."
 msgstr ""
 
+#: src/components/NetworkSwitcher.tsx
+msgid "Switch network"
+msgstr ""
+
 #: src/modules/app/hooks/useNotification.tsx
 msgid "then get rewards"
 msgstr ""
