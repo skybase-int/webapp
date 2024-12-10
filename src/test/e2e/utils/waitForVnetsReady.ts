@@ -31,5 +31,5 @@ const waitForVnetsReadyRequest = async () => {
 };
 
 export const waitForVnetsReady = async () => {
-  await backOffRetry(() => waitForVnetsReadyRequest(), 5, 1);
+  await backOffRetry(() => waitForVnetsReadyRequest(), 6, 1);
 };
