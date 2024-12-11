@@ -6,24 +6,19 @@ import { absBigInt } from '../../utils/math';
 import { SavingsSupply, ArrowDown } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
 import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
-import { useSavingsHistory } from '../hooks/useSavingsHistory';
+import { useSavingsHistory } from '@jetstreamgg/hooks';
 import { getTokenDecimals, TransactionTypeEnum } from '@jetstreamgg/hooks';
 import { useChainId } from 'wagmi';
 
 export function SavingsHistory() {
   const subgraphUrl = useSubgraphUrl();
-  const {
-    data: savingsHistory,
-    isLoading: savingsHistoryLoading,
-    error
-  } = useSavingsHistory({
-    subgraphUrl
-  });
+  const { data: savingsHistory, isLoading: savingsHistoryLoading, error } = useSavingsHistory(subgraphUrl);
+
   const chainId = useChainId();
   const { i18n } = useLingui();
 
   const memoizedDates = useMemo(() => savingsHistory?.map(s => s.blockTimestamp), [savingsHistory]);
-  const formattedDates = useFormatDates(memoizedDates, i18n.locale, 'MMMM d, yyyy, h:mm a');
+  const formattedDates = useFormatDates(memoizedDates, i18n.locale, 'MMM d, yyyy, h:mm a');
 
   // map savings history to rows
   const history = savingsHistory?.map((s, index) => ({
