@@ -33,7 +33,7 @@ export function TradeHistory() {
     formattedDate: formattedDates.length > index ? formattedDates[index] : '',
     rawDate: s.blockTimestamp,
     transactionHash: s.transactionHash,
-    cowOrderStatus: s.cowOrderStatus
+    ...('cowOrderStatus' in s ? { cowOrderStatus: s.cowOrderStatus } : {})
   }));
 
   return (
