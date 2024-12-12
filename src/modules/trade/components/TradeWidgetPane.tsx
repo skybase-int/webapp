@@ -7,7 +7,6 @@ import {
 } from '@jetstreamgg/widgets';
 import { defaultConfig } from '../../config/default-config';
 import { useChainId, useConfig as useWagmiConfig } from 'wagmi';
-import { base } from 'viem/chains';
 import { QueryParams, REFRESH_DELAY } from '@/lib/constants';
 import { SharedProps } from '@/modules/app/types/Widgets';
 import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
@@ -18,6 +17,7 @@ import { useSearchParams } from 'react-router-dom';
 import { updateParamsFromTransaction } from '@/modules/utils/updateParamsFromTransaction';
 import { useQueryClient } from '@tanstack/react-query';
 import { useMemo } from 'react';
+import { isBaseChainId } from '@jetstreamgg/utils';
 
 export function TradeWidgetPane(sharedProps: SharedProps) {
   const chainId = useChainId();
@@ -30,7 +30,7 @@ export function TradeWidgetPane(sharedProps: SharedProps) {
 
   const { onNavigate, setCustomHref, customNavLabel, setCustomNavLabel } = useCustomNavigation();
 
-  const isBase = chainId === base.id;
+  const isBase = isBaseChainId(chainId);
 
   const onTradeWidgetStateChange = ({
     hash,
