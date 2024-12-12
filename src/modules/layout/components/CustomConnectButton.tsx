@@ -4,6 +4,7 @@ import { useAccount } from 'wagmi';
 import { Button } from '@/components/ui/button';
 import { t } from '@lingui/macro';
 import { useConnectedContext } from '@/modules/ui/context/ConnectedContext';
+import { UnauthorizedPage } from '../../auth/components/UnauthorizedPage';
 
 export function CustomConnectButton(props: any) {
   const defaultProps = {
@@ -19,7 +20,17 @@ export function CustomConnectButton(props: any) {
   const { openConnectModal } = useConnectModal();
   const { isConnected } = useAccount();
 
-  const { isConnectedAndAcceptedTerms } = useConnectedContext();
+  const { isConnectedAndAcceptedTerms, isAuthorized, authData, vpnData } = useConnectedContext();
+
+  if (!isAuthorized) {
+    return (
+      <UnauthorizedPage authData={authData} vpnData={vpnData}>
+        <Button variant="connect" onClick={openConnectModal}>
+          {props.label ? props.label : t`Connect Wallet`}
+        </Button>
+      </UnauthorizedPage>
+    );
+  }
 
   return !isConnectedAndAcceptedTerms ? (
     <TermsModal />
@@ -29,7 +40,6 @@ export function CustomConnectButton(props: any) {
     </Button>
   ) : (
     <div className="p-0">
-      {/*ConnectButton is transparent and thus looks like its parent button */}
       <ConnectButton {...mergedProps} />
     </div>
   );

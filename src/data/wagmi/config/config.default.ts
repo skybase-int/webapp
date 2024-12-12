@@ -85,7 +85,8 @@ export const wagmiConfigDev = createConfig({
     [base.id]: http(import.meta.env.VITE_RPC_PROVIDER_BASE || ''),
     [tenderlyBase.id]: http(import.meta.env.VITE_RPC_PROVIDER_TENDERLY_BASE || ''),
     [sepolia.id]: http(import.meta.env.VITE_RPC_PROVIDER_SEPOLIA || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });
 
 export const wagmiConfigMainnet = createConfig({
@@ -94,5 +95,6 @@ export const wagmiConfigMainnet = createConfig({
   transports: {
     [mainnet.id]: http(import.meta.env.VITE_RPC_PROVIDER_MAINNET || ''),
     [base.id]: http(import.meta.env.VITE_RPC_PROVIDER_BASE || '')
-  }
+  },
+  multiInjectedProviderDiscovery: false
 });

@@ -80,14 +80,14 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
   const laExtraHeight = isMobile ? 61 : 100; // LA Wrapper and action button height
   const baseTabContentClasses = 'md:h-full md:flex-1';
   const tabContentClasses = isRewardsOverview
-    ? `${baseTabContentClasses} p-6 pb-0 md:p-3 md:pb-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pb-4 xl:pr-1.5`
-    : `${baseTabContentClasses} p-6 md:p-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pr-1.5`;
+    ? `${baseTabContentClasses} p-6 pr-3.5 pb-0 md:p-3 md:pb-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pb-4 xl:pr-1.5`
+    : `${baseTabContentClasses} p-6 pr-3.5 md:p-3 md:pr-0.5 md:pt-2 xl:p-4 xl:pr-1.5`;
   // If it's mobile, use the widget navigation row height + the height of the webiste header
   // as we're using 100vh for the content style, if not, just use the height of the navigation row
   const headerHeight = (isMobile ? 63 + 56 : 66) + (contentMarginTop + contentPaddingTop) * 4;
   const topOffset = headerHeight;
   const style = isMobile
-    ? { height: `calc(100vh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
+    ? { height: `calc(100dvh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
     : { height: `${height - topOffset - (showLinkedAction ? laExtraHeight : 0)}px` };
   const tabGlowClasses =
     'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light before:opacity-100 hover:before:opacity-100';
