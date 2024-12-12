@@ -86,6 +86,11 @@ export default ({ mode }: { mode: string }) => {
         '@': path.resolve(__dirname, './src')
       }
     },
+    optimizeDeps: {
+      // Optimize safe-apps-provider dependency to get rid of the Safe connector issue
+      // and be able to connect Safe apps
+      include: ['wagmi > @safe-global/safe-apps-provider']
+    },
     plugins: [
       createHtmlPlugin({
         minify: true,

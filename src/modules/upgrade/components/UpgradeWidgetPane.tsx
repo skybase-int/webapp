@@ -27,7 +27,6 @@ const targetTokenFromSourceToken = (sourceToken?: string) => {
 };
 
 export function UpgradeWidgetPane(sharedProps: SharedProps) {
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
   const subgraphUrl = useSubgraphUrl();
   const { linkedActionConfig, updateLinkedActionConfig, exitLinkedActionMode } = useConfigContext();
   const { mutate: refreshUpgradeHistory } = useUpgradeHistory({ subgraphUrl });
@@ -121,8 +120,8 @@ export function UpgradeWidgetPane(sharedProps: SharedProps) {
       onWidgetStateChange={onUpgradeWidgetStateChange}
       customNavigationLabel={customNavLabel}
       onCustomNavigation={onNavigate}
-      upgradeOptions={isRestricted ? [TOKENS.dai] : [TOKENS.dai, TOKENS.mkr]}
-      revertOptions={isRestricted ? [TOKENS.usds] : [TOKENS.usds, TOKENS.sky]}
+      upgradeOptions={[TOKENS.dai, TOKENS.mkr]}
+      revertOptions={[TOKENS.usds, TOKENS.sky]}
     />
   );
 }

@@ -64,7 +64,7 @@ function BaseBalanceCard({
           <BaseBalanceCardContent label={label} toggle={toggle}>
             <TokenIconWithBalance
               token={token}
-              balance={typeof balance === 'string' ? balance : formatBigInt(balance || 0n)}
+              balance={typeof balance === 'string' ? balance : formatBigInt(balance)}
             />
           </BaseBalanceCardContent>
         </LoadingErrorWrapper>
