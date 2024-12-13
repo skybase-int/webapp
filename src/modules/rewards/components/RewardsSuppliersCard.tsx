@@ -2,9 +2,16 @@ import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { Text } from '@/modules/layout/components/Typography';
 import { t } from '@lingui/macro';
 import { useRewardsSuppliersCount } from '../hooks/useRewardsSuppliersCount';
+import { useChainId } from 'wagmi';
+import { isBaseChainId } from '@jetstreamgg/utils';
 
 export function RewardsSuppliersCard() {
-  const { data: suppliers, isLoading, error } = useRewardsSuppliersCount();
+  const chainId = useChainId();
+  const {
+    data: suppliers,
+    isLoading,
+    error
+  } = useRewardsSuppliersCount(isBaseChainId(chainId) ? 1 : chainId); //Show mainnet data on base
   return (
     <StatsCard
       title={t`Rewards Suppliers`}
