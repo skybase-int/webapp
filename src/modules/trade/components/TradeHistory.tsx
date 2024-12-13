@@ -36,14 +36,16 @@ export function TradeHistory() {
     ...('cowOrderStatus' in s ? { cowOrderStatus: s.cowOrderStatus } : {})
   }));
 
+  const isBase = isBaseChainId(chainId);
+
   return (
     <HistoryTable
       history={history}
       error={error}
       isLoading={tradeHistoryLoading}
       transactionHeader={t`Trades`}
-      statusColumn={!isBaseChainId(chainId)}
-      cowExplorerLink
+      statusColumn={!isBase}
+      cowExplorerLink={!isBase}
     />
   );
 }
