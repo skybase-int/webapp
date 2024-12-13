@@ -5,11 +5,15 @@ import { defaultConfig } from '../../config/default-config';
 import { CustomConnectButton } from './CustomConnectButton';
 import { MockConnectButton } from './MockConnectButton';
 import { ChainModal } from '@/modules/ui/components/ChainModal';
+import { BP, useBreakpointIndex } from '@/modules/ui/hooks/useBreakpointIndex';
 // import { LanguageSelector } from '../../config/components/LanguageSelector';
 
 const useMock = import.meta.env.VITE_USE_MOCK_WALLET === 'true';
 
 export function Header(): React.ReactElement {
+  const { bpi } = useBreakpointIndex();
+  const isMobile = bpi < BP.md;
+
   return (
     <div
       className={`flex w-full items-center justify-center px-3 py-2 min-h-[${HEADER_HEIGHT}px] max-h-[${HEADER_HEIGHT}px] md:mb-2`}
@@ -21,7 +25,7 @@ export function Header(): React.ReactElement {
           </div>
         </Link>
         <div className="flex items-center gap-3">
-          <ChainModal dataTestId="chain-modal-trigger-header" />
+          <ChainModal dataTestId="chain-modal-trigger-header" showLabel={!isMobile} />
           <CustomConnectButton />
           {useMock ? <MockConnectButton /> : null}
           {/* <LanguageSelector /> */}

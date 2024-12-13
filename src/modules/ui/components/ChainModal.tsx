@@ -12,6 +12,11 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { QueryParams } from '@/lib/constants';
 
+enum ChainModalVariant {
+  default = 'default',
+  widget = 'widget'
+}
+
 const getChainIcon = (chainId: number, className?: string) =>
   [base.id, tenderlyBase.id].includes(chainId) ? (
     <BaseChain className={className} />
@@ -20,10 +25,14 @@ const getChainIcon = (chainId: number, className?: string) =>
   );
 
 export function ChainModal({
-  iconOnly,
+  showLabel = true,
+  showDropdownIcon = true,
+  variant = 'default',
   dataTestId = 'chain-modal-trigger'
 }: {
-  iconOnly?: boolean;
+  showLabel?: boolean;
+  showDropdownIcon?: boolean;
+  variant?: 'default' | 'widget';
   dataTestId?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -57,18 +66,14 @@ export function ChainModal({
           variant="connect"
           className={cn(
             'flex items-center gap-1.5 px-2.5 py-2',
-            iconOnly &&
+            variant === ChainModalVariant.widget &&
               'border-transparent bg-primary bg-blend-overlay px-[9px] hover:border-transparent hover:bg-white/10 hover:[--gradient-opacity:100%] focus:border-transparent focus:bg-white/15 focus:[--gradient-opacity:100%]'
           )}
           data-testid={dataTestId}
         >
-          {getChainIcon(chainId, iconOnly ? 'h-5 w-5' : 'h-6 w-6')}
-          {!iconOnly && (
-            <>
-              <Text className="text-text">{client?.chain.name || 'Ethereum'}</Text>
-              <ChevronDown width={14} height={14} />
-            </>
-          )}
+          {getChainIcon(chainId, variant === ChainModalVariant.widget ? 'h-5 w-5' : 'h-6 w-6')}
+          {showLabel && <Text className="text-text">{client?.chain.name || 'Ethereum'}</Text>}
+          {showDropdownIcon && <ChevronDown width={14} height={14} />}
         </Button>
       </DialogTrigger>
       <DialogContent
