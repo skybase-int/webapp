@@ -10,9 +10,10 @@ import { useChainId } from 'wagmi';
 import { mainnet, base } from 'viem/chains';
 import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';
 
-export function useSubgraphUrl() {
-  const chainId = useChainId();
+export function useSubgraphUrl(overrideChainId?: number) {
+  const connectedChainId = useChainId();
   const [subgraphUrl, setSubgraphUrl] = useState('');
+  const chainId = overrideChainId ?? connectedChainId;
 
   useEffect(() => {
     if (import.meta.env.VITE_ENV_NAME === 'staging' || import.meta.env.VITE_ENV_NAME === 'development') {
