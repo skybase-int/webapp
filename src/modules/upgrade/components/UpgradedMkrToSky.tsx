@@ -8,7 +8,7 @@ import { useChainId } from 'wagmi';
 
 export function UpgradedMkrToSky() {
   const chainId = useChainId();
-  const chainIdToUse = isBaseChainId(chainId) ? 1 : chainId;
+  const chainIdToUse = isBaseChainId(chainId) ? 1 : chainId; // Display mainnet data on Base
   const subgraphUrl = useSubgraphUrl(chainIdToUse);
   const { data, isLoading, error } = useUpgradeTotals({ subgraphUrl });
 

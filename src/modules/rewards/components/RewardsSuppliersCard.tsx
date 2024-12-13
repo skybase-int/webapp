@@ -11,7 +11,7 @@ export function RewardsSuppliersCard() {
     data: suppliers,
     isLoading,
     error
-  } = useRewardsSuppliersCount(isBaseChainId(chainId) ? 1 : chainId); //Show mainnet data on base
+  } = useRewardsSuppliersCount(isBaseChainId(chainId) ? 1 : chainId); // Display mainnet data on Base
   return (
     <StatsCard
       title={t`Rewards Suppliers`}
