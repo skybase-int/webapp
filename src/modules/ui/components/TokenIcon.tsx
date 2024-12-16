@@ -9,17 +9,20 @@ export function TokenIcon({
   token,
   width = 50,
   className,
-  fallbackClassName
+  fallbackClassName,
+  chainId
 }: {
   token: Partial<Token> & { symbol: string };
   width?: number;
   className?: string;
   fallbackClassName?: string;
+  chainId?: number;
 }): React.ReactElement {
-  const chainId = useChainId();
+  const connectedChainId = useChainId();
+  const chainIdToUse = chainId ?? connectedChainId;
   if (!token.symbol) return <></>;
 
-  const path = `/tokens/${isBaseChainId(chainId) ? 'base/' : ''}${token.symbol.toLowerCase()}.svg`;
+  const path = `/tokens/${isBaseChainId(chainIdToUse) ? 'base/' : ''}${token.symbol.toLowerCase()}.svg`;
 
   return (
     <Avatar className={cn('', className)}>

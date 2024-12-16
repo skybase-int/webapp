@@ -90,7 +90,7 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
     ? { height: `calc(100dvh - ${topOffset + (showLinkedAction ? laExtraHeight : 0)}px)` }
     : { height: `${height - topOffset - (showLinkedAction ? laExtraHeight : 0)}px` };
   const tabGlowClasses =
-    'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light before:opacity-100 hover:before:opacity-100';
+    'before:top-[-13px] xl:before:top-[-17px] before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[120%] before:h-px before:bg-nav-light';
 
   // Memoized scroll function
   const scrollToTop = useCallback(() => {
@@ -128,20 +128,24 @@ export function WidgetNavigation({ widgetContent, intent, children }: WidgetNavi
                 variant="icons"
                 value={widgetIntent}
                 className={cn(
-                  'px-1 md:px-2',
+                  'px-1 text-textSecondary data-[state=active]:text-text md:px-2',
                   'before:opacity-0',
-                  'disabled:cursor-not-allowed disabled:opacity-50 disabled:before:opacity-0 disabled:hover:before:opacity-0',
-                  intent === widgetIntent && tabGlowClasses
+                  'disabled:cursor-not-allowed disabled:text-[rgba(198,194,255,0.4)] disabled:before:opacity-0 disabled:hover:before:opacity-0',
+                  tabGlowClasses,
+                  intent === widgetIntent && 'before:opacity-100 hover:before:opacity-100'
                 )}
                 disabled={options?.disabled || false}
               >
-                {!isMobile && icon({ color: intent === widgetIntent ? 'white' : 'rgba(198, 194, 255, 0.8)' })}
-                <Text variant="small">
+                {!isMobile && icon({ color: 'inherit' })}
+                <Text variant="small" className="text-inherit">
                   <Trans>{label}</Trans>
                 </Text>
                 {comingSoon && (
-                  <Text variant="small" className="text-nowrap text-[9px]">
-                    <Trans>Coming soon</Trans>
+                  <Text
+                    variant="small"
+                    className="absolute left-1/2 top-0 rounded-full bg-primary px-1.5 py-0 text-textSecondary md:px-2 md:py-1"
+                  >
+                    <Trans>Soon</Trans>
                   </Text>
                 )}
               </TabsTrigger>
