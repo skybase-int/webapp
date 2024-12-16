@@ -30,7 +30,7 @@ export const useActionForToken = () => {
       const retainedParams = [Locale, Details];
 
       const lowerSymbol = symbol.toLowerCase();
-      const upperSymbol = symbol.toLowerCase();
+      const upperSymbol = symbol.toUpperCase();
       const image = `/tokens/actions/${lowerSymbol}.png`;
       const formattedBalance = formatNumber(parseFloat(balance));
       let action;
