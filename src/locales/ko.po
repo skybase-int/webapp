@@ -238,7 +238,7 @@ msgid "Get rewards with USDS"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Get rewards with your {0} {1}"
+msgid "Get rewards with your {formattedBalance} {upperSymbol}"
 msgstr ""
 
 #: src/modules/app/hooks/useNotification.tsx
@@ -466,6 +466,11 @@ msgstr ""
 msgid "Start saving"
 msgstr ""
 
+#: src/modules/app/hooks/useActionForToken.tsx
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Start saving with your {formattedBalance} {upperSymbol}"
+msgstr ""
+
 #: src/modules/ui/components/BalanceCards.tsx
 msgid "Supplied to Savings"
 msgstr ""
@@ -579,11 +584,12 @@ msgid "Trade USDT for USDS"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Trade your {0} {1} for USDS"
+#: src/modules/app/hooks/useActionForToken.tsx
+msgid "Trade your {formattedBalance} {upperSymbol} for USDS"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Trade your {0} {1} for USDS to get rewards"
+msgid "Trade your {formattedBalance} {upperSymbol} for USDS to get rewards"
 msgstr ""
 
 #: src/modules/balances/components/BalancesModuleShowcase.tsx
@@ -676,15 +682,15 @@ msgid "Upgrade stats"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Upgrade your {0} {1} to SKY"
+msgid "Upgrade your {formattedBalance} {upperSymbol} to SKY"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Upgrade your {0} {1} to USDS"
+msgid "Upgrade your {formattedBalance} {upperSymbol} to USDS"
 msgstr ""
 
 #: src/modules/app/hooks/useActionForToken.tsx
-msgid "Upgrade your {0} {1} to USDS to get rewards"
+msgid "Upgrade your {formattedBalance} {upperSymbol} to USDS to get rewards"
 msgstr ""
 
 #: src/modules/balances/components/BalancesModuleShowcase.tsx
