@@ -3,7 +3,8 @@ import {
   PROD_URL_SKY_SUBGRAPH_MAINNET,
   STAGING_URL_SKY_SUBGRAPH_TESTNET,
   STAGING_URL_SKY_SUBGRAPH_BASE,
-  STAGING_URL_SKY_SUBGRAPH_BASE_TENDERLY
+  STAGING_URL_SKY_SUBGRAPH_BASE_TENDERLY,
+  PROD_URL_SKY_SUBGRAPH_BASE
 } from '@/lib/constants';
 import { useState, useEffect } from 'react';
 import { useChainId } from 'wagmi';
@@ -39,7 +40,7 @@ export function useSubgraphUrl(overrideChainId?: number) {
           setSubgraphUrl(PROD_URL_SKY_SUBGRAPH_MAINNET);
           break;
         case base.id:
-          setSubgraphUrl(STAGING_URL_SKY_SUBGRAPH_BASE); //TODO change to prod
+          setSubgraphUrl(PROD_URL_SKY_SUBGRAPH_BASE);
           break;
       }
     }
