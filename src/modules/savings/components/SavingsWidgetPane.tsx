@@ -57,11 +57,16 @@ export function SavingsWidgetPane(sharedProps: SharedProps) {
 
   const Widget = isBaseChain ? BaseSavingsWidget : SavingsWidget;
 
+  console.log({ linkedActionConfig });
+
   return (
     <Widget
       {...sharedProps}
       onWidgetStateChange={onSavingsWidgetStateChange}
-      externalWidgetState={{ amount: linkedActionConfig?.inputAmount }}
+      externalWidgetState={{
+        amount: linkedActionConfig?.inputAmount,
+        token: isBaseChain ? linkedActionConfig?.sourceToken : undefined
+      }}
     />
   );
 }
