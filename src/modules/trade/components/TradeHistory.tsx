@@ -1,13 +1,11 @@
 import { useMemo } from 'react';
-import { useTradeHistory } from '@jetstreamgg/hooks';
-import { formatNumber, isBaseChainId, useFormatDates } from '@jetstreamgg/utils';
+import { getTokenDecimals, TokenForChain, useTradeHistory } from '@jetstreamgg/hooks';
+import { formatNumber, useFormatDates, isBaseChainId } from '@jetstreamgg/utils';
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
 import { formatUnits } from 'viem';
-import { getTokenDecimals } from '@jetstreamgg/hooks';
 import { useChainId } from 'wagmi';
-import { TokenForChain } from '@jetstreamgg/hooks';
 
 export function TradeHistory() {
   const { data: tradeHistory, isLoading: tradeHistoryLoading, error } = useTradeHistory();
