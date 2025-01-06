@@ -65,10 +65,6 @@ You can trade SKY for USDS and, soon, use it to accumulate Activation Token Rewa
 
 const baseFaqItems = [
   {
-    question: '',
-    answer: ''
-  },
-  {
     question: 'What is Base?',
     answer: `[Base](https://www.base.org/) is a Coinbase-developed Layer 2 (L2) network that provides easy access to some L1 networks, including Ethereum and Solana, and other L2s. 
 
