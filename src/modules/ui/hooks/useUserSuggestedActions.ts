@@ -223,8 +223,10 @@ const fetchUserSuggestedActions = (
     });
   }
 
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
-  if (isRestricted) {
+  const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+  const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
+
+  if (isRestrictedBuild) {
     // if restricted build, remove get rewards and save actions
     const restrictedSuggestedActions = suggestedActions.filter(
       action =>
@@ -241,6 +243,22 @@ const fetchUserSuggestedActions = (
     return {
       suggestedActions: restrictedSuggestedActions,
       linkedActions: restrictedLinkedActions
+    };
+  }
+
+  if (isRestrictedMiCa) {
+    // if restricted build, remove trade actions
+    const restrictedMiCaSuggestedActions = suggestedActions.filter(
+      action => action.intent !== IntentMapping.TRADE_INTENT
+    );
+
+    const restrictedMiCaLinkedActions = linkedActions.filter(
+      action => action.intent !== IntentMapping.TRADE_INTENT && action.la !== IntentMapping.TRADE_INTENT
+    );
+
+    return {
+      suggestedActions: restrictedMiCaSuggestedActions,
+      linkedActions: restrictedMiCaLinkedActions
     };
   }
 
