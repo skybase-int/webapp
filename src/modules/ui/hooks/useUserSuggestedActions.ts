@@ -226,45 +226,23 @@ const fetchUserSuggestedActions = (
   const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
   const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
 
-  if (isRestrictedBuild) {
-    // if restricted build, remove get rewards and save actions
-    const restrictedSuggestedActions = suggestedActions.filter(
-      action =>
-        action.intent !== IntentMapping.REWARDS_INTENT && action.intent !== IntentMapping.SAVINGS_INTENT
-    );
-    const restrictedLinkedActions = linkedActions.filter(
-      action =>
-        action.intent !== IntentMapping.REWARDS_INTENT &&
-        action.la !== IntentMapping.REWARDS_INTENT &&
-        action.intent !== IntentMapping.SAVINGS_INTENT &&
-        action.la !== IntentMapping.SAVINGS_INTENT
-    );
+  const restrictedIntents = isRestrictedBuild
+    ? [IntentMapping.REWARDS_INTENT, IntentMapping.SAVINGS_INTENT]
+    : isRestrictedMiCa
+      ? [IntentMapping.TRADE_INTENT]
+      : [];
 
-    return {
-      suggestedActions: restrictedSuggestedActions,
-      linkedActions: restrictedLinkedActions
-    };
-  }
-
-  if (isRestrictedMiCa) {
-    // if restricted build, remove trade actions
-    const restrictedMiCaSuggestedActions = suggestedActions.filter(
-      action => action.intent !== IntentMapping.TRADE_INTENT
-    );
-
-    const restrictedMiCaLinkedActions = linkedActions.filter(
-      action => action.intent !== IntentMapping.TRADE_INTENT && action.la !== IntentMapping.TRADE_INTENT
-    );
-
-    return {
-      suggestedActions: restrictedMiCaSuggestedActions,
-      linkedActions: restrictedMiCaLinkedActions
-    };
-  }
+  // if restricted build, remove restricted actions
+  const restrictedSuggestedActions = suggestedActions.filter(
+    action => !restrictedIntents.includes(action.intent)
+  );
+  const restrictedLinkedActions = linkedActions.filter(
+    action => !restrictedIntents.includes(action.intent) && !restrictedIntents.includes(action.la)
+  );
 
   return {
-    suggestedActions,
-    linkedActions
+    suggestedActions: restrictedSuggestedActions,
+    linkedActions: restrictedLinkedActions
   };
 };
 
