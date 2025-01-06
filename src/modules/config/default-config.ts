@@ -2,9 +2,14 @@
 
 import { defaultConfig as widgetsConfig } from '@jetstreamgg/widgets';
 import { SiteConfig } from './types/site-config';
-import { restrictedTokenList, restrictedTokenListTrade } from './restrictedTokenList';
+import {
+  restrictedTokenList,
+  restrictedTokenListMiCa,
+  restrictedTokenListTrade
+} from './restrictedTokenList';
 
 const restrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+const restrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
 
 // stores all the RPCs the application will use, and also the user configured-ones
 export const defaultConfig: SiteConfig = {
@@ -19,5 +24,6 @@ export const defaultConfig: SiteConfig = {
         tradeTokenList: restrictedTokenListTrade,
         balancesTokenList: restrictedTokenList
       }
-    : {})
+    : {}),
+  ...(restrictedMiCa ? { balancesTokenList: restrictedTokenListMiCa } : {})
 };
