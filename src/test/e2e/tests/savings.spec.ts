@@ -357,7 +357,7 @@ test('Details pane shows right data', async ({ page }) => {
   await page.getByRole('tab', { name: 'Withdraw' }).click();
   const detailsSuppliedBalance = await page
     .getByTestId('savings-stats-section')
-    .getByText('2 USDS', { exact: true })
+    .getByText('102 USDS', { exact: true })
     .innerText();
   await expect(page.getByTestId('supplied-balance')).toHaveText(detailsSuppliedBalance);
 
