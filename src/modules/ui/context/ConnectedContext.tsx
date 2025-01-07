@@ -59,7 +59,10 @@ export const ConnectedProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   // Check whether the user is in a restricted region,
   // but only flag to reload if the current build is unrestricted
   const isRestrictedRegion = useMemo(
-    () => !vpnIsLoading && import.meta.env.VITE_RESTRICTED_BUILD !== 'true' && vpnData?.isRestrictedRegion,
+    () =>
+      !vpnIsLoading &&
+      (import.meta.env.VITE_RESTRICTED_BUILD !== 'true' || import.meta.env.VITE_RESTRICTED_MICA !== 'true') &&
+      vpnData?.isRestrictedRegion,
     [vpnIsLoading, vpnData?.isRestrictedRegion]
   );
 
