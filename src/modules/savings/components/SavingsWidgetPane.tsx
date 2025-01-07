@@ -57,8 +57,6 @@ export function SavingsWidgetPane(sharedProps: SharedProps) {
 
   const Widget = isBaseChain ? BaseSavingsWidget : SavingsWidget;
 
-  console.log({ linkedActionConfig });
-
   return (
     <Widget
       {...sharedProps}
