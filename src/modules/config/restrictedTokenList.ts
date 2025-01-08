@@ -83,7 +83,12 @@ export const restrictedTokenListMiCa = {
     { ...eth, address: ETH_ADDRESS },
     { ...weth, address: wethSepoliaAddress[sepolia.id] },
     { ...dai, address: mcdDaiSepoliaAddress[sepolia.id] }
-  ]
+  ],
+  [base.id]: [
+    { ...usds, address: usdsBaseAddress[base.id] },
+    { ...eth, address: ETH_ADDRESS }
+  ],
+  [tenderlyBase.id]: [{ ...usds, address: usdsBaseAddress[TENDERLY_BASE_CHAIN_ID] }]
 };
 
 export const restrictedTokenListTrade = {
