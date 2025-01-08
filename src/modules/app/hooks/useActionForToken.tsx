@@ -14,7 +14,10 @@ export const useActionForToken = () => {
     (rewardContract: RewardContract) => rewardContract.rewardToken.symbol === 'SKY'
   );
   const [searchParams] = useSearchParams();
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+
+  const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+  const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
+  const isRestricted = isRestrictedBuild || isRestrictedMiCa;
 
   const actionForToken = useCallback(
     (symbol: string, balance: string) => {
@@ -28,7 +31,7 @@ export const useActionForToken = () => {
       // TODO: What do we suggest for SKY?
       switch (lowerSymbol) {
         case 'dai':
-          action = isRestricted
+          action = isRestrictedBuild
             ? {
                 label: t`Upgrade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} to USDS`,
                 actionUrl: getRetainedQueryParams(
@@ -60,7 +63,7 @@ export const useActionForToken = () => {
           };
           break;
         case 'usds':
-          action = isRestricted
+          action = isRestrictedBuild
             ? undefined
             : {
                 label: t`Get rewards with your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()}`,
@@ -78,27 +81,29 @@ export const useActionForToken = () => {
           // TODO: Uncomment eth-weth when their trades to USDS are supported
           // case 'eth':
           // case 'weth':
-          action = isRestricted
-            ? {
-                label: t`Trade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} for USDS`,
-                // TODO: Some of these trades are not supported by the trade widget (eth - usds, weth - usds)
-                actionUrl: getRetainedQueryParams(
-                  `?${Widget}=${TRADE}&${InputAmount}=${balance}&${SourceToken}=${symbol}&${TargetToken}=USDS`,
-                  retainedParams,
-                  searchParams
-                ),
-                image: `/tokens/actions/${lowerSymbol}.png`
-              }
-            : {
-                label: t`Trade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} for USDS to get rewards`,
-                // TODO: Some of these trades are not supported by the trade widget (eth - usds, weth - usds)
-                actionUrl: getRetainedQueryParams(
-                  `?${Widget}=${TRADE}&${InputAmount}=${balance}&${SourceToken}=${symbol}&${TargetToken}=USDS&${LinkedAction}=${REWARD}&${skyRewardContract ? `&reward=${skyRewardContract.contractAddress}` : ''}`,
-                  retainedParams,
-                  searchParams
-                ),
-                image: `/tokens/actions/${lowerSymbol}.png`
-              };
+          action = isRestrictedMiCa
+            ? undefined
+            : isRestricted
+              ? {
+                  label: t`Trade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} for USDS`,
+                  // TODO: Some of these trades are not supported by the trade widget (eth - usds, weth - usds)
+                  actionUrl: getRetainedQueryParams(
+                    `?${Widget}=${TRADE}&${InputAmount}=${balance}&${SourceToken}=${symbol}&${TargetToken}=USDS`,
+                    retainedParams,
+                    searchParams
+                  ),
+                  image: `/tokens/actions/${lowerSymbol}.png`
+                }
+              : {
+                  label: t`Trade your ${formatNumber(parseFloat(balance))} ${symbol.toUpperCase()} for USDS to get rewards`,
+                  // TODO: Some of these trades are not supported by the trade widget (eth - usds, weth - usds)
+                  actionUrl: getRetainedQueryParams(
+                    `?${Widget}=${TRADE}&${InputAmount}=${balance}&${SourceToken}=${symbol}&${TargetToken}=USDS&${LinkedAction}=${REWARD}&${skyRewardContract ? `&reward=${skyRewardContract.contractAddress}` : ''}`,
+                    retainedParams,
+                    searchParams
+                  ),
+                  image: `/tokens/actions/${lowerSymbol}.png`
+                };
           break;
         default:
           action = undefined;
@@ -106,7 +111,7 @@ export const useActionForToken = () => {
 
       return action;
     },
-    [skyRewardContract, searchParams, isRestricted]
+    [skyRewardContract, searchParams, isRestricted, isRestrictedBuild, isRestrictedMiCa]
   );
 
   return actionForToken;
