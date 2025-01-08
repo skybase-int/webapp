@@ -37,6 +37,7 @@ Create a `.env` file in the root directory of the project. You can use the `.env
 - `VITE_TESTNET_CONFIG`: Boolean flag to determine network config to use, should be `false` in production
 - `VITE_AUTH_URL`: Base URL for the authentication service
 - `VITE_RESTRICTED_BUILD`: Boolean flag to enable certain restrictions
+- `VITE_RESTRICTED_BUILD_MICA`: Boolean flag to enable certain restrictions for MiCa compliance
 - `VITE_WALLETCONNECT_PROJECT_ID`: Project ID for WalletConnect integration
 - `VITE_SKIP_AUTH_CHECK`: Boolean flag to bypass authentication checks during development
 - `NPM_TOKEN`: Token for accessing private npm packages or registries

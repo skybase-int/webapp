@@ -47,7 +47,10 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
   const onNotification = useNotification();
   const { onExternalLinkClicked } = useConfigContext();
   const locale = i18n.locale;
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+
+  const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+  const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
+  const isRestricted = isRestrictedBuild || isRestrictedMiCa;
   const referralCode = Number(import.meta.env.VITE_REFERRAL_CODE) || 0; // fallback to 0 if invalid
 
   const rightHeaderComponent = <DualSwitcher />;
@@ -77,7 +80,7 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
       withErrorBoundary(
         <BalancesWidget
           {...sharedProps}
-          hideModuleBalances={isRestricted}
+          hideModuleBalances={isRestrictedBuild}
           actionForToken={actionForToken}
           onClickRewardsCard={() => navigate(rewardsUrl)}
           onClickSavingsCard={() => navigate(savingsUrl)}
