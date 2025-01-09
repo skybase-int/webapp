@@ -80,7 +80,6 @@ Any assets used by you in connection with the Services are either owned by you o
 You acknowledge and agree that we have no control over, or liability for, the delivery, quality, safety, legality or any other aspect of any assets that you may transfer to or from a third party, and that we are not responsible for ensuring that an entity with whom you transact actually completes the transaction or is authorized to do so. If you experience a problem with any assets purchased from or sold to a third party through the Services, you bear the entire risk.
 
 You covenant that all activity and conduct in connection with your use of the Services, including any resultant transactions of the assets, will be in compliance with all applicable law, rules, regulations, requirements, guidelines and policies of any governmental or quasi-governmental body or regulatory agency, any self-regulatory organization and that you will not use the Services for any illegal or unlawful purpose.
-   
 You will not violate any applicable law, including, without limitation, any relevant and applicable anti-money laundering and anti-terrorist financing laws and any relevant and applicable privacy and data collection laws.
 
 You acknowledge and affirm that you are not and have not been placed on any excluded or denied persons lists by any authority.
