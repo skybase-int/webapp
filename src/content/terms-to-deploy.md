@@ -1,10 +1,10 @@
 # Skybase International Terms of Use
 
-**Last updated: 22 October 2024**
+**Last updated: 9 January 2025**
 
 ## **Introduction**
 
-These Skybase International Terms of Use (together with all appendices and exhibits hereto, which are hereby incorporated by reference, these “Terms,” “Terms of Use,” or this “Agreement”) explain the terms and conditions by which you, whether personally or on behalf of an entity (“you”), may access and use the software products and services (the “Services”) provided by Skybase International (hereinafter referred to as “Skybase International” “we,” “us,” and “our”) to interact with the non-custodial, blockchain-based software protocol known as the “Sky Protocol,” as described below. The Services shall include, but shall not necessarily be limited to, the website, [https://sky.money](https://sky.money/) (the “Website”), and [https://app.sky.money,](https://app.sky.money/) a website-hosted user interface, as well as any other websites, apps, interfaces or dashboards, available through the sky.money domain, its subdomains, or any other means (the “Interface” or “Web App”). Please read these Terms of Use carefully as they govern your use of the Services.
+These Skybase International Terms of Use (together with all appendices and exhibits hereto, which are hereby incorporated by reference, these “Terms,” “Terms of Use,” or this “Agreement”) explain the terms and conditions by which you, whether personally or on behalf of an entity (“you”), may access and use the software products and services (the “Services”) provided by Skybase International (hereinafter referred to as “Skybase International” “we,” “us,” and “our”) to interact with the non-custodial, blockchain-based software protocol known as the “Sky Protocol,” as described below. The Services shall include, but shall not necessarily be limited to, the website, [https://sky.money](https://sky.money/) (the “Website”), and [https://app.sky.money](https://app.sky.money/), a website-hosted user interface, as well as any other websites, apps, interfaces or dashboards, available through the sky.money domain, its subdomains, or any other means (the “Interface” or “Web App”). Please read these Terms of Use carefully as they govern your use of the Services.
 
 ## **You Are Entering Into a Binding Agreement**
 
@@ -59,7 +59,7 @@ You acknowledge and agree that from time to time the Website may be inaccessible
 You acknowledge and agree that the Services may evolve or change over time. This means we may alter, replace, or discontinue (temporarily or permanently) the Services at any time in our sole discretion.
 
 You acknowledge and agree that the pricing information provided in the Interface does not represent an offer, a solicitation of an offer, or any advice regarding, or recommendation to enter into, a transaction with us.
-
+   
 You further acknowledge and agree that you are not relying upon pricing information provided in the Interface and will undertake reasonable independent diligence as to pricing information which may appear in the Interface.
 
 You acknowledge and agree that we do not act as an agent for any of the users, or for any party or parties who may otherwise use any underlying blockchain infrastructure that is involved in any of the Services.
@@ -81,30 +81,28 @@ Any assets used by you in connection with the Services are either owned by you o
 You acknowledge and agree that we have no control over, or liability for, the delivery, quality, safety, legality or any other aspect of any assets that you may transfer to or from a third party, and that we are not responsible for ensuring that an entity with whom you transact actually completes the transaction or is authorized to do so. If you experience a problem with any assets purchased from or sold to a third party through the Services, you bear the entire risk.
 
 You covenant that all activity and conduct in connection with your use of the Services, including any resultant transactions of the assets, will be in compliance with all applicable law, rules, regulations, requirements, guidelines and policies of any governmental or quasi-governmental body or regulatory agency, any self-regulatory organization and that you will not use the Services for any illegal or unlawful purpose.
-
+   
 You will not violate any applicable law, including, without limitation, any relevant and applicable anti-money laundering and anti-terrorist financing laws and any relevant and applicable privacy and data collection laws.
 
 You acknowledge and affirm that you are not and have not been placed on any excluded or denied persons lists by any authority.
 
-You represent and warrant that you are not a resident of any of the following countries or regions (“**Prohibited Jurisdictions**”): Afghanistan, Belarus, Burma, Burundi, Central African Republic, China, Cuba, Democratic Republic of the
-
-Congo, Donetsk, Ethiopia, Guinea, Guinea-Bissau, Haiti, Hong Kong, Iran, Iraq, Kherson, Lebanon,
-
-Libya, Luhansk, Mali, Nicaragua, Niger, North Korea DPRK , Russia, Somalia, South
-
-Sudan, Sudan and Darfur, Syria, United Kingdom, Venezuela, Yemen, Zaporizhzhia, and Zimbabwe.
+You represent and warrant that you are not a resident of any of the following countries or regions (“**Prohibited Jurisdictions**”): Afghanistan, Belarus, Burma, Burundi, Central African Republic, China, Crimea, Cuba, Democratic Republic of the Congo, Donetsk, Ethiopia, Guinea, Guinea-Bissau, Haiti, Hong Kong, Iran, Iraq, Kherson, Lebanon, Libya, Luhansk, Mali, Nicaragua, Niger, North Korea DPRK , Russia, Somalia, South Sudan, Sudan and Darfur, Syria, United Kingdom, Venezuela, Yemen, Zaporizhzhia, and Zimbabwe.
 
 You represent and warrant that you will not transact with users in any Prohibited Jurisdictions or with any individuals sanctioned by OFAC, or sanctioned under EU or UK regulations.
 
 You do not and will not use Virtual Private Network (“VPN”) software, proxy server, or any other privacy or anonymization tools or techniques to circumvent any restrictions that apply to the Services, especially those which restrict the geographical availability of the Services.
-
+   
 You acknowledge and waive any claim against us based on changes in law, regulatory inquiries, regulatory actions, or claims that limit our ability to provide access to the Services.
 
 You acknowledge that at any time, your access to the Interface may be suspended or terminated, or there may be a delay in your access or use of the Sky Protocol via the Interface which may result in the cryptocurrency assets diminishing in value or you being unable to complete a transaction.
 
 You acknowledge that we use data you submit using the Services through your wallet to detect, prevent and mitigate illicit or harmful activity and that we may share that data with blockchain analytics providers. We share this information with these service providers to allow them to help us to promote the safety, security, and integrity of the Services.
 
-Certain functionalities of the Web App, including the Sky Savings Rate, Sky Token Rewards, and Upgrade (for upgrading MKR to SKY only) are subject to geographical restrictions, and are not available in selected jurisdictions including the U.S. and Switzerland. Accordingly, users subject to the restriction are served a restricted version of the Web App (the “**Restricted Version**”) and are prohibited from accessing the restricted features.
+Certain functionalities of the Web App, including the Sky Savings Rate and Sky Token Rewards are subject to geographical restrictions and are unavailable in specific  jurisdictions including the United States and Switzerland.
+
+Furthermore, the Trade feature is explicitly restricted in all European Union member states.
+
+Users residing in these restricted jurisdictions are provided a limited version of the Web App and are expressly prohibited from accessing or attempting to access any restricted features.
 
 ## **1\. The Services**
 
@@ -116,9 +114,9 @@ New versions and upgrades to the Sky Protocol may be released from time to time,
 
 ### **1.2 Availability of Third-Party Products and Services**
 
-We reserve the right to make certain third-party products and services available to you through API integrations with third-party providers or blockchain-based integrations. Any such third-party products and services may include integrations, links, or other access to third-party services, sites, technology, content, and resources. By choosing to use these third-party products and services, you acknowledge and agree that your use of such products and services is subject to any terms and conditions, privacy policies, and other applicable agreements of the respective third-party providers. It is your responsibility to review and understand these terms before utilizing any third-party products and services available through the Interface. We disclaim any liability for any issues arising from your use of these third-party products and services, including, but not limited to, any breach of contract, privacy, or data security issues. You, and not Skybase International will be responsible for any and all fees and charges associated with your use of any thirdparty services. Skybase International enables access to these third-party services merely as a convenience, and the inclusion of a third-party service on the Interface does not constitute an endorsement or recommendation of that third partyʼs products and services. Any dealings that you have with third parties while using the Services, such as the Interface, are between you and that third party. Skybase
+We reserve the right to make certain third-party products and services available to you through API integrations with third-party providers or blockchain-based integrations. Any such third-party products and services may include integrations, links, or other access to third-party services, sites, technology, content, and resources. By choosing to use these third-party products and services, you acknowledge and agree that your use of such products and services is subject to any terms and conditions, privacy policies, and other applicable agreements of the respective third-party providers. It is your responsibility to review and understand these terms before utilizing any third-party products and services available through the Interface. We disclaim any liability for any issues arising from your use of these third-party products and services, including, but not limited to, any breach of contract, privacy, or data security issues. You, and not Skybase International will be responsible for any and all fees and charges associated with your use of any third-party services. Skybase International enables access to these third-party services merely as a convenience, and the inclusion of a third-party service on the Interface does not constitute an endorsement or recommendation of that third partyʼs products and services. Any dealings that you have with third parties while using the Services, such as the Interface, are between you and that third party.
 
-International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of such third-party products and services. We encourage you to review the terms of use and privacy policies of the third-party providers prior to using such products and services. Some third-party products or services will provide us with access to certain information that you have provided to such parties through your use of the third-party services, and we will use, store, and disclose such information in accordance with our Privacy Policy. For more information on the implications of using any products and services made available via the Services through thirdparty integrations or otherwise, including our use, storage, and disclosure of information related to you and your use of such third-party services within the Services, please see our Privacy Policy.
+Skybase International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of such third-party products and services. We encourage you to review the terms of use and privacy policies of the third-party providers prior to using such products and services. Some third-party products or services will provide us with access to certain information that you have provided to such parties through your use of the third-party services, and we will use, store, and disclose such information in accordance with our Privacy Policy. For more information on the implications of using any products and services made available via the Services through thirdparty integrations or otherwise, including our use, storage, and disclosure of information related to you and your use of such third-party services within the Services, please see our Privacy Policy.
 
 ### **1.3 Other Products and Services**
 
@@ -130,9 +128,7 @@ We reserve the right, in our sole discretion, and without any liability to you, 
 
 ### **1.5 Informational Resources**
 
-We may also make certain informational resources relating to the Sky Protocol, including, without limitation, the documentation on the Website, blog posts, data, articles, tutorials, social media posts and other informational content published by us, our employees or marketing partners (“**Informational Resources**”), available to you as part of the Services. The Informational Resources provided are not exhaustive and may not cover all aspects of or potential developments concerning the Sky Protocol. You acknowledge and agree that all such Informational Resources are intended for informational and educational purposes only and are not the exclusive or sole source of information regarding the Sky Protocol. Skybase International shall not be responsible or liable for any damage or loss caused or alleged to be caused by or in connection with the use or reliance on any
-
-Informational Resources. We assume no responsibility for keeping the Informational Resources up to date and/or accurate.
+We may also make certain informational resources relating to the Sky Protocol, including, without limitation, the documentation on the Website, blog posts, data, articles, tutorials, social media posts and other informational content published by us, our employees or marketing partners (“**Informational Resources**”), available to you as part of the Services. The Informational Resources provided are not exhaustive and may not cover all aspects of or potential developments concerning the Sky Protocol. You acknowledge and agree that all such Informational Resources are intended for informational and educational purposes only and are not the exclusive or sole source of information regarding the Sky Protocol. Skybase International shall not be responsible or liable for any damage or loss caused or alleged to be caused by or in connection with the use or reliance on any Informational Resources. We assume no responsibility for keeping the Informational Resources up to date and/or accurate.
 
 ### **1.6 User Control of Cryptoassets**
 
@@ -258,9 +254,7 @@ Monetary Authority, or which would involve proceeds of any unlawful activity.
 
 ## **5\. Dispute Resolution by Binding Arbitration**
 
-Please read the following arbitration agreement in this Section (the “**Arbitration**
-
-**Agreement**”) carefully. It requires you to arbitrate disputes with Skybase International, its affiliates, successors, and assigns, and all of their respective officers, directors, employees, agents, and representatives (collectively, the "**Skybase Parties**”). It also limits the manner in which you can seek relief from the Skybase Parties.
+Please read the following arbitration agreement in this Section (the “**Arbitration Agreement**”) carefully. It requires you to arbitrate disputes with Skybase International, its affiliates, successors, and assigns, and all of their respective officers, directors, employees, agents, and representatives (collectively, the "**Skybase Parties**”). It also limits the manner in which you can seek relief from the Skybase Parties.
 
 ### **5.1. Informal Dispute Resolution**
 
@@ -306,9 +300,7 @@ To the extent permitted by applicable law, any dispute arising out of or relatin
 
 These Terms and the Services, and any non-contractual obligations arising out of or in connection with them, shall be governed by and construed in accordance with the laws of the Cayman Islands without regard to the principles of conflict of laws.
 
-Except as expressly set forth in Section 5, “Dispute Resolution by Binding
-
-Arbitration”, the exclusive jurisdiction for all disputes will be the courts of the Cayman Islands, and you waive any objection to jurisdiction and venue in such courts.
+Except as expressly set forth in Section 5, “Dispute Resolution by Binding Arbitration”, the exclusive jurisdiction for all disputes will be the courts of the Cayman Islands, and you waive any objection to jurisdiction and venue in such courts.
 
 ## **7\. Additional Provisions**
 
@@ -392,9 +384,7 @@ Skybase Internationalʼs role is limited to facilitating your access to the Camp
 
 ## **Reward Mechanism and Eligibility**
 
-The specific details of the reward mechanism, including but not limited to the method of reward calculation, distribution criteria, and eligibility requirements, are solely controlled and determined by Sky (formerly known as MakerDAO) and its community-driven governance processes. Users acknowledge and agree that: (i) the reward mechanism, calculation methods, and eligibility criteria may change at any time without prior notice to users, as determined by Sky's governance processes; (ii) Skybase International has no influence over the reward mechanisms, and any changes to them and is not responsible for communicating them to users; (iii) the final determination of reward amounts, if any, and user eligibility rests entirely with Sky governance and the Sky Protocol; (iv) Skybase International makes no representations or guarantees regarding the consistency, fairness, or continuation of the reward mechanism or eligibility criteria; (v) users are responsible for staying informed about any changes to the reward system by monitoring official Sky communication channels; (vi) a userʼs participation in the Campaign does not guarantee their eligibility for rewards; (vii) Skybase
-
-Internationalʼs role is limited to providing a point of access to the Sky Protocol and does not extend to the determination or implementation of rewards in connection with the Campaign.
+The specific details of the reward mechanism, including but not limited to the method of reward calculation, distribution criteria, and eligibility requirements, are solely controlled and determined by Sky (formerly known as MakerDAO) and its community-driven governance processes. Users acknowledge and agree that: (i) the reward mechanism, calculation methods, and eligibility criteria may change at any time without prior notice to users, as determined by Sky's governance processes; (ii) Skybase International has no influence over the reward mechanisms, and any changes to them and is not responsible for communicating them to users; (iii) the final determination of reward amounts, if any, and user eligibility rests entirely with Sky governance and the Sky Protocol; (iv) Skybase International makes no representations or guarantees regarding the consistency, fairness, or continuation of the reward mechanism or eligibility criteria; (v) users are responsible for staying informed about any changes to the reward system by monitoring official Sky communication channels; (vi) a userʼs participation in the Campaign does not guarantee their eligibility for rewards; (vii) Skybase Internationalʼs role is limited to providing a point of access to the Sky Protocol and does not extend to the determination or implementation of rewards in connection with the Campaign.
 
 By participating in the Campaign, you represent that you acknowledge, understand, and agree to these conditions regarding the reward mechanism and eligibility criteria.
 
@@ -436,11 +426,7 @@ By accessing or interacting with these external sites hosted under the sky.money
 
 This Privacy Policy (“Policy”) explains how Skybase International and its Affiliates ("we," "our," or "us"), collects, uses, and shares Personal Information in connection with our services ("Services") provided through the Sky.money interface ("Interface") that allows users to non-custodially interact with the Sky Protocol.
 
-This Privacy Policy also outlines your rights and choices regarding such Personal
-
-Information. By using our Interface and Services, as described in the Terms of
-
-Service (“ToS”), you agree to the collection, use, and sharing of your Personal Information as described in this Policy. If you do not agree with these terms, please do not use our Interface or Services.
+This Privacy Policy also outlines your rights and choices regarding such Personal Information. By using our Interface and Services, as described in the Terms of Service (“ToS”), you agree to the collection, use, and sharing of your Personal Information as described in this Policy. If you do not agree with these terms, please do not use our Interface or Services.
 
 If the user engages with the Services under authority from a different party or on another partyʼs behalf, then “user” and “you” (and its variants, including “your,” “yours,” etc.) as used herein refer to that person on whose behalf the Services are used. If the person engaging with our Services is an individual, acting in their own individual capacity, then “user” and “you” (and its variants) refer to that individual. If you have anyone using the Services on your behalf, you agree that you remain responsible for any acts or omissions of all such persons.
 
@@ -478,9 +464,7 @@ We may collect the following Personal Information when you use the Services:
 
 **On-Chain Data:** By engaging with our services, you acknowledge that your wallet address and transaction data and history, are permanently recorded and publicly available on the blockchain. This data cannot be altered or erased by any party once it is published. If maintaining complete privacy is a concern, blockchain transactions may not fully protect such rights due to the inherent properties of the technology. You agree to release us from any liability related to the data you release on the blockchain, including that data generated by using our Services.
 
-**Social Media Presence:** We are active on social media platforms such as \[e.g., X
-
-(formerly Twitter), LinkedIn, Facebook, Instagram, YouTube, TikTok, Mirror, Farcaster, Lens\], where we Personal Information as outlined in this Section 2 and below. This data is obtained both directly from your interactions with us (e.g., comments, communications) and from the platforms themselves. These platforms also analyze your engagement with our content and combine this with other data they hold about you, such as your preferences and behavior. They use this data for their own purposes, including targeted marketing and platform optimization, even if you do not have a profile on the platform.
+**Social Media Presence:** We are active on social media platforms such as \[e.g., X (formerly Twitter), LinkedIn, Facebook, Instagram, YouTube, TikTok, Mirror, Farcaster, Lens\], where we Personal Information as outlined in this Section 2 and below. This data is obtained both directly from your interactions with us (e.g., comments, communications) and from the platforms themselves. These platforms also analyze your engagement with our content and combine this with other data they hold about you, such as your preferences and behavior. They use this data for their own purposes, including targeted marketing and platform optimization, even if you do not have a profile on the platform.
 
 **Airdrop Data**: We collect and store your wallet address and the Tweet ID that you submit when participating in promotional campaigns and airdrop rewards. . This data is collected either directly through our own systems or via our Service Providers. This data is used for managing airdrops, including verifying eligibility, distributing tokens, and preventing fraud. We do not share this data with third parties except as necessary to facilitate these airdrop-related activities.
 
@@ -530,9 +514,9 @@ During a change to our business. If we engage in a merger, acquisition, bankrupt
 
 The Interface may integrate with technologies operated by third parties, such as links to websites, mobile applications or any other online assets that are not owned or controlled by us. These third parties may independently collect information about you. We encourage you to review their privacy policies and terms of use. We have no control over and assume no responsibility for the content, privacy policies or practices of any Third-Party Services and websites.
 
-## **6\. Cookies Notice**
+## **6\. Cookies Notice and local storage**
 
-**We do not use collect cookies on the Interface. If you have any questions about our privacy practices, please contact us.**
+Browser local storage and similar technologies are utilized to store certain data on your device to provide and improve our Services and to enable certain features of the Interface. This includes storing your Ethereum wallet address and session information. While we do not collect cookies, the use of browser local storage to store data on your device is required for the optimal functioning of the Interface. Please note that data stored in local storage may not be secure, and may be accessible to any browser extensions or scripts running in your browser. By using the Interface, you acknowledge and accept the risks associated with the storage of data in your browser’s local storage.
 
 ## **7\. Analytics and Performance Monitoring**
 
