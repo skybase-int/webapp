@@ -59,6 +59,7 @@ You acknowledge and agree that from time to time the Website may be inaccessible
 You acknowledge and agree that the Services may evolve or change over time. This means we may alter, replace, or discontinue (temporarily or permanently) the Services at any time in our sole discretion.
 
 You acknowledge and agree that the pricing information provided in the Interface does not represent an offer, a solicitation of an offer, or any advice regarding, or recommendation to enter into, a transaction with us.
+
 You further acknowledge and agree that you are not relying upon pricing information provided in the Interface and will undertake reasonable independent diligence as to pricing information which may appear in the Interface.
 
 You acknowledge and agree that we do not act as an agent for any of the users, or for any party or parties who may otherwise use any underlying blockchain infrastructure that is involved in any of the Services.
@@ -80,6 +81,7 @@ Any assets used by you in connection with the Services are either owned by you o
 You acknowledge and agree that we have no control over, or liability for, the delivery, quality, safety, legality or any other aspect of any assets that you may transfer to or from a third party, and that we are not responsible for ensuring that an entity with whom you transact actually completes the transaction or is authorized to do so. If you experience a problem with any assets purchased from or sold to a third party through the Services, you bear the entire risk.
 
 You covenant that all activity and conduct in connection with your use of the Services, including any resultant transactions of the assets, will be in compliance with all applicable law, rules, regulations, requirements, guidelines and policies of any governmental or quasi-governmental body or regulatory agency, any self-regulatory organization and that you will not use the Services for any illegal or unlawful purpose.
+
 You will not violate any applicable law, including, without limitation, any relevant and applicable anti-money laundering and anti-terrorist financing laws and any relevant and applicable privacy and data collection laws.
 
 You acknowledge and affirm that you are not and have not been placed on any excluded or denied persons lists by any authority.
@@ -89,6 +91,7 @@ You represent and warrant that you are not a resident of any of the following co
 You represent and warrant that you will not transact with users in any Prohibited Jurisdictions or with any individuals sanctioned by OFAC, or sanctioned under EU or UK regulations.
 
 You do not and will not use Virtual Private Network (“VPN”) software, proxy server, or any other privacy or anonymization tools or techniques to circumvent any restrictions that apply to the Services, especially those which restrict the geographical availability of the Services.
+
 You acknowledge and waive any claim against us based on changes in law, regulatory inquiries, regulatory actions, or claims that limit our ability to provide access to the Services.
 
 You acknowledge that at any time, your access to the Interface may be suspended or terminated, or there may be a delay in your access or use of the Sky Protocol via the Interface which may result in the cryptocurrency assets diminishing in value or you being unable to complete a transaction.
