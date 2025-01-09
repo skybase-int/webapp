@@ -18,8 +18,10 @@ So, when you choose to redeem your sUSDS for USDS—which you can do anytime—t
   },
   {
     question: 'Does it cost anything to access the Sky Savings Rate?',
-    answer:
-      'Accessing the Sky Savings Rate via the Sky Protocol is free. However, any time you supply or withdraw funds to/from the Sky Savings Rate module, you will incur a transaction fee— called a gas fee—for using the Ethereum blockchain network. That fee is not controlled, imposed or received by Sky.money or the Sky Protocol.'
+    answer: `Accessing the Sky Savings Rate via the Sky Protocol is free. However, any time you supply or withdraw assets to/from the Sky Savings Rate module, you will incur a transaction fee— called a gas fee—for using the Ethereum blockchain network. That fee is not controlled, imposed or received by Sky.money or the Sky Protocol.
+
+SkyLink, Sky’s bridge system, enhances your ability to manage your digital assets efficiently by seamlessly connecting your Ethereum L1-based Sky Protocol tokens and features to the Base network. If you have shied away from the Ethereum blockchain due to the high price of gas, SkyLink introduces reduced fees and faster transaction speeds. 
+`
   },
   {
     question: 'What is USDS?',
@@ -80,12 +82,5 @@ SkyLink, Sky’s bridge system, enhances your ability to manage your digital ass
     question: 'Is the Sky Savings Rate percentage the same on Ethereum Mainnet and Base?',
     answer:
       'Yes, the Sky Savings Rate percentage on Base tracks the rate on Ethereum mainnet. This is done programmatically in the PSM module deployed on Base.'
-  },
-  {
-    question: 'Does it cost anything to access the Sky Savings Rate?',
-    answer: `Accessing the Sky Savings Rate via the Sky Protocol is free. However, any time you supply or withdraw assets to/from the Sky Savings Rate module, you will incur a transaction fee— called a gas fee—for using the Ethereum blockchain network. That fee is not controlled, imposed or received by Sky.money or the Sky Protocol.
-
-SkyLink, Sky’s bridge system, enhances your ability to manage your digital assets efficiently by seamlessly connecting your Ethereum L1-based Sky Protocol tokens and features to the Base network. If you have shied away from the Ethereum blockchain due to the high price of gas, SkyLink introduces reduced fees and faster transaction speeds. 
-`
   }
 ];
