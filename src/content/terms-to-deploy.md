@@ -89,7 +89,6 @@ You represent and warrant that you are not a resident of any of the following co
 You represent and warrant that you will not transact with users in any Prohibited Jurisdictions or with any individuals sanctioned by OFAC, or sanctioned under EU or UK regulations.
 
 You do not and will not use Virtual Private Network (“VPN”) software, proxy server, or any other privacy or anonymization tools or techniques to circumvent any restrictions that apply to the Services, especially those which restrict the geographical availability of the Services.
-   
 You acknowledge and waive any claim against us based on changes in law, regulatory inquiries, regulatory actions, or claims that limit our ability to provide access to the Services.
 
 You acknowledge that at any time, your access to the Interface may be suspended or terminated, or there may be a delay in your access or use of the Sky Protocol via the Interface which may result in the cryptocurrency assets diminishing in value or you being unable to complete a transaction.
