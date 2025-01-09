@@ -5,7 +5,7 @@ import {
   SavingsAction,
   WidgetStateChangeParams
 } from '@jetstreamgg/widgets';
-import { useSavingsHistory } from '@jetstreamgg/hooks';
+import { TOKENS, useSavingsHistory } from '@jetstreamgg/hooks';
 import { isBaseChainId } from '@jetstreamgg/utils';
 import { REFRESH_DELAY } from '@/lib/constants';
 import { SharedProps } from '@/modules/app/types/Widgets';
@@ -24,6 +24,9 @@ export function SavingsWidgetPane(sharedProps: SharedProps) {
   const chainId = useChainId();
 
   const isBaseChain = isBaseChainId(chainId);
+  const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
+  const disallowedTokens =
+    isRestrictedMiCa && isBaseChain ? { supply: [TOKENS.usdc], withdraw: [TOKENS.usdc] } : undefined;
 
   const onSavingsWidgetStateChange = ({ hash, txStatus, widgetState }: WidgetStateChangeParams) => {
     // After a successful linked action sUPPLY, set the final step to "success"
@@ -65,6 +68,7 @@ export function SavingsWidgetPane(sharedProps: SharedProps) {
         amount: linkedActionConfig?.inputAmount,
         token: isBaseChain ? linkedActionConfig?.sourceToken : undefined
       }}
+      disallowedTokens={disallowedTokens}
     />
   );
 }
