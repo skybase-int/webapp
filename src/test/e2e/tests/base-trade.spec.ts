@@ -7,7 +7,6 @@ import { TENDERLY_BASE_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
 import { switchToBase } from '../utils/switchToBase.ts';
 import { NetworkName } from '../utils/constants.ts';
-import { expect } from '@playwright/test';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 
 test.beforeAll(async () => {
@@ -16,58 +15,107 @@ test.beforeAll(async () => {
   await setErc20Balance(usdcBaseAddress[TENDERLY_BASE_CHAIN_ID], '100', 6, NetworkName.base);
 });
 
-test('Go to Base Trade, trade usdc to usds, then trade usds back to usdc', async ({ page }) => {
+test('trade usdc to usds, then trade usds back to usdc', async ({ page }) => {
   await page.goto('/');
   await connectMockWalletAndAcceptTerms(page);
-  await page.getByRole('tab', { name: 'Trade' }).click();
   await switchToBase(page);
 
-  await expect(page.getByRole('button', { name: 'Transaction overview' })).not.toBeVisible();
+  await page.getByRole('tab', { name: 'Trade' }).click();
 
-  //supply usds
-  await page.getByTestId('base-trade-suuply-input').click();
-  await page.getByTestId('base-trade-suuply-input').fill('10');
-
-  await expect(page.getByRole('button', { name: 'Transaction overview' })).toBeVisible();
-
-  await approveOrPerformAction(page, 'Supply');
-
-  await page.getByRole('button', { name: 'Back to Savings' }).click();
-
-  //supply usdc
-  await page.getByTestId('undefined-menu-button').click();
-  await page.getByRole('button', { name: 'USDC USDC USDC' }).click();
-
-  await page.getByTestId('base-trade-suuply-input').click();
-  await page.getByTestId('base-trade-suuply-input').fill('10');
-
-  await expect(page.getByRole('button', { name: 'Transaction overview' })).toBeVisible();
-
-  await approveOrPerformAction(page, 'Supply');
-
-  await page.getByRole('button', { name: 'Back to Savings' }).click();
-
-  await page.getByRole('tab', { name: 'Withdraw' }).click();
-
-  //withdraw usdc
-  await page.getByTestId('base-trade-withdraw-input').click();
-  await page.getByTestId('base-trade-withdraw-input').fill('10');
-  await expect(page.getByRole('button', { name: 'Transaction overview' })).toBeVisible();
-
-  await approveOrPerformAction(page, 'Withdraw');
-
-  await page.getByRole('button', { name: 'Back to Savings' }).click();
-
-  //withdraw usds
-  await page.getByTestId('undefined-menu-button').click();
+  //select usds for target token; usdc is origin by default
+  await page.getByRole('button', { name: 'Select token' }).click();
   await page.getByRole('button', { name: 'USDS USDS USDS' }).click();
 
-  await page.getByTestId('base-trade-withdraw-input').click();
-  await page.getByTestId('base-trade-withdraw-input').fill('10');
+  await page.getByTestId('trade-input-origin').click();
+  await page.getByTestId('trade-input-origin').fill('10');
 
-  await expect(page.getByRole('button', { name: 'Transaction overview' })).toBeVisible();
+  await approveOrPerformAction(page, 'Trade');
 
-  await approveOrPerformAction(page, 'Withdraw');
+  await page.locator('button', { hasText: 'Add USDS to wallet' }).first().click();
 
-  await page.getByRole('button', { name: 'Back to Savings' }).click();
+  //select usds for target token then use the switcher to select usdc
+  await page.getByRole('button', { name: 'Select token' }).click();
+  await page.getByRole('button', { name: 'USDS USDS USDS' }).click();
+
+  await page.getByTestId('trade-input-target').click();
+  await page.getByTestId('trade-input-target').fill('10');
+
+  await page.getByLabel('Switch token inputs').click();
+
+  await approveOrPerformAction(page, 'Trade');
+
+  await page.locator('button', { hasText: 'Add USDC to wallet' }).first().click();
+});
+
+test('trade usdc to susds, then trade susds back to usdc', async ({ page }) => {
+  await page.goto('/');
+  await connectMockWalletAndAcceptTerms(page);
+  await switchToBase(page);
+
+  await page.getByRole('tab', { name: 'Trade' }).click();
+
+  //select sUsds for target token; usdc is origin by default
+  await page.getByRole('button', { name: 'Select token' }).click();
+  await page.getByRole('button', { name: 'sUSDS sUSDS sUSDS' }).click();
+
+  await page.getByTestId('trade-input-origin').click();
+  await page.getByTestId('trade-input-origin').fill('10');
+
+  await approveOrPerformAction(page, 'Trade');
+
+  await page.locator('button', { hasText: 'Add sUSDS to wallet' }).first().click();
+
+  //select sUsds for target token then use the switcher to select usdc
+  await page.getByRole('button', { name: 'Select token' }).click();
+  await page.getByRole('button', { name: 'sUSDS sUSDS sUSDS' }).click();
+
+  await page.getByTestId('trade-input-target').click();
+  await page.getByTestId('trade-input-target').fill('9');
+
+  await page.getByLabel('Switch token inputs').click();
+
+  await approveOrPerformAction(page, 'Trade');
+
+  await page.locator('button', { hasText: 'Add USDC to wallet' }).first().click();
+});
+
+test('trade usds to susds, then trade susds back to usds', async ({ page }) => {
+  await page.goto('/');
+  await connectMockWalletAndAcceptTerms(page);
+  await switchToBase(page);
+
+  await page.getByRole('tab', { name: 'Trade' }).click();
+
+  //select usds for origin token
+  await page.getByRole('button', { name: 'USDC USDC' }).click();
+  await page.getByRole('button', { name: 'USDS USDS USDS' }).click();
+
+  //select sUsds for target token
+  await page.getByRole('button', { name: 'Select token' }).click();
+  await page.getByRole('button', { name: 'sUSDS sUSDS sUSDS' }).click();
+
+  //specify target amount
+  await page.getByTestId('trade-input-target').click();
+  await page.getByTestId('trade-input-target').fill('10');
+
+  await approveOrPerformAction(page, 'Trade');
+
+  await page.locator('button', { hasText: 'Add sUSDS to wallet' }).first().click();
+
+  //select usds for origin token (will be switched)
+  await page.getByRole('button', { name: 'USDC USDC' }).click();
+  await page.getByRole('button', { name: 'USDS USDS USDS' }).click();
+
+  //select sUsds for target token (will be switched)
+  await page.getByRole('button', { name: 'Select token' }).click();
+  await page.getByRole('button', { name: 'sUSDS sUSDS sUSDS' }).click();
+
+  await page.getByLabel('Switch token inputs').click();
+
+  await page.getByTestId('trade-input-origin').click();
+  await page.getByTestId('trade-input-origin').fill('5');
+
+  await approveOrPerformAction(page, 'Trade');
+
+  await page.locator('button', { hasText: 'Add USDS to wallet' }).first().click();
 });
