@@ -460,6 +460,10 @@ msgstr ""
 msgid "Soon"
 msgstr ""
 
+#: src/modules/balances/components/ModuleCard.tsx
+msgid "Soon on Base"
+msgstr ""
+
 #: src/modules/ui/hooks/useUserSuggestedActions.ts
 msgid "Start getting rewards"
 msgstr ""
@@ -729,6 +733,10 @@ msgstr ""
 
 #: src/components/DetailsSwitcher.tsx
 msgid "View details"
+msgstr ""
+
+#: src/modules/balances/components/ModuleCard.tsx
+msgid "View on Mainnet"
 msgstr ""
 
 #: src/modules/ui/components/historyTable/HistoryRow.tsx
