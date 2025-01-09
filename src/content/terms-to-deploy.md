@@ -59,7 +59,6 @@ You acknowledge and agree that from time to time the Website may be inaccessible
 You acknowledge and agree that the Services may evolve or change over time. This means we may alter, replace, or discontinue (temporarily or permanently) the Services at any time in our sole discretion.
 
 You acknowledge and agree that the pricing information provided in the Interface does not represent an offer, a solicitation of an offer, or any advice regarding, or recommendation to enter into, a transaction with us.
-   
 You further acknowledge and agree that you are not relying upon pricing information provided in the Interface and will undertake reasonable independent diligence as to pricing information which may appear in the Interface.
 
 You acknowledge and agree that we do not act as an agent for any of the users, or for any party or parties who may otherwise use any underlying blockchain infrastructure that is involved in any of the Services.
