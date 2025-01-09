@@ -19,7 +19,12 @@ export enum QueryParams {
   Network = 'network'
 }
 
-export const restrictedIntents = [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT];
+const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
+
+export const restrictedIntents = isRestrictedMiCa
+  ? [Intent.TRADE_INTENT]
+  : [Intent.SAVINGS_INTENT, Intent.REWARDS_INTENT];
 
 export const IntentMapping = {
   [Intent.BALANCES_INTENT]: 'balances',
@@ -77,7 +82,7 @@ export const VALID_LINKED_ACTIONS = [
 
 const AvailableIntentMapping = Object.entries(IntentMapping).reduce(
   (acc, [key, value]) => {
-    const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+    const isRestricted = isRestrictedBuild || isRestrictedMiCa;
     if (!isRestricted || !restrictedIntents.includes(key as Intent)) {
       acc[key as Intent] = value;
     }

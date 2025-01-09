@@ -42,7 +42,6 @@ export const restrictedTokenList = {
     { ...mkr, address: mkrAddress[TENDERLY_CHAIN_ID] },
     { ...sky, address: skyAddress[TENDERLY_CHAIN_ID] }
   ],
-  // ]
   [sepolia.id]: [
     // The USDC token that COW uses has 18 decimals, instead of 6
     { ...usdc, address: usdcSepoliaAddress[sepolia.id], decimals: 18 },
@@ -59,6 +58,31 @@ export const restrictedTokenList = {
   [tenderlyBase.id]: [
     { ...usdc, address: usdcBaseAddress[TENDERLY_BASE_CHAIN_ID] },
     { ...usds, address: usdsBaseAddress[TENDERLY_BASE_CHAIN_ID] }
+  ]
+};
+
+// Remove USDC and USDT from the list as they're only used for trade
+export const restrictedTokenListMiCa = {
+  [mainnet.id]: [
+    { ...eth, address: eth.address[mainnet.id] },
+    { ...weth, address: wethAddress[mainnet.id] },
+    { ...dai, address: mcdDaiAddress[mainnet.id] },
+    { ...usds, address: usdsAddress[mainnet.id] },
+    { ...mkr, address: mkrAddress[mainnet.id] },
+    { ...sky, address: skyAddress[mainnet.id] }
+  ],
+  [tenderly.id]: [
+    { ...eth, address: eth.address[TENDERLY_CHAIN_ID] },
+    { ...weth, address: wethAddress[TENDERLY_CHAIN_ID] },
+    { ...dai, address: mcdDaiAddress[TENDERLY_CHAIN_ID] },
+    { ...usds, address: usdsAddress[TENDERLY_CHAIN_ID] },
+    { ...mkr, address: mkrAddress[TENDERLY_CHAIN_ID] },
+    { ...sky, address: skyAddress[TENDERLY_CHAIN_ID] }
+  ],
+  [sepolia.id]: [
+    { ...eth, address: ETH_ADDRESS },
+    { ...weth, address: wethSepoliaAddress[sepolia.id] },
+    { ...dai, address: mcdDaiSepoliaAddress[sepolia.id] }
   ]
 };
 

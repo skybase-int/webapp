@@ -229,30 +229,26 @@ const fetchUserSuggestedActions = (
     }
   }
 
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
-  if (isRestricted) {
-    // if restricted build, remove get rewards and save actions
-    const restrictedSuggestedActions = suggestedActions.filter(
-      action =>
-        action.intent !== IntentMapping.REWARDS_INTENT && action.intent !== IntentMapping.SAVINGS_INTENT
-    );
-    const restrictedLinkedActions = linkedActions.filter(
-      action =>
-        action.intent !== IntentMapping.REWARDS_INTENT &&
-        action.la !== IntentMapping.REWARDS_INTENT &&
-        action.intent !== IntentMapping.SAVINGS_INTENT &&
-        action.la !== IntentMapping.SAVINGS_INTENT
-    );
+  const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
+  const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
 
-    return {
-      suggestedActions: restrictedSuggestedActions,
-      linkedActions: restrictedLinkedActions
-    };
-  }
+  const restrictedIntents = isRestrictedBuild
+    ? [IntentMapping.REWARDS_INTENT, IntentMapping.SAVINGS_INTENT]
+    : isRestrictedMiCa
+      ? [IntentMapping.TRADE_INTENT]
+      : [];
+
+  // if restricted build, remove restricted actions
+  const restrictedSuggestedActions = suggestedActions.filter(
+    action => !restrictedIntents.includes(action.intent)
+  );
+  const restrictedLinkedActions = linkedActions.filter(
+    action => !restrictedIntents.includes(action.intent) && !restrictedIntents.includes(action.la)
+  );
 
   return {
-    suggestedActions,
-    linkedActions
+    suggestedActions: restrictedSuggestedActions,
+    linkedActions: restrictedLinkedActions
   };
 };
 
