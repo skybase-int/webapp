@@ -112,7 +112,7 @@ msgid "Amount"
 msgstr ""
 
 #: src/modules/ui/components/TermsModal.tsx
-msgid "An error occurred while submitting your signature. Please ensure your wallet is connected to Ethereum mainnet and try again. If the issue persists, reach out for assistance in the official <0>Sky Discord</0>"
+msgid "An error occurred while submitting your signature. Please ensure your wallet is connected to either Ethereum mainnet or Base and try again. If the issue persists, reach out for assistance in the official <0>Sky Discord</0>"
 msgstr ""
 
 #: src/lib/constants.ts

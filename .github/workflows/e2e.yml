@@ -38,6 +38,8 @@ jobs:
           #   vnet: true
           - test: base-savings.spec
             vnet: true
+          - test: base-trade.spec
+            vnet: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
