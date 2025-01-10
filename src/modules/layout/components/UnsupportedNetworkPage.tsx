@@ -4,14 +4,28 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { UnsupportedNetwork } from '@/modules/icons/UnsupportedNetwork';
 import { useSwitchChain } from 'wagmi';
 import { Button } from '@/components/ui/button';
+import { useSearchParams } from 'react-router-dom';
+import { QueryParams } from '@/lib/constants';
 
 export const UnsupportedNetworkPage = ({ children }: { children: React.ReactNode }) => {
   const { chains, switchChain } = useSwitchChain();
+  const [, setSearchParams] = useSearchParams();
+
+  const handleSwitchChain = (chainId: number, name: string) => {
+    setSearchParams(params => {
+      params.set(QueryParams.Network, name.toLowerCase());
+      return params;
+    });
+    switchChain({ chainId });
+  };
 
   return (
     <>
-      <Dialog open={true}>
-        <DialogContent className="max-w-[640px] bg-containerDark p-10">
+      <Dialog open={true} modal={true}>
+        <DialogContent
+          className="max-w-[640px] bg-containerDark p-10"
+          onOpenAutoFocus={e => e.preventDefault()} //don't automatically focus the first button
+        >
           <div className="flex flex-col gap-5 sm:flex-row">
             <UnsupportedNetwork className="flex-shrink-0" />
             <div>
@@ -33,7 +47,7 @@ export const UnsupportedNetworkPage = ({ children }: { children: React.ReactNode
                     variant="connect"
                     className="border-transparent bg-primary hover:border-transparent focus:border-transparent"
                     key={id}
-                    onClick={() => switchChain({ chainId: id })}
+                    onClick={() => handleSwitchChain(id, name)}
                   >
                     Switch to {name}
                   </Button>
