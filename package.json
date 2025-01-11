@@ -48,7 +48,7 @@
   "dependencies": {
     "@jetstreamgg/hooks": "3.1.13",
     "@jetstreamgg/utils": "2.1.6",
-    "@jetstreamgg/widgets": "3.1.22",
+    "@jetstreamgg/widgets": "3.1.23",
     "@lingui/detect-locale": "^4.7.0",
     "@lingui/macro": "^4.7.0",
     "@lingui/react": "^4.7.0",
