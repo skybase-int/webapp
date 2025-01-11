@@ -189,11 +189,14 @@ test('if not connected it should show a connect button', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('tab', { name: 'Savings' }).click();
 
-  // Connect button should be visible
-  // TODO: fix this after we update "Sky features" in helipad
-  const widgetConnectButton = page.getByText('Set up access to exploreSky Protocol featuresConnect Wallet');
-  await expect(widgetConnectButton).toHaveCount(1);
-  expect((await widgetConnectButton.allInnerTexts())[0]).toContain('Connect Wallet');
+  const widgetConnectButton = page
+    .getByTestId('widget-container')
+    .getByRole('button', { name: 'Connect Wallet' });
+
+  await expect(page.getByRole('heading', { name: 'Connect to explore Sky' })).toBeVisible();
+
+  // Check that Connect button is visible
+  await expect(widgetConnectButton).toBeVisible();
 
   // After connecting, the button should disappear
   await connectMockWalletAndAcceptTerms(page);
