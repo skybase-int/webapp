@@ -111,7 +111,7 @@ test('trade usds to susds, then trade susds back to usds', async ({ page }) => {
   await page.getByRole('button', { name: 'sUSDS sUSDS sUSDS' }).click();
 
   await page.getByLabel('Switch token inputs').click();
-
+  await page.waitForTimeout(1000);
   await page.getByTestId('trade-input-origin').click();
   await page.getByTestId('trade-input-origin').fill('5');
 
