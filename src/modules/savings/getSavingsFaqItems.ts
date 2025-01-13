@@ -45,6 +45,12 @@ So, when you choose to redeem your sUSDS for USDS—which you can do anytime—t
     question: 'Can I trade sUSDS on the open market?',
     answer:
       'Yes. Anyone holding sUSDS in their wallet can trade it on the Sky Protocol for select tokens, or in any other protocol that supports the trading of sUSDS.'
+  },
+  {
+    question:
+      'Why do I see activity in my Savings transaction history in the Sky.money app if I’ve never used the Savings widget?',
+    answer:
+      'When you trade sUSDS for another token (or vice versa), sUSDS is automatically supplied to (or withdrawn from) the Sky Savings Rate module. These transactions are recorded in your Savings transaction history as a “supply” or “withdrawal.” Your Savings balance will also update automatically to reflect the increase or decrease in the amount of sUSDS you hold.'
   }
 ];
 
