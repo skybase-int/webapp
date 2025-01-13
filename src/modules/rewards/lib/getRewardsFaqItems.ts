@@ -1,4 +1,11 @@
-export const getRewardsFaqItems = () => [
+import { isBaseChainId } from '@jetstreamgg/utils';
+
+export const getRewardsFaqItems = (chainId: number) => [
+  ...mainnetFaqItems,
+  ...(isBaseChainId(chainId) && baseFaqItems ? baseFaqItems : [])
+];
+
+const mainnetFaqItems = [
   {
     question: 'What are Sky Token Rewards, and how do they work?',
     answer: `When you supply USDS to the Sky Token Rewards module through the Sky Protocol, you receive Sky Token Rewards over time in the form of Sky governance tokens.
@@ -42,3 +49,6 @@ Sky.money does not control the issuance, determination, or distribution of these
     type: 'restricted'
   }
 ];
+
+// Rewards in Base is coming soon
+const baseFaqItems: { question: string; answer: string; type?: 'restricted' | 'unrestricted' }[] = [];

@@ -27,7 +27,7 @@ jobs:
           # - test: trade-2.spec
           #   vnet: true
           - test: landing.spec
-            vnet: false
+            vnet: true
           - test: la-u-r.spec
             vnet: true
           - test: la-u-s.spec
@@ -36,6 +36,10 @@ jobs:
           #   vnet: true
           # - test: la-s-s.spec
           #   vnet: true
+          - test: base-savings.spec
+            vnet: true
+          - test: base-trade.spec
+            vnet: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
