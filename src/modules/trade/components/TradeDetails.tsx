@@ -36,7 +36,7 @@ export function TradeDetails(): React.ReactElement {
           </DetailSectionRow>
         </DetailSection>
       )}
-      <DetailSection title={t`About Sky tokens`}>
+      <DetailSection title={t`About Native Sky Protocol Tokens`}>
         <DetailSectionRow>
           <AboutUsds />
         </DetailSectionRow>

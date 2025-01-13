@@ -4,7 +4,7 @@ import { Intent } from '@/lib/enums';
 import { useLingui } from '@lingui/react';
 import { useCustomConnectModal } from '@/modules/ui/hooks/useCustomConnectModal';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
-import { mapIntentToQueryParam, restrictedIntents } from '@/lib/constants';
+import { CHAIN_WIDGET_MAP, COMING_SOON_MAP, mapIntentToQueryParam, restrictedIntents } from '@/lib/constants';
 import { WidgetNavigation } from '@/modules/app/components/WidgetNavigation';
 import { withErrorBoundary } from '@/modules/utils/withErrorBoundary';
 import { DualSwitcher } from '@/components/DualSwitcher';
@@ -24,7 +24,14 @@ import { defaultConfig } from '@/modules/config/default-config';
 import { useChainId } from 'wagmi';
 import { SealWidgetPane } from '@/modules/seal/components/SealWidgetPane';
 
-export type WidgetContent = [Intent, string, (props: IconProps) => JSX.Element, JSX.Element][];
+export type WidgetContent = [
+  Intent,
+  string,
+  (props: IconProps) => React.ReactNode,
+  React.ReactNode | null,
+  boolean,
+  { disabled?: boolean }?
+][];
 
 type WidgetPaneProps = {
   intent: Intent;
@@ -44,6 +51,7 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
   const isRestrictedBuild = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
   const isRestrictedMiCa = import.meta.env.VITE_RESTRICTED_BUILD_MICA === 'true';
   const isRestricted = isRestrictedBuild || isRestrictedMiCa;
+  const referralCode = Number(import.meta.env.VITE_REFERRAL_CODE) || 0; // fallback to 0 if invalid
 
   const rightHeaderComponent = <DualSwitcher />;
 
@@ -54,7 +62,8 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
     rightHeaderComponent,
     onNotification,
     enabled: isConnectedAndAcceptedTerms,
-    onExternalLinkClicked
+    onExternalLinkClicked,
+    referralCode
   };
 
   const actionForToken = useActionForToken();
@@ -90,13 +99,29 @@ export const WidgetPane = ({ intent, children }: WidgetPaneProps) => {
     [Intent.UPGRADE_INTENT, 'Upgrade', Upgrade, withErrorBoundary(<UpgradeWidgetPane {...sharedProps} />)],
     [Intent.TRADE_INTENT, 'Trade', Trade, withErrorBoundary(<TradeWidgetPane {...sharedProps} />)],
     [Intent.SEAL_INTENT, 'Seal', Seal, withErrorBoundary(<SealWidgetPane {...sharedProps} />)]
-  ];
+  ].map(([intent, label, icon, component]) => {
+    const comingSoon = COMING_SOON_MAP[chainId]?.includes(intent as Intent);
+    return [
+      intent as Intent,
+      label as string,
+      icon as (props: IconProps) => React.ReactNode,
+      comingSoon ? null : (component as React.ReactNode),
+      comingSoon,
+      comingSoon ? { disabled: true } : undefined
+    ];
+  });
 
   return (
     <WidgetNavigation
-      widgetContent={widgetContent.filter(([intent]) =>
-        isRestricted ? !restrictedIntents.includes(intent) : true
-      )}
+      widgetContent={widgetContent.filter(([widgetIntent]) => {
+        // First check if restricted build
+        if (isRestricted && restrictedIntents.includes(widgetIntent)) {
+          return false;
+        }
+        // Then check if widget is supported on current chain
+        const supportedIntents = CHAIN_WIDGET_MAP[chainId] || [];
+        return supportedIntents.includes(widgetIntent);
+      })}
       intent={intent}
     >
       {children}

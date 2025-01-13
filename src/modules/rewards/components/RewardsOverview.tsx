@@ -44,7 +44,7 @@ export function RewardsOverview() {
           <RewardsOverviewCharts rewardContracts={allRewardContracts} />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Sky tokens`}>
+      <DetailSection title={t`About Native Sky Protocol Tokens`}>
         <DetailSectionRow>
           <RewardsOverviewAbout />
         </DetailSectionRow>
