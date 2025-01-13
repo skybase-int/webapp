@@ -48,6 +48,14 @@ msgstr ""
 msgid "About Chronicle points"
 msgstr ""
 
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/upgrade/components/UpgradeDetails.tsx
+msgid "About Native Sky Protocol Tokens"
+msgstr ""
+
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "About Seal Engine"
 msgstr ""
@@ -60,14 +68,6 @@ msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
 msgid "About Sky Token Rewards"
-msgstr ""
-
-#: src/modules/rewards/components/RewardsDetailsView.tsx
-#: src/modules/rewards/components/RewardsOverview.tsx
-#: src/modules/savings/components/SavingsDetails.tsx
-#: src/modules/trade/components/TradeDetails.tsx
-#: src/modules/upgrade/components/UpgradeDetails.tsx
-msgid "About Sky tokens"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx

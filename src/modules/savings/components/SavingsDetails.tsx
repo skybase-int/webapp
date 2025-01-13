@@ -56,7 +56,7 @@ export function SavingsDetails(): React.ReactElement {
           <SavingsChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Sky tokens`}>
+      <DetailSection title={t`About Native Sky Protocol Tokens`}>
         <DetailSectionRow>
           <AboutSUsds />
         </DetailSectionRow>
