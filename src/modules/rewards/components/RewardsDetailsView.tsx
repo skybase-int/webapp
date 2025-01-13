@@ -66,7 +66,7 @@ export function RewardsDetailsView({ rewardContract }: { rewardContract?: Reward
         </DetailSectionRow>
       </DetailSection>
       {rewardContract.rewardToken.symbol === TOKENS.sky.symbol && (
-        <DetailSection title={t`About Sky tokens`}>
+        <DetailSection title={t`About Native Sky Protocol Tokens`}>
           <DetailSectionRow>
             <RewardsOverviewAbout />
           </DetailSectionRow>
