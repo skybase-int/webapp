@@ -1,9 +1,16 @@
+import { isBaseChainId } from '@jetstreamgg/utils';
+
 export interface Item {
   question: string;
   answer: string;
   type?: 'restricted' | 'unrestricted';
 }
-export const getRewardsCleFaqItems = (): Item[] => [
+export const getRewardsCleFaqItems = (chainId: number): Item[] => [
+  ...mainnetFaqItems,
+  ...(isBaseChainId(chainId) ? baseFaqItems : [])
+];
+
+const mainnetFaqItems = [
   {
     question: 'What is Chronicle?',
     answer:
@@ -25,3 +32,6 @@ export const getRewardsCleFaqItems = (): Item[] => [
       'Users can view the current distribution of Chronicle Points on the [Sky Ecosystem dashboard](https://info.sky.money/rewards/0x10ab606b067c9c461d8893c47c7512472e19e2ce/).'
   }
 ];
+
+// Rewards on Base is coming soon
+const baseFaqItems: Item[] = [];

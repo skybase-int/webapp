@@ -48,7 +48,7 @@ export function UpgradeDetails(): React.ReactElement {
           <UpgradeChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Sky tokens`}>
+      <DetailSection title={t`About Native Sky Protocol Tokens`}>
         <DetailSectionRow>
           <UpgradeAbout />
         </DetailSectionRow>
