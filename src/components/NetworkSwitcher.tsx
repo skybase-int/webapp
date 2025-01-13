@@ -1,6 +1,6 @@
 import { Tooltip, TooltipArrow, TooltipContent, TooltipPortal, TooltipTrigger } from './ui/tooltip';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { t } from '@lingui/macro';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { Intent } from '@/lib/enums';
 import { ChainModal } from '@/modules/ui/components/ChainModal';
@@ -33,9 +33,7 @@ export function NetworkSwitcher() {
       </TooltipTrigger>
       <TooltipPortal>
         <TooltipContent arrowPadding={10}>
-          <Text variant="small">
-            <Trans>Switch network</Trans>
-          </Text>
+          <Text variant="small">{t`Switch network`}</Text>
           <TooltipArrow width={12} height={8} />
         </TooltipContent>
       </TooltipPortal>
