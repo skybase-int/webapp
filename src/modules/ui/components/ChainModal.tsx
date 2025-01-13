@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { t } from '@lingui/macro';
 import { useChainId, useChains, useClient, useSwitchChain } from 'wagmi';
 import { MainnetChain, BaseChain, Close } from '@/modules/icons';
 import { cn } from '@/lib/utils';
@@ -89,9 +89,7 @@ export function ChainModal({
         onCloseAutoFocus={e => e.preventDefault()}
       >
         <DialogHeader>
-          <Text className="pl-2 text-[28px] text-text md:text-[32px]">
-            <Trans>Switch chain</Trans>
-          </Text>
+          <Text className="pl-2 text-[28px] text-text md:text-[32px]">{t`Switch chain`}</Text>
         </DialogHeader>
         <div className="flex flex-col items-start gap-1">
           {chains.map(chain => (
