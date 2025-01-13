@@ -514,7 +514,7 @@ msgid "Switch network"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "The experience of supplying stablecoins to the Savings widget on Base and Ethereum is very similar. However, given that no native Sky Savings Rate module is deployed to Base, when on Base you always interact with the Peg Stability Module (PSM) for conversions to/from USDS, sUSDS and USDC. The PSM on Base handles conversions between these pairs directly. PSMs are smart contracts designed to maintain the stability of stablecoins and allow users to trade certain stablecoins directly with the Sky Protocol at a fixed rate and with relatively low fees."
+msgid "The experience of supplying stablecoins to the Savings widget on Base and Ethereum is very similar. However, given that no native Sky Savings Rate module is deployed to Base, when on Base you always interact with the Peg Stability Module (PSM) for conversions to/from USDS, sUSDS and USDC."
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
