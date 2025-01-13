@@ -1,4 +1,11 @@
-export const getBalancesFaqItems = () => [
+import { isBaseChainId } from '@jetstreamgg/utils';
+
+export const getBalancesFaqItems = (chainId: number) => [
+  ...mainnetFaqItems,
+  ...(isBaseChainId(chainId) ? baseFaqItems : [])
+];
+
+const mainnetFaqItems = [
   {
     question: 'What is a crypto wallet, and how do I get one?',
     answer: `A crypto wallet is software that enables you to easily view a list of your digital funds, manage them and help safeguard them. Note that in the case of non-custodial wallets, your funds are only _visible_ in the wallet—not stored there. Your non-custodial wallet holds the private keys needed to sign crypto transactions, and gives you full control over these private keys, which are essential for accessing and managing your crypto. Unlike custodial wallets where a third party holds the private keys, non-custodial wallets allow users to be the sole custodian of their keys. This means that only the user has the ability to sign transactions, making it more secure and private; however, it also means that if a user loses their private key or recovery phrase, they may permanently lose access to their funds. All crypto funds are stored on a public blockchain and can be accessed via your private keys.
@@ -53,5 +60,15 @@ You can trade SKY for USDS and, soon, use it to accumulate Activation Token Rewa
   {
     question: 'Are there risks involved with using the Sky Protocol?',
     answer: 'For details regarding potential risks, please see the User Risk Documentation.'
+  }
+];
+
+const baseFaqItems = [
+  {
+    question: 'What is Base?',
+    answer: `[Base](https://www.base.org/) is a Coinbase-developed Layer 2 (L2) network that provides easy access to some L1 networks, including Ethereum and Solana, and other L2s. 
+
+SkyLink, Sky’s bridge system, enhances your ability to manage your digital assets efficiently by seamlessly connecting your Ethereum L1-based Sky Protocol tokens and features to the Base network. If you have shied away from the Ethereum blockchain due to the high price of gas, SkyLink introduces reduced fees and faster transaction speeds. 
+`
   }
 ];
