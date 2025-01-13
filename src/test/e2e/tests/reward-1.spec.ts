@@ -101,7 +101,7 @@ test('if not connected it should show a connect button', async ({ page }) => {
     .getByTestId('widget-container')
     .getByRole('button', { name: 'Connect Wallet' });
   await expect(widgetConnectButton).toBeEnabled();
-  await expect(page.getByText('Set up access to exploreSky Protocol features')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Connect to explore Sky' })).toBeVisible();
 
   // After connecting, the button should disappear
   await connectMockWalletAndAcceptTerms(page);
