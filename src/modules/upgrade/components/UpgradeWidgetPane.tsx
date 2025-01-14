@@ -18,6 +18,7 @@ import { useCustomNavigation } from '@/modules/ui/hooks/useCustomNavigation';
 import { updateParamsFromTransaction } from '@/modules/utils/updateParamsFromTransaction';
 import { capitalizeFirstLetter } from '@/lib/helpers/string/capitalizeFirstLetter';
 import { useSubgraphUrl } from '@/modules/app/hooks/useSubgraphUrl';
+import { deleteSearchParams } from '@/modules/utils/deleteSearchParams';
 
 const targetTokenFromSourceToken = (sourceToken?: string) => {
   if (sourceToken === 'DAI') return 'USDS';
@@ -26,7 +27,6 @@ const targetTokenFromSourceToken = (sourceToken?: string) => {
 };
 
 export function UpgradeWidgetPane(sharedProps: SharedProps) {
-  const isRestricted = import.meta.env.VITE_RESTRICTED_BUILD === 'true';
   const subgraphUrl = useSubgraphUrl();
   const { linkedActionConfig, updateLinkedActionConfig, exitLinkedActionMode } = useConfigContext();
   const { mutate: refreshUpgradeHistory } = useUpgradeHistory({ subgraphUrl });
@@ -86,7 +86,10 @@ export function UpgradeWidgetPane(sharedProps: SharedProps) {
       widgetState.flow === UpgradeFlow.REVERT &&
       widgetState.screen === UpgradeScreen.TRANSACTION
     ) {
-      setSearchParams('');
+      setSearchParams(prevParams => {
+        const params = deleteSearchParams(prevParams);
+        return params;
+      });
       exitLinkedActionMode();
     }
 
@@ -99,7 +102,10 @@ export function UpgradeWidgetPane(sharedProps: SharedProps) {
       targetToken &&
       targetToken !== targetTokenFromSourceToken(linkedActionConfig.sourceToken)
     ) {
-      setSearchParams('');
+      setSearchParams(prevParams => {
+        const params = deleteSearchParams(prevParams);
+        return params;
+      });
       exitLinkedActionMode();
     }
   };
@@ -114,8 +120,8 @@ export function UpgradeWidgetPane(sharedProps: SharedProps) {
       onWidgetStateChange={onUpgradeWidgetStateChange}
       customNavigationLabel={customNavLabel}
       onCustomNavigation={onNavigate}
-      upgradeOptions={isRestricted ? [TOKENS.dai] : [TOKENS.dai, TOKENS.mkr]}
-      revertOptions={isRestricted ? [TOKENS.usds] : [TOKENS.usds, TOKENS.sky]}
+      upgradeOptions={[TOKENS.dai, TOKENS.mkr]}
+      revertOptions={[TOKENS.usds, TOKENS.sky]}
     />
   );
 }

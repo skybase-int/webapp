@@ -3,7 +3,7 @@ import '../mock-rpc-call.ts';
 import '../mock-vpn-check.ts';
 import { setErc20Balance } from '../utils/setBalance.ts';
 import { mcdDaiAddress, mkrAddress, usdsAddress } from '@jetstreamgg/hooks';
-import { TENDERLY_CHAIN_ID } from '../utils/constants.ts';
+import { TENDERLY_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts';
 import { interceptAndRejectTransactions } from '../utils/rejectTransaction.ts';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
@@ -165,11 +165,12 @@ test('if not connected it should show a connect button', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('tab', { name: 'Upgrade' }).click();
 
-  // Connect button should be visible
-  // TODO: fix this after we update "Sky features" in helipad
-  const widgetConnectButton = page.getByText('Set up access to exploreSky Protocol featuresConnect Wallet');
-  await expect(widgetConnectButton).toHaveCount(1);
-  expect((await widgetConnectButton.allInnerTexts())[0]).toContain('Connect Wallet');
+  // Connect button and copy should be visible
+  const widgetConnectButton = page
+    .getByTestId('widget-container')
+    .getByRole('button', { name: 'Connect Wallet' });
+  await expect(widgetConnectButton).toBeEnabled();
+  await expect(page.getByRole('heading', { name: 'Connect to explore Sky' })).toBeVisible();
 
   // After connecting, the button should disappear
   await connectMockWalletAndAcceptTerms(page);

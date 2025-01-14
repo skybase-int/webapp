@@ -9,3 +9,6 @@ updates:
     directory: '/' # Location of package manifests
     schedule:
       interval: 'weekly'
+    ignore:
+      # These are currently private and we update them manually as soon as they're published anyways
+      - dependency-name: '@jetstreamgg/*'

@@ -3,7 +3,7 @@ import '../mock-rpc-call.ts';
 import '../mock-vpn-check.ts';
 import { setErc20Balance } from '../utils/setBalance.ts';
 import { usdsAddress } from '@jetstreamgg/hooks';
-import { TENDERLY_CHAIN_ID } from '../utils/constants.ts';
+import { TENDERLY_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts';
 import { interceptAndRejectTransactions } from '../utils/rejectTransaction.ts';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
@@ -37,7 +37,8 @@ test('Supply and withdraw from Savings', async ({ page }) => {
   const withdrawButton = page.getByTestId('widget-button');
   await expect(withdrawButton).toHaveText('Withdraw');
   await withdrawButton.click();
-  await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+
+  await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
   //TODO: why is the finish button disabled?
   await page.getByRole('button', { name: 'Back to Savings' }).click();
 });
@@ -48,6 +49,7 @@ test('supply with insufficient usds balance', async ({ page }) => {
   await page.getByRole('tab', { name: 'Savings' }).click();
 
   const balanceLabel = page.getByTestId('supply-input-savings-balance');
+  await expect(balanceLabel).not.toHaveText('No wallet connected');
   const balanceText = ((await balanceLabel.innerText()) as string).split(' ')[0].trim();
   await page.getByTestId('supply-input-savings').click();
   await page.getByTestId('supply-input-savings').fill(`500${balanceText}`); // Supply an amount greater than the balance
@@ -68,7 +70,7 @@ test('withdraw with insufficient savings balance', async ({ page }) => {
   // If there's no withdraw button after clicking 100%, it means we don't any USDS supplied
   if (withdrawButton) {
     await withdrawButton.click();
-    await expect(page.locator("text=You've withdrawn 0.01")).toHaveCount(1);
+    await expect(page.getByText("You've withdrawn 0.01 USDS from the Sky Savings Rate module")).toBeVisible();
     // await expect(page.locator('text=successfully withdrew')).toHaveCount(2);
     await page.getByRole('button', { name: 'Back to Savings' }).click();
   }
@@ -87,7 +89,7 @@ test('Balance changes after a successful supply', async ({ page }) => {
   await page.goto('/');
   await connectMockWalletAndAcceptTerms(page);
   await page.getByRole('tab', { name: 'Savings' }).click();
-  expect(await page.getByTestId('supply-input-savings-balance').innerText()).toBe('10 USDS');
+  await expect(page.getByTestId('supply-input-savings-balance')).toHaveText('10 USDS');
 
   const suppliedBalancedText = await page.getByTestId('supplied-balance').innerText();
   const preSupplyBalance = parseFloat(suppliedBalancedText) || 0;
@@ -187,11 +189,14 @@ test('if not connected it should show a connect button', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('tab', { name: 'Savings' }).click();
 
-  // Connect button should be visible
-  // TODO: fix this after we update "Sky features" in helipad
-  const widgetConnectButton = page.getByText('Set up access to exploreSky Protocol featuresConnect Wallet');
-  await expect(widgetConnectButton).toHaveCount(1);
-  expect((await widgetConnectButton.allInnerTexts())[0]).toContain('Connect Wallet');
+  const widgetConnectButton = page
+    .getByTestId('widget-container')
+    .getByRole('button', { name: 'Connect Wallet' });
+
+  await expect(page.getByRole('heading', { name: 'Connect to explore Sky' })).toBeVisible();
+
+  // Check that Connect button is visible
+  await expect(widgetConnectButton).toBeVisible();
 
   // After connecting, the button should disappear
   await connectMockWalletAndAcceptTerms(page);
@@ -346,20 +351,18 @@ test('Details pane shows right data', async ({ page }) => {
   await connectMockWalletAndAcceptTerms(page);
   await page.getByRole('tab', { name: 'Savings' }).click();
 
-  const balanceWidget = await page.getByTestId('supply-input-savings-balance').innerText();
   const balanceDetails = await page
     .getByTestId('savings-stats-section')
     .getByText('100 USDS', { exact: true })
     .innerText();
-  expect(balanceWidget).toEqual(balanceDetails);
+  await expect(page.getByTestId('supply-input-savings-balance')).toHaveText(balanceDetails);
 
   await page.getByRole('tab', { name: 'Withdraw' }).click();
-  const widgetSuppliedBalance = await page.getByTestId('supplied-balance').innerText();
   const detailsSuppliedBalance = await page
     .getByTestId('savings-stats-section')
     .getByText('102 USDS', { exact: true })
     .innerText();
-  expect(widgetSuppliedBalance).toEqual(detailsSuppliedBalance);
+  await expect(page.getByTestId('supplied-balance')).toHaveText(detailsSuppliedBalance);
 
   // close details pane
   await page.getByLabel('Toggle details').click();

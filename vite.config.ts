@@ -14,6 +14,8 @@ export default ({ mode }: { mode: string }) => {
   const RPC_PROVIDER_MAINNET = process.env.VITE_RPC_PROVIDER_MAINNET || '';
   const RPC_PROVIDER_SEPOLIA = process.env.VITE_RPC_PROVIDER_SEPOLIA || '';
   const RPC_PROVIDER_TENDERLY = process.env.VITE_RPC_PROVIDER_TENDERLY || '';
+  const RPC_PROVIDER_BASE = process.env.VITE_RPC_PROVIDER_BASE || '';
+  const RPC_PROVIDER_TENDERLY_BASE = process.env.VITE_RPC_PROVIDER_TENDERLY_BASE || '';
 
   const CONTENT_SECURITY_POLICY = `
     default-src 'self';
@@ -28,8 +30,13 @@ export default ({ mode }: { mode: string }) => {
       ${RPC_PROVIDER_MAINNET}
       ${RPC_PROVIDER_TENDERLY}
       ${RPC_PROVIDER_SEPOLIA}
+      ${RPC_PROVIDER_BASE}
+      ${RPC_PROVIDER_TENDERLY_BASE}
       https://virtual.mainnet.rpc.tenderly.co
+      https://virtual.base.rpc.tenderly.co
       https://rpc.sepolia.org
+      https://mainnet.base.org
+      https://vote.makerdao.com
       https://query-subgraph-testnet.sky.money
       https://query-subgraph-staging.sky.money
       https://query-subgraph.sky.money
@@ -38,6 +45,7 @@ export default ({ mode }: { mode: string }) => {
       https://api.sky.money
       https://api.ipify.org
       https://info-sky.blockanalitica.com
+      https://sky-tenderly.blockanalitica.com
       https://api.cow.fi/
       wss://relay.walletconnect.com
       wss://relay.walletconnect.org
@@ -77,6 +85,11 @@ export default ({ mode }: { mode: string }) => {
       alias: {
         '@': path.resolve(__dirname, './src')
       }
+    },
+    optimizeDeps: {
+      // Optimize safe-apps-provider dependency to get rid of the Safe connector issue
+      // and be able to connect Safe apps
+      include: ['wagmi > @safe-global/safe-apps-provider']
     },
     plugins: [
       createHtmlPlugin({

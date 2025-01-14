@@ -14,6 +14,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { CheckedState } from '@radix-ui/react-checkbox';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink } from '@/modules/layout/components/ExternalLink';
+import { sanitizeUrl } from '@/lib/utils';
 
 export function TermsModal() {
   const { closeModal, isModalOpen, openModal } = useTermsModal();
@@ -33,7 +34,7 @@ export function TermsModal() {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_TERMS_ENDPOINT}/add`, {
+      const response = await fetch(sanitizeUrl(`${import.meta.env.VITE_TERMS_ENDPOINT}/add`) || '', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -92,6 +93,10 @@ export function TermsModal() {
 
   const handleCheckboxChange = (checkedState: CheckedState) => {
     setIsChecked(checkedState === true);
+    if (checkedState === true) {
+      setSignStatus('signing');
+      signMessage({ message: import.meta.env.VITE_TERMS_MESSAGE_TO_SIGN });
+    }
   };
 
   return (
@@ -141,8 +146,8 @@ export function TermsModal() {
             <Text className="mb-4 text-center text-sm leading-none text-error md:leading-tight">
               <Trans>
                 An error occurred while submitting your signature. Please ensure your wallet is connected to
-                Ethereum mainnet and try again. If the issue persists, reach out for assistance in the
-                official{' '}
+                either Ethereum mainnet or Base and try again. If the issue persists, reach out for assistance
+                in the official{' '}
                 <ExternalLink
                   className="text-textEmphasis hover:underline"
                   href="https://discord.gg/skyecosystem"

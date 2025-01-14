@@ -12,9 +12,9 @@ const content = {
         issuance rate of the reward token in question, as set through the relevant onchain governance
         processes pertinent to the reward token in question (for example, SKY issuance rate is decided by the
         decentralised Maker/Sky ecosystem onchain governance), the current market price of the reward token in
-        question, and the user’s proportional percentage of the total supply within the pool of assets
-        accruing that particular reward. STR rate may be volatile. The rate provided here is an estimate of
-        the relevant STR rate expressed in expected rate per annum, should be automatically updated every 5
+        question, and the user’s proportional percentage of the total supply within the pool of funds accruing
+        that particular reward. STR rate may be volatile. The rate provided here is an estimate of the
+        relevant STR rate expressed in expected rate per annum, should be automatically updated every 5
         minutes and is powered by data provided by a third party (
         <ExternalLink
           href="https://blockanalitica.com/"
@@ -31,12 +31,12 @@ const content = {
     title: 'Sky Savings Rate (SSR)',
     description: (
       <Text className="leading-5 text-white/80" variant="small">
-        The Sky Savings Rate (SSR) is variable and determined by the decentralised Maker/Sky Ecosystem onchain
-        governance and is configured on the Ethereum blockchain. Maker/Sky Ecosystem governance is able to
-        adapt the SSR and other relevant parameters at any time at its discretion and without notice, based on
-        market conditions, protocol surplus and other factors. The rate provided here is an estimate of the
-        SSR expressed in expected compounded rate per annum, should be automatically updated every 5 minutes
-        and is powered by data provided by a third party (
+        The Sky Savings Rate (SSR) is variable, determined by decentralised Sky Ecosystem onchain governance,
+        and configured on the Ethereum blockchain. Sky Ecosystem governance is able to adapt the SSR and other
+        relevant parameters at any time at its discretion and without notice, based on market conditions,
+        protocol surplus and other factors. The rate provided here is an estimate of the SSR expressed in
+        expected compounded rate per annum, should be automatically updated every 5 minutes, and is powered by
+        data provided by a third party (
         <ExternalLink
           href="https://blockanalitica.com/"
           className="hover:text-white hover:underline"
@@ -47,10 +47,20 @@ const content = {
         ). This figure does not represent or guarantee future results.
       </Text>
     )
+  },
+  sbr: {
+    title: 'Borrow Rate',
+    description: (
+      <Text className="leading-5 text-white/80" variant="small">
+        The borrow rate is a parameter determined by Sky ecosystem governance through a process of
+        decentralised onchain voting. Borrow rate fees accumulate automatically per block and get added to the
+        total debt.
+      </Text>
+    )
   }
 };
 
-export const PopoverRateInfo = ({ type }: { type: 'str' | 'ssr' }) => {
+export const PopoverRateInfo = ({ type }: { type: 'str' | 'ssr' | 'sbr' }) => {
   if (!(type in content)) return null;
 
   return (

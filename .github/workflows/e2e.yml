@@ -20,12 +20,14 @@ jobs:
             vnet: true
           - test: savings.spec
             vnet: true
+          - test: seal.spec
+            vnet: true
           # - test: trade-1.spec
           #   vnet: true
           # - test: trade-2.spec
           #   vnet: true
           - test: landing.spec
-            vnet: false
+            vnet: true
           - test: la-u-r.spec
             vnet: true
           - test: la-u-s.spec
@@ -34,6 +36,10 @@ jobs:
           #   vnet: true
           # - test: la-s-s.spec
           #   vnet: true
+          - test: base-savings.spec
+            vnet: true
+          - test: base-trade.spec
+            vnet: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
@@ -65,6 +71,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           VITE_ENV_NAME: development
+          VITE_TERMS_LINK: '[{"url":"https://legal-terms","name":"Terms of Use"}]'
 
       - name: Teardown VNet (if required)
         if: ${{always() && matrix.vnet}}
@@ -79,3 +86,23 @@ jobs:
           name: playwright-report-${{ matrix.test }}
           path: playwright-report/
           retention-days: 30
+
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
