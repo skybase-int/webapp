@@ -9,6 +9,7 @@ import { Intent } from '@/lib/enums';
 // import { z } from 'zod';
 import { RewardContract } from '@jetstreamgg/hooks';
 import { ALLOWED_EXTERNAL_DOMAINS } from '@/lib/constants';
+import { SealToken } from '@/modules/seal/constants';
 
 type LinkedActionConfig = {
   inputAmount?: string;
@@ -50,7 +51,8 @@ export const StepMap: Record<LinkedActionSteps, StepIndicatorStates[]> = {
 // Default user config
 const defaultUserConfig: UserConfig = {
   locale: undefined,
-  intent: Intent.BALANCES_INTENT
+  intent: Intent.BALANCES_INTENT,
+  sealToken: SealToken.MKR
 };
 
 const defaultLinkedActionConfig = {
@@ -67,6 +69,8 @@ export interface ConfigContextProps {
   setIntent: (intent: Intent) => void;
   selectedRewardContract?: RewardContract;
   setSelectedRewardContract: (rewardContract?: RewardContract) => void;
+  selectedSealUrnIndex: number | undefined;
+  setSelectedSealUrnIndex: (position: number | undefined) => void;
   linkedActionConfig: LinkedActionConfig;
   updateLinkedActionConfig: (config: Partial<LinkedActionConfig>) => void;
   exitLinkedActionMode: () => void;
@@ -94,6 +98,8 @@ export const ConfigContext = createContext<ConfigContextProps>({
   setIntent: () => {},
   selectedRewardContract: undefined,
   setSelectedRewardContract: () => {},
+  selectedSealUrnIndex: undefined,
+  setSelectedSealUrnIndex: () => {},
   updateLinkedActionConfig: () => {},
   linkedActionConfig: defaultLinkedActionConfig,
   exitLinkedActionMode: () => {},
@@ -108,6 +114,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }): ReactElem
   const [userConfig, setUserConfig] = useState<UserConfig>(defaultUserConfig);
   const [loaded, setLoaded] = useState<boolean>(false);
   const [selectedRewardContract, setSelectedRewardContract] = useState<RewardContract | undefined>(undefined);
+  const [selectedSealUrnIndex, setSelectedSealUrnIndex] = useState<number | undefined>(undefined);
   const [linkedActionConfig, setLinkedActionConfig] = useState(defaultLinkedActionConfig);
   const [externalLinkModalOpened, setExternalLinkModalOpened] = useState(false);
   const [externalLinkModalUrl, setExternalLinkModalUrl] = useState('');
@@ -198,6 +205,8 @@ export const ConfigProvider = ({ children }: { children: ReactNode }): ReactElem
         setIntent,
         selectedRewardContract,
         setSelectedRewardContract,
+        selectedSealUrnIndex,
+        setSelectedSealUrnIndex,
         linkedActionConfig,
         updateLinkedActionConfig,
         exitLinkedActionMode,

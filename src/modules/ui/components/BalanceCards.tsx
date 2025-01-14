@@ -8,20 +8,22 @@ import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { LoadingErrorWrapper } from './LoadingErrorWrapper';
 import { Text } from '@/modules/layout/components/Typography';
+import { Token } from '@jetstreamgg/hooks';
+import { useChainId } from 'wagmi';
 
 interface BalanceCardProps {
   balance: bigint | string;
   isLoading: boolean;
-  token: {
-    symbol: string;
-    name: string;
-  };
+  token: Pick<Token, 'symbol' | 'name'> & Partial<Pick<Token, 'decimals'>>;
   label?: string;
+  toggle?: React.ReactNode;
   error?: Error | null;
+  afterBalance?: string;
 }
 
 interface BaseBalanceCardProps extends BalanceCardProps {
   label: string;
+  toggle?: React.ReactNode;
   icon: React.ReactElement;
   iconEmpty: React.ReactElement;
   className?: string;
@@ -30,14 +32,17 @@ interface BaseBalanceCardProps extends BalanceCardProps {
 
 function BaseBalanceCard({
   label,
+  toggle,
   balance,
   icon,
   iconEmpty,
   isLoading,
   token,
   className,
-  error
+  error,
+  afterBalance
 }: BaseBalanceCardProps): React.ReactElement {
+  const chainId = useChainId();
   const isPositiveBalance = useMemo(() => {
     if (typeof balance === 'bigint') {
       return balance > 0n;
@@ -49,6 +54,8 @@ function BaseBalanceCard({
     return false;
   }, [balance]);
 
+  const decimals = typeof token.decimals === 'number' ? token.decimals : token.decimals?.[chainId];
+
   return (
     <Card variant="stats" className={cn('flex justify-between', className)}>
       <div className="flex w-full flex-col justify-center">
@@ -58,10 +65,13 @@ function BaseBalanceCard({
           error={error ? error : null}
           errorComponent={<ErrorComponent label={label} />}
         >
-          <BaseBalanceCardContent label={label}>
+          <BaseBalanceCardContent label={label} toggle={toggle}>
             <TokenIconWithBalance
               token={token}
-              balance={typeof balance === 'string' ? balance : formatBigInt(balance || 0n)}
+              balance={
+                typeof balance === 'string' ? balance : formatBigInt(balance, { unit: decimals || 18 })
+              }
+              afterBalance={afterBalance}
             />
           </BaseBalanceCardContent>
         </LoadingErrorWrapper>
@@ -71,12 +81,29 @@ function BaseBalanceCard({
   );
 }
 
-function BaseBalanceCardContent({ label, children }: { label: string; children: React.ReactNode }) {
+function BaseBalanceCardContent({
+  label,
+  toggle,
+  children
+}: {
+  label: string;
+  toggle?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <>
-      <CardTitle variant="stats" className="mb-2">
-        {label}
-      </CardTitle>
+      {toggle ? (
+        <div className="flex w-full gap-2">
+          <CardTitle variant="stats" className="mb-2">
+            {label}
+          </CardTitle>
+          {toggle}
+        </div>
+      ) : (
+        <CardTitle variant="stats" className="mb-2">
+          {label}
+        </CardTitle>
+      )}
       {children}
     </>
   );
@@ -105,17 +132,19 @@ export function SuppliedBalanceCard({
   isLoading,
   token,
   label,
-  error
+  error,
+  afterBalance
 }: BalanceCardProps): React.ReactElement {
   return (
     <BaseBalanceCard
-      label={label || t`Supplied to Savings`}
+      label={label || t`Savings balance`}
       balance={balance}
       icon={<Supplied />}
       iconEmpty={<SuppliedEmpty />}
       isLoading={isLoading}
       token={token}
       error={error}
+      afterBalance={afterBalance}
     />
   );
 }
@@ -129,7 +158,7 @@ export function UnsuppliedBalanceCard({
 }: BalanceCardProps): React.ReactElement {
   return (
     <BaseBalanceCard
-      label={label || t`Remaining balance`}
+      label={label || t`Remaining ${token.symbol} balance`}
       balance={balance}
       icon={<Withdrawn />}
       iconEmpty={<WithdrawnEmpty />}
@@ -153,6 +182,46 @@ export function RewardsBalanceCard({
       balance={balance}
       icon={<Rewards />}
       iconEmpty={<RewardsEmpty />}
+      isLoading={isLoading}
+      token={token}
+      error={error}
+    />
+  );
+}
+
+export function SealSealedCard({
+  balance,
+  isLoading,
+  token,
+  label,
+  error
+}: BalanceCardProps): React.ReactElement {
+  return (
+    <BaseBalanceCard
+      label={label || t`USDS borrowed`}
+      balance={balance}
+      icon={<Supplied />}
+      iconEmpty={<SuppliedEmpty />}
+      isLoading={isLoading}
+      token={token}
+      error={error}
+    />
+  );
+}
+
+export function SealBorrowedCard({
+  balance,
+  isLoading,
+  token,
+  label,
+  error
+}: BalanceCardProps): React.ReactElement {
+  return (
+    <BaseBalanceCard
+      label={label || t`USDS borrowed`}
+      balance={balance}
+      icon={<Withdrawn />}
+      iconEmpty={<WithdrawnEmpty />}
       isLoading={isLoading}
       token={token}
       error={error}

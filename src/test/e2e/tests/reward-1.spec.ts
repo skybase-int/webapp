@@ -4,7 +4,7 @@ import '../mock-vpn-check.ts';
 import { approveOrPerformAction } from '../utils/approveOrPerformAction.ts';
 import { setErc20Balance } from '../utils/setBalance.ts';
 import { usdsAddress } from '@jetstreamgg/hooks';
-import { TENDERLY_CHAIN_ID } from '../utils/constants.ts';
+import { TENDERLY_CHAIN_ID } from '@/data/wagmi/config/testTenderlyChain.ts';
 import { withdrawAllAndReset } from '../utils/rewards.ts';
 import { connectMockWalletAndAcceptTerms } from '../utils/connectMockWalletAndAcceptTerms.ts';
 
@@ -101,7 +101,7 @@ test('if not connected it should show a connect button', async ({ page }) => {
     .getByTestId('widget-container')
     .getByRole('button', { name: 'Connect Wallet' });
   await expect(widgetConnectButton).toBeEnabled();
-  await expect(page.getByText('Set up access to exploreSky Protocol features')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Connect to explore Sky' })).toBeVisible();
 
   // After connecting, the button should disappear
   await connectMockWalletAndAcceptTerms(page);

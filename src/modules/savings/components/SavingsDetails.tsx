@@ -23,11 +23,13 @@ export function SavingsDetails(): React.ReactElement {
 
   return (
     <DetailSectionWrapper>
-      <DetailSection title={t`Your USDS balances`} dataTestId="savings-stats-section">
-        <DetailSectionRow>
-          <SavingsBalanceDetails />
-        </DetailSectionRow>
-      </DetailSection>
+      {isConnectedAndAcceptedTerms && (
+        <DetailSection title={t`Your balances`} dataTestId="savings-stats-section">
+          <DetailSectionRow>
+            <SavingsBalanceDetails />
+          </DetailSectionRow>
+        </DetailSection>
+      )}
       <DetailSection title={t`Sky Savings Rate info`}>
         <DetailSectionRow>
           <SavingsInfoDetails />
@@ -54,7 +56,7 @@ export function SavingsDetails(): React.ReactElement {
           <SavingsChart />
         </DetailSectionRow>
       </DetailSection>
-      <DetailSection title={t`About Sky tokens`}>
+      <DetailSection title={t`About Native Sky Protocol Tokens`}>
         <DetailSectionRow>
           <AboutSUsds />
         </DetailSectionRow>

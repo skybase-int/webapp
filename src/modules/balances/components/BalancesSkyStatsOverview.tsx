@@ -14,7 +14,7 @@ export function BalancesSkyStatsOverview(): React.ReactElement {
       <UsdsTotalSupplyCard />
       {!isRestricted && <SavingsRateCard />}
       {!isRestricted && <SkySavingsRatePoolCard />}
-      {!isRestricted && <UpgradedMkrToSky />}
+      <UpgradedMkrToSky />
       <UpgradedDaiToUsds />
       {!isRestricted && <RewardsSuppliersCard />}
       {!isRestricted && <SavingsSuppliersCard />}

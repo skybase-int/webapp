@@ -66,14 +66,14 @@ export function RewardsDetailsView({ rewardContract }: { rewardContract?: Reward
         </DetailSectionRow>
       </DetailSection>
       {rewardContract.rewardToken.symbol === TOKENS.sky.symbol && (
-        <DetailSection title={t`About Sky tokens`}>
+        <DetailSection title={t`About Native Sky Protocol Tokens`}>
           <DetailSectionRow>
             <RewardsOverviewAbout />
           </DetailSectionRow>
         </DetailSection>
       )}
       {rewardContract.rewardToken.symbol === TOKENS.cle.symbol && (
-        <DetailSection title={t`About Sky tokens`}>
+        <DetailSection title={t`About Chronicle points`}>
           <DetailSectionRow>
             <AboutCle />
           </DetailSectionRow>
@@ -81,7 +81,7 @@ export function RewardsDetailsView({ rewardContract }: { rewardContract?: Reward
       )}
       <DetailSection title={t`FAQs`}>
         <DetailSectionRow>
-          <RewardsFaq />
+          <RewardsFaq rewardContract={rewardContract} />
         </DetailSectionRow>
       </DetailSection>
     </DetailSectionWrapper>
