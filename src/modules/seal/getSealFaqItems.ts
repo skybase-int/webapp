@@ -59,5 +59,10 @@ Delegates in receipt of token voting power can never directly access any tokens 
     question: 'Where can I learn about Sky ecosystem governance?',
     answer:
       'For a deep dive into the facets and checks and balances of Sky ecosystem governance, please refer to the [Sky Forum](https://forum.sky.money/), the [Sky Voting Portal](https://vote.makerdao.com/) and the [Sky Atlas](https://mips.makerdao.com/mips/details/MIP101)—the source of truth behind the Sky project, superseding and overriding all other competing rules or decisions.'
+  },
+  {
+    question: 'Why can\'t I create a new position or borrow more USDS?',
+    answer:
+      'If the total outstanding USDS borrowed from the Seal Engine exceeds the debt ceiling, no new USDS can be borrowed. The debt ceiling is a parameter determined by Sky ecosystem governance through a process of decentralised onchain voting.'
   }
 ];
