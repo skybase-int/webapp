@@ -69,7 +69,9 @@ export const ModuleCard = ({ className, title, intent, module, notAvailable, soo
       <div
         className={`relative flex flex-1 basis-full flex-col xl:basis-[20%] ${!notAvailable ? 'hidden' : ''}`}
       >
-        <ChainModal variant="wrapper">{content}</ChainModal>
+        <ChainModal variant="wrapper" nextIntent={intent}>
+          {content}
+        </ChainModal>
       </div>
     </>
   );
