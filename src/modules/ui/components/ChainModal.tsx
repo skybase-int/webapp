@@ -49,6 +49,7 @@ export function ChainModal({
       { chainId },
       {
         onSuccess: (_, { chainId: newChainId }) => {
+          console.log('SUCCESS SUCCESS SUCCESS');
           const newChainName = chains.find(c => c.id === newChainId)?.name;
           if (newChainName) {
             setSearchParams(params => {
@@ -57,7 +58,10 @@ export function ChainModal({
             });
           }
         },
-        onSettled: () => setOpen(false)
+        onSettled: () => {
+          console.log('SETTLED SETTLED SETTLED');
+          setOpen(false);
+        }
       }
     );
   };

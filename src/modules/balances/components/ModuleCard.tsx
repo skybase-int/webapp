@@ -58,17 +58,19 @@ export const ModuleCard = ({ className, title, intent, module, notAvailable, soo
     </>
   );
 
-  if (notAvailable) {
-    return (
-      <div className="relative flex flex-1 basis-full flex-col xl:basis-[20%]">
+  return (
+    <>
+      <Link
+        to={url}
+        className={`relative flex flex-1 basis-full flex-col xl:basis-[20%] ${notAvailable ? 'hidden' : ''}`}
+      >
+        {content}
+      </Link>
+      <div
+        className={`relative flex flex-1 basis-full flex-col xl:basis-[20%] ${!notAvailable ? 'hidden' : ''}`}
+      >
         <ChainModal variant="wrapper">{content}</ChainModal>
       </div>
-    );
-  }
-
-  return (
-    <Link to={url} className="relative flex flex-1 basis-full flex-col xl:basis-[20%]">
-      {content}
-    </Link>
+    </>
   );
 };
