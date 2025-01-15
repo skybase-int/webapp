@@ -14,7 +14,10 @@ on:
           - 'development'
           - 'preprod'
   schedule:
-    - cron: '23,53 * * * *'
+    - cron: '3 * * * *'
+  repository_dispatch:
+    types:
+      - manual-trigger-by-devs
 
 env:
   BRANCHES: 'main staging development preprod'
