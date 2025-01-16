@@ -116,7 +116,7 @@ export const validateSearchParams = (
       const sourceToken = searchParams.get(QueryParams.SourceToken);
       if (sourceToken) {
         const disallowedPairs = defaultConfig.tradeDisallowedPairs;
-        const pairsToCheck = disallowedPairs[sourceToken.toUpperCase()];
+        const pairsToCheck = disallowedPairs?.[sourceToken.toUpperCase()];
         if (pairsToCheck?.includes(value.toUpperCase())) {
           searchParams.delete(key);
         }
