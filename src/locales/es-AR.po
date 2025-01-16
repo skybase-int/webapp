@@ -254,7 +254,7 @@ msgid "Get SKY rewards with USDS"
 msgstr ""
 
 #: src/modules/balances/components/ModuleCard.tsx
-msgid "Go to {module}"
+msgid "Go to {0} {module}"
 msgstr ""
 
 #: src/components/DetailsSwitcher.tsx
