@@ -62,7 +62,7 @@ The application should now be running at [http://localhost:3000](http://localhos
 
 To run the e2e tests, run `pnpm e2e` or `pnpm e2e:ui` to run in ui mode.
 
-These will fork a tenderly vnet, run the e2e tests, then delete the fork. You'll need to run node version >20.6 and also have the `TENDERLY_API_KEY` environment variable set in your local environment to fork and delete the vnet. Additionally, to run the testing environment locally, set `VITE_USE_MOCK_WALLET=true` in env vars.
+These will fork a tenderly vnet, run the e2e tests, then delete the fork. **You'll need to run node version >=22** and also have the `TENDERLY_API_KEY` environment variable set in your local environment to fork and delete the vnet. Additionally, to run the testing environment locally, set `VITE_USE_MOCK_WALLET=true` in env vars.
 
 The regular mode will automatically run all tests, and then generate a report including recordings of tests, whereas in ui mode, you can select which tests to run in the ui, and watch the tests run in real time.
 

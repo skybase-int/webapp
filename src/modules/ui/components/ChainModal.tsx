@@ -10,7 +10,8 @@ import { ChevronDown } from 'lucide-react';
 import { tenderlyBase } from '@/data/wagmi/config/config.default';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { QueryParams } from '@/lib/constants';
+import { mapIntentToQueryParam, QueryParams } from '@/lib/constants';
+import { Intent } from '@/lib/enums';
 
 enum ChainModalVariant {
   default = 'default',
@@ -30,13 +31,15 @@ export function ChainModal({
   showDropdownIcon = true,
   variant = 'default',
   dataTestId = 'chain-modal-trigger',
-  children
+  children,
+  nextIntent
 }: {
   showLabel?: boolean;
   showDropdownIcon?: boolean;
   variant?: 'default' | 'widget' | 'wrapper';
   dataTestId?: string;
   children?: React.ReactNode;
+  nextIntent?: Intent;
 }) {
   const [open, setOpen] = useState(false);
   const chainId = useChainId();
@@ -53,11 +56,14 @@ export function ChainModal({
           if (newChainName) {
             setSearchParams(params => {
               params.set(QueryParams.Network, newChainName.toLowerCase());
+              nextIntent && params.set(QueryParams.Widget, mapIntentToQueryParam(nextIntent));
               return params;
             });
           }
         },
-        onSettled: () => setOpen(false)
+        onSettled: () => {
+          setOpen(false);
+        }
       }
     );
   };

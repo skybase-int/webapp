@@ -1,5 +1,5 @@
-import { useSealHistoricData } from '@jetstreamgg/hooks';
-import { formatDecimalPercentage, formatNumber, math } from '@jetstreamgg/utils';
+import { useSealHistoricData, useCollateralData } from '@jetstreamgg/hooks';
+import { formatDecimalPercentage, formatNumber, math, formatBigInt } from '@jetstreamgg/utils';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
@@ -39,6 +39,13 @@ export function SealOverview() {
   const tvl = mostRecentData?.tvl ?? 0;
   const numberOfUrns = mostRecentData?.numberOfUrns ?? 0;
 
+  const {
+    data: collateralData,
+    isLoading: collateralDataLoading,
+    error: collateralDataError
+  } = useCollateralData();
+  const debtCeiling = collateralData?.debtCeiling ?? 0n;
+
   return (
     <DetailSectionWrapper>
       <DetailSection title={t`Seal Engine Overview`}>
@@ -73,6 +80,18 @@ export function SealOverview() {
                   className="mt-2"
                   token={{ name: 'USDS', symbol: 'USDS' }}
                   balance={usdsDebt}
+                />
+              }
+            />
+            <StatsCard
+              title={t`Debt ceiling`}
+              isLoading={collateralDataLoading}
+              error={collateralDataError}
+              content={
+                <TokenIconWithBalance
+                  className="mt-2"
+                  token={{ name: 'USDS', symbol: 'USDS' }}
+                  balance={formatBigInt(debtCeiling)}
                 />
               }
             />
