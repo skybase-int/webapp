@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@jetstreamgg/hooks':
-        specifier: 3.1.13
-        version: 3.1.13(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+        specifier: 3.1.14
+        version: 3.1.14(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@jetstreamgg/utils':
-        specifier: 2.1.6
-        version: 2.1.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+        specifier: 2.1.7
+        version: 2.1.7(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@jetstreamgg/widgets':
-        specifier: 3.1.24
-        version: 3.1.24(qusdmks2k4xjiosuok7sepk3vi)
+        specifier: 3.1.25
+        version: 3.1.25(qusdmks2k4xjiosuok7sepk3vi)
       '@lingui/detect-locale':
         specifier: ^4.7.0
         version: 4.7.0
@@ -873,8 +873,8 @@ packages:
     resolution: {integrity: sha512-u3UPsIilWKOM3F9CXtrG8LEJmNxwoCQC/XVj4IKYXvvpx7QIi/Kg1LI5uDmDpKlac62NUtX7eLjRh+jVZcLOzw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  '@jetstreamgg/hooks@3.1.13':
-    resolution: {integrity: sha512-RgF3yxks9D9wtGIIM43K37qtEdS1TkLR4yACCHm9hOsaQ6DKtJqtGsYyjL/A1SOMQBtrpM7lgJLn+imoaxklpQ==}
+  '@jetstreamgg/hooks@3.1.14':
+    resolution: {integrity: sha512-qamfMKgPmKfjO5JyhCZG4sJTnBuXwd2bdiVnKFTGQLnxrli51z7ieK3KMaPGqCFqdrnlP8eiI58zjMxlmIDWHQ==}
     peerDependencies:
       '@tanstack/react-query': ^5.17.15
       '@wagmi/core': ^2.13.8
@@ -883,8 +883,8 @@ packages:
       viem: ^2.21.19
       wagmi: ^2.12.17
 
-  '@jetstreamgg/utils@2.1.6':
-    resolution: {integrity: sha512-q4wJ4KzQ1Hlt/3kCvDNU/Oan3107IrTOl4aAbA7eX1GOL4RlkFXbByBt+JuT5N1KWil2Bp0ix+yXaa5VKdFTyA==}
+  '@jetstreamgg/utils@2.1.7':
+    resolution: {integrity: sha512-Cq2ItAQDTLD6NERC268qMrmXZhZJeNnjk2HUe6tBV1zZ0TPaPWd7f3DizIDKU9uxcoQS6uIL8OunRKI+qYMnOg==}
     peerDependencies:
       '@tanstack/react-query': ^5.17.15
       react: ^18.2.0
@@ -892,8 +892,8 @@ packages:
       viem: ^2.21.19
       wagmi: ^2.12.17
 
-  '@jetstreamgg/widgets@3.1.24':
-    resolution: {integrity: sha512-mxMd18XEPnZcL+ixL2DLq96tt7GbKpAxvb89/hoa/GFbH4el8nV/+aG3zZyIeCZeegDDjRU52twyFQbT/St0oQ==}
+  '@jetstreamgg/widgets@3.1.25':
+    resolution: {integrity: sha512-ju7jqNiQtUQnmjpbfQTILO0WmDL8vxTEyWnT1WRyWLISXK6KaJf6nTuNw/H2bgk9p2+2wScnEFDy7klDCt4zxA==}
     peerDependencies:
       '@emotion/react': ^11
       '@emotion/styled': ^11
@@ -3909,6 +3909,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -7609,9 +7610,9 @@ snapshots:
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
-  '@jetstreamgg/hooks@3.1.13(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
+  '@jetstreamgg/hooks@3.1.14(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
     dependencies:
-      '@jetstreamgg/utils': 2.1.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/utils': 2.1.7(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@tanstack/react-query': 5.17.15(react@18.2.0)
       '@wagmi/core': 2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))
       front-matter: 4.0.2
@@ -7626,7 +7627,7 @@ snapshots:
       - encoding
       - utf-8-validate
 
-  '@jetstreamgg/utils@2.1.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
+  '@jetstreamgg/utils@2.1.7(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))':
     dependencies:
       '@tanstack/react-query': 5.17.15(react@18.2.0)
       date-fns: 2.30.0
@@ -7640,12 +7641,12 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@jetstreamgg/widgets@3.1.24(qusdmks2k4xjiosuok7sepk3vi)':
+  '@jetstreamgg/widgets@3.1.25(qusdmks2k4xjiosuok7sepk3vi)':
     dependencies:
       '@emotion/react': 11.11.4(@types/react@18.2.6)(react@18.2.0)
       '@emotion/styled': 11.11.5(@emotion/react@11.11.4(@types/react@18.2.6)(react@18.2.0))(@types/react@18.2.6)(react@18.2.0)
-      '@jetstreamgg/hooks': 3.1.13(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
-      '@jetstreamgg/utils': 2.1.6(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/hooks': 3.1.14(@tanstack/react-query@5.17.15(react@18.2.0))(@wagmi/core@2.15.2(@tanstack/query-core@5.17.15)(@types/react@18.2.6)(react@18.2.0)(typescript@5.2.2)(use-sync-external-store@1.2.0(react@18.2.0))(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8)))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
+      '@jetstreamgg/utils': 2.1.7(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@lingui/detect-locale': 4.7.0
       '@lingui/macro': 4.7.0(@lingui/react@4.7.0(react@18.2.0))(babel-plugin-macros@3.1.0)(typescript@5.2.2)
       '@lingui/react': 4.7.0(react@18.2.0)
