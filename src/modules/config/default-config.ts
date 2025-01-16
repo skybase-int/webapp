@@ -25,5 +25,6 @@ export const defaultConfig: SiteConfig = {
         balancesTokenList: restrictedTokenList
       }
     : {}),
-  ...(restrictedMiCa ? { balancesTokenList: restrictedTokenListMiCa } : {})
+  ...(restrictedMiCa ? { balancesTokenList: restrictedTokenListMiCa } : {}),
+  locale: 'en'
 };
