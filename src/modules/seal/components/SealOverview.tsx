@@ -91,7 +91,7 @@ export function SealOverview() {
                 <TokenIconWithBalance
                   className="mt-2"
                   token={{ name: 'USDS', symbol: 'USDS' }}
-                  balance={formatBigInt(debtCeiling / BigInt(1e27))} //TODO: remove the / BigInt(1e27) once we update the packages
+                  balance={formatBigInt(debtCeiling)}
                 />
               }
             />
