@@ -15,8 +15,8 @@ importers:
         specifier: 2.1.7
         version: 2.1.7(@tanstack/react-query@5.17.15(react@18.2.0))(bufferutil@4.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(wagmi@2.13.2(@tanstack/query-core@5.17.15)(@tanstack/react-query@5.17.15(react@18.2.0))(@types/react@18.2.6)(bufferutil@4.0.8)(react@18.2.0)(typescript@5.2.2)(utf-8-validate@5.0.10)(viem@2.21.19(bufferutil@4.0.8)(typescript@5.2.2)(utf-8-validate@5.0.10)(zod@3.23.8))(zod@3.23.8))
       '@jetstreamgg/widgets':
-        specifier: 3.1.25
-        version: 3.1.25(qusdmks2k4xjiosuok7sepk3vi)
+        specifier: 3.1.26
+        version: 3.1.26(qusdmks2k4xjiosuok7sepk3vi)
       '@lingui/detect-locale':
         specifier: ^4.7.0
         version: 4.7.0
@@ -892,8 +892,8 @@ packages:
       viem: ^2.21.19
       wagmi: ^2.12.17
 
-  '@jetstreamgg/widgets@3.1.25':
-    resolution: {integrity: sha512-ju7jqNiQtUQnmjpbfQTILO0WmDL8vxTEyWnT1WRyWLISXK6KaJf6nTuNw/H2bgk9p2+2wScnEFDy7klDCt4zxA==}
+  '@jetstreamgg/widgets@3.1.26':
+    resolution: {integrity: sha512-THA+0VdRiYAkzQ2qkaWMhRnJzt1rS0YEyCvz9Ma85YuWp5tJPz2hJ8QNYwLDYoYQMxDo4Us+CQXnxktZvsXuig==}
     peerDependencies:
       '@emotion/react': ^11
       '@emotion/styled': ^11
@@ -7641,7 +7641,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@jetstreamgg/widgets@3.1.25(qusdmks2k4xjiosuok7sepk3vi)':
+  '@jetstreamgg/widgets@3.1.26(qusdmks2k4xjiosuok7sepk3vi)':
     dependencies:
       '@emotion/react': 11.11.4(@types/react@18.2.6)(react@18.2.0)
       '@emotion/styled': 11.11.5(@emotion/react@11.11.4(@types/react@18.2.6)(react@18.2.0))(@types/react@18.2.6)(react@18.2.0)
