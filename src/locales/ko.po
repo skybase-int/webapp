@@ -206,6 +206,10 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
+#: src/modules/seal/components/SealOverview.tsx
+msgid "Debt ceiling"
+msgstr ""
+
 #: src/modules/seal/components/SealDelegateCard.tsx
 msgid "Delegate"
 msgstr ""
@@ -256,7 +260,7 @@ msgid "Get SKY rewards with USDS"
 msgstr ""
 
 #: src/modules/balances/components/ModuleCard.tsx
-msgid "Go to {module}"
+msgid "Go to {0} {module}"
 msgstr ""
 
 #: src/components/DetailsSwitcher.tsx
