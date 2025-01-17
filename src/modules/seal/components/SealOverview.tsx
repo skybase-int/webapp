@@ -73,8 +73,8 @@ export function SealOverview() {
             />
             <StatsCard
               title={t`Total USDS borrowed`}
-              isLoading={isLoading}
-              error={error}
+              isLoading={collateralDataLoading}
+              error={collateralDataError}
               content={
                 <TokenIconWithBalance
                   className="mt-2"
