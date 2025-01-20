@@ -3,7 +3,7 @@ import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
 import { useUpgradeTotals } from '@jetstreamgg/hooks';
 import { formatBigInt, isBaseChainId } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useChainId } from 'wagmi';
 
 export function UpgradedMkrToSky() {

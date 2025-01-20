@@ -2,7 +2,7 @@ import { ConnectButton, useConnectModal } from '@rainbow-me/rainbowkit';
 import { TermsModal } from '../../ui/components/TermsModal';
 import { useAccount } from 'wagmi';
 import { Button } from '@/components/ui/button';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useConnectedContext } from '@/modules/ui/context/ConnectedContext';
 import { UnauthorizedPage } from '../../auth/components/UnauthorizedPage';
 

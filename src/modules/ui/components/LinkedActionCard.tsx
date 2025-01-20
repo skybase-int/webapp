@@ -11,7 +11,7 @@ import { RewardsRate, SavingsRate } from './HighlightRate';
 import { Logo } from './HighlightLogo';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { LinkedActionSteps } from '@/modules/config/context/ConfigContext';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { formatNumber } from '@jetstreamgg/utils';
 import { useEffect, useState } from 'react';
 
