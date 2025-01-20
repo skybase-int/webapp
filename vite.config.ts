@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import { configDefaults } from 'vitest/config';
 import { lingui } from '@lingui/vite-plugin';
 import tailwindcss from 'tailwindcss';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import simpleHtmlPlugin from 'vite-plugin-simple-html';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
@@ -92,7 +92,7 @@ export default ({ mode }: { mode: string }) => {
       include: ['wagmi > @safe-global/safe-apps-provider']
     },
     plugins: [
-      createHtmlPlugin({
+      simpleHtmlPlugin({
         minify: true,
         inject: {
           data: {
