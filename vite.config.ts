@@ -71,9 +71,9 @@ export default ({ mode }: { mode: string }) => {
       port: 3000
     },
     root: 'src',
-    envDir: './',
+    envDir: '../',
     build: {
-      outDir: './dist',
+      outDir: '../dist',
       emptyOutDir: true
     },
     test: {
