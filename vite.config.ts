@@ -71,9 +71,9 @@ export default ({ mode }: { mode: string }) => {
       port: 3000
     },
     root: 'src',
-    envDir: '../',
+    envDir: './',
     build: {
-      outDir: '../dist',
+      outDir: './dist',
       emptyOutDir: true
     },
     test: {
@@ -95,9 +95,15 @@ export default ({ mode }: { mode: string }) => {
       simpleHtmlPlugin({
         minify: true,
         inject: {
-          data: {
-            csp: parsedCSP
-          }
+          tags: [
+            {
+              tag: 'meta',
+              attrs: {
+                'http-equiv': 'Content-Security-Policy',
+                content: parsedCSP
+              }
+            }
+          ]
         }
       }),
       nodePolyfills({
