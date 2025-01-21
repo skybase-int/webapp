@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { Text, Heading } from './Typography';
 
 export function Error({ variant = 'large' }: { variant?: 'large' | 'medium' | 'small' }) {

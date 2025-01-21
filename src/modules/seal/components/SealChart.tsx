@@ -3,7 +3,7 @@ import { ErrorBoundary } from '@/modules/layout/components/ErrorBoundary';
 import { useParseSavingsChartData } from '@/modules/savings/hooks/useParseSavingsChartData';
 import { Chart, TimeFrame } from '@/modules/ui/components/Chart';
 import { useSealHistoricData } from '@jetstreamgg/hooks';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { useState } from 'react';
 import { parseEther } from 'viem';
 

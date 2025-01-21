@@ -1,7 +1,7 @@
 import { RewardContract, RewardsChartInfoParsed, useRewardsChartInfo } from '@jetstreamgg/hooks';
 import { useState } from 'react';
 import { ErrorBoundary } from '@/modules/layout/components/ErrorBoundary';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { Chart, TimeFrame } from '@/modules/ui/components/Chart';
 import { useParseRewardsChartData } from '@/modules/rewards/hooks/useParseRewardsChartData';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';

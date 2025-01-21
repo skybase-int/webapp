@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTrigger } from '@/components/ui/dialog';
 import { Text } from '@/modules/layout/components/Typography';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useChainId, useChains, useClient, useSwitchChain } from 'wagmi';
 import { MainnetChain, BaseChain, Close } from '@/modules/icons';
 import { cn } from '@/lib/utils';

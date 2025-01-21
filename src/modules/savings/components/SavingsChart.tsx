@@ -2,7 +2,7 @@ import { useSavingsChartInfo } from '@jetstreamgg/hooks';
 import { Chart, TimeFrame } from '@/modules/ui/components/Chart';
 import { useState } from 'react';
 import { ErrorBoundary } from '@/modules/layout/components/ErrorBoundary';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { useParseSavingsChartData } from '../hooks/useParseSavingsChartData';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useChainId } from 'wagmi';

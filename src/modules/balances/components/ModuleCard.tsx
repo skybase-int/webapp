@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Intent } from '@/lib/enums';
 import { mapIntentToQueryParam } from '@/lib/constants';
-import { t, Trans } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
+import { Trans } from '@lingui/react/macro';
 import { cn } from '@/lib/utils';
 import { HStack } from '@/modules/layout/components/HStack';
 import { Card, CardTitle, CardContent } from '@/components/ui/card';
@@ -36,9 +37,7 @@ export const ModuleCard = ({ className, title, intent, module, notAvailable, soo
         </Text>
       )}
       <Card className={cn('relative flex h-full flex-col justify-between bg-[length:100%_100%]', className)}>
-        <CardTitle
-          className={`mb-7 text-left font-custom-450 font-normal leading-8 ${notAvailable ? '' : ''}`}
-        >
+        <CardTitle className={`mb-7 text-left font-normal leading-8 ${notAvailable ? '' : ''}`}>
           {t`${title}`}
         </CardTitle>
         <CardContent className="relative p-0 pb-2">

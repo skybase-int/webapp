@@ -3,7 +3,7 @@ import { isBaseChainId } from '@jetstreamgg/utils';
 import { Chart, TimeFrame } from '@/modules/ui/components/Chart';
 import { useState } from 'react';
 import { ErrorBoundary } from '@/modules/layout/components/ErrorBoundary';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { useParseTokenChartData } from '@/modules/ui/hooks/useParseTokenChartData';
 import { useChainId } from 'wagmi';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
