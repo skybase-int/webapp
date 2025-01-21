@@ -4,7 +4,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useBoostedRewards } from '@jetstreamgg/hooks';
 import { Rewards, RewardsEmpty, Rocket } from '@/modules/icons';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { useAccount } from 'wagmi';
 import { formatBigInt } from '@jetstreamgg/utils';
 import { mapIntentToQueryParam } from '@/lib/constants';

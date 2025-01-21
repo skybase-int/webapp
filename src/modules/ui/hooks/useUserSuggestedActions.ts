@@ -7,7 +7,7 @@ import {
   TOKENS
 } from '@jetstreamgg/hooks';
 import { isBaseChainId } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useState, useEffect, useRef } from 'react';
 import { useAccount, useChainId } from 'wagmi';
 

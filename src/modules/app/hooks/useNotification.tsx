@@ -2,7 +2,7 @@ import { NotificationType, TxStatus } from '@jetstreamgg/widgets';
 import { Toast, toast } from '@/components/ui/use-toast';
 import { LinkedAction } from '@/modules/ui/hooks/useUserSuggestedActions';
 import { HStack } from '@/modules/layout/components/HStack';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { VStack } from '@/modules/layout/components/VStack';
 import { Button } from '@/components/ui/button';
 import { capitalizeFirstLetter } from '@/lib/helpers/string/capitalizeFirstLetter';
