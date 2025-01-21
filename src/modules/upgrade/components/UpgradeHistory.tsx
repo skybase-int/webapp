@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useUpgradeHistory, UpgradeHistoryRow } from '@jetstreamgg/hooks';
 import { formatBigInt, useFormatDates } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';

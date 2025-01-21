@@ -1,6 +1,6 @@
 import { Intent } from '@/lib/enums';
 import { HStack } from '@/modules/layout/components/HStack';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { ModuleCard } from '@/modules/balances/components/ModuleCard';
 import { useChainId } from 'wagmi';
 import { isBaseChainId } from '@jetstreamgg/utils';

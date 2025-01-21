@@ -23,7 +23,7 @@ import { easeOutExpo } from '../animation/timingFunctions';
 import { positionAnimations } from '../animation/presets';
 import { AnimationLabels } from '../animation/constants';
 import { LoadingErrorWrapper } from './LoadingErrorWrapper';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { VStack } from '@/modules/layout/components/VStack';
 import { Warning } from '@/modules/icons/Warning';
 

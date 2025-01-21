@@ -1,6 +1,6 @@
 import { RewardContract, useRewardContractInfo, useRewardsChartInfo } from '@jetstreamgg/hooks';
 import { formatBigInt, formatNumber } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { Text } from '@/modules/layout/components/Typography';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { PopoverRateInfo } from '@/modules/ui/components/PopoverRateInfo';

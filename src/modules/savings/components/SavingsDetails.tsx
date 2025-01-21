@@ -2,7 +2,7 @@ import { SavingsHistory } from './SavingsHistory';
 import { SavingsBalanceDetails } from './SavingsBalanceDetails';
 import { SavingsInfoDetails } from './SavingsInfoDetails';
 import { SavingsFaq } from './SavingsFaq';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
