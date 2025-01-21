@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { formatBigInt, useFormatDates, isBaseChainId } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { absBigInt } from '../../utils/math';
 import { SavingsSupply, ArrowDown } from '@/modules/icons';

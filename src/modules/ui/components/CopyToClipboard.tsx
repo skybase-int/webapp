@@ -2,7 +2,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { useClipboard } from '../hooks/useClipboard';
 import { Text } from '@/modules/layout/components/Typography';
 import { Copy } from '@/modules/icons';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 
 export function CopyToClipboard({ text }: { text: string }) {
   const { hasCopied, onCopy } = useClipboard(text);

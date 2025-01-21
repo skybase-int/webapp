@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { ExternalLinkIcon } from 'lucide-react';
 import { ExternalLink } from '@/modules/layout/components/ExternalLink';
 import { Heading, Text } from '@/modules/layout/components/Typography';

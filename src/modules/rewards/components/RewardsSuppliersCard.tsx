@@ -1,6 +1,6 @@
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { Text } from '@/modules/layout/components/Typography';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useRewardsSuppliersCount } from '../hooks/useRewardsSuppliersCount';
 import { useChainId } from 'wagmi';
 import { isBaseChainId } from '@jetstreamgg/utils';

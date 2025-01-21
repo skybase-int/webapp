@@ -3,7 +3,8 @@ import { formatDecimalPercentage, formatNumber, math, formatBigInt } from '@jets
 import { DetailSectionRow } from '@/modules/ui/components/DetailSectionRow';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';
 import { DetailSection } from '@/modules/ui/components/DetailSection';
-import { t, Trans } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
+import { Trans } from '@lingui/react/macro';
 import { HStack } from '@/modules/layout/components/HStack';
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { TokenIconWithBalance } from '@/modules/ui/components/TokenIconWithBalance';
@@ -34,7 +35,6 @@ export function SealOverview() {
     );
   }, [mostRecentData?.totalMkr]);
 
-  const usdsDebt = formatNumber(mostRecentData?.totalDebt ?? 0);
   const borrowRate = mostRecentData?.borrowRate ?? 0;
   const tvl = mostRecentData?.tvl ?? 0;
   const numberOfUrns = mostRecentData?.numberOfUrns ?? 0;
@@ -45,6 +45,7 @@ export function SealOverview() {
     error: collateralDataError
   } = useCollateralData();
   const debtCeiling = collateralData?.debtCeiling ?? 0n;
+  const totalDebt = collateralData?.totalDaiDebt ?? 0n;
 
   return (
     <DetailSectionWrapper>
@@ -73,13 +74,13 @@ export function SealOverview() {
             />
             <StatsCard
               title={t`Total USDS borrowed`}
-              isLoading={isLoading}
-              error={error}
+              isLoading={collateralDataLoading}
+              error={collateralDataError}
               content={
                 <TokenIconWithBalance
                   className="mt-2"
                   token={{ name: 'USDS', symbol: 'USDS' }}
-                  balance={usdsDebt}
+                  balance={formatBigInt(totalDebt)}
                 />
               }
             />

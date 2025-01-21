@@ -1,7 +1,8 @@
 import { Heading, Text } from './Typography';
 import { Button } from '@/components/ui/button';
 import { useCustomConnectModal } from '@/modules/ui/hooks/useCustomConnectModal';
-import { Trans, t } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 import { GradientShapeCard } from '@/modules/ui/components/GradientShapeCard';
 import { Intent } from '@/lib/enums';
 import { useChainId } from 'wagmi';

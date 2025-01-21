@@ -5,7 +5,7 @@ import { useChainId } from 'wagmi';
 import { getRetainedQueryParams } from '@/modules/ui/hooks/useRetainedQueryParams';
 import { useSearchParams } from 'react-router-dom';
 import { IntentMapping, QueryParams } from '@/lib/constants';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { base, mainnet } from 'viem/chains';
 
 export const useActionForToken = () => {
