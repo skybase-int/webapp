@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans, t } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Unavailable } from '@/modules/icons';
 import { ExternalLink } from '@/modules/layout/components/ExternalLink';

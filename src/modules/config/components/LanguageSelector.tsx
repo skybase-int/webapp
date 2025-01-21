@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Globe } from '../../icons';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { supportedLocales } from '../../../../supportedLocales';
 import { ConfigContext } from '../context/ConfigContext';
 import { useLingui } from '@lingui/react';

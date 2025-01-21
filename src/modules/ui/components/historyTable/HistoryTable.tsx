@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useAccount, useChainId } from 'wagmi';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { Table, TableBody } from '@/components/ui/table';
 import { CustomPagination } from '../CustomPagination';
 import { LoadingErrorWrapper } from '../LoadingErrorWrapper';

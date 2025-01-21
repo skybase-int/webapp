@@ -6,7 +6,7 @@ import { LoadingAssetBalanceCard } from './LoadingAssetBalanceCard';
 import { AssetBalanceCard } from './AssetBalanceCard';
 import { LoadingErrorWrapper } from '@/modules/ui/components/LoadingErrorWrapper';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { defaultConfig } from '@/modules/config/default-config';
 
 export function BalancesAssets() {

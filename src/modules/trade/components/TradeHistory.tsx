@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { getTokenDecimals, TokenForChain, useTradeHistory } from '@jetstreamgg/hooks';
 import { formatNumber, useFormatDates, isBaseChainId } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';
 import { formatUnits } from 'viem';

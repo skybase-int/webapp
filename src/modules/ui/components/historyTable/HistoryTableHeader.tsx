@@ -1,7 +1,7 @@
 import { TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { ArrowDown } from '@/modules/icons';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { HistoryTableProps, SortDirection } from './types';
 
 export function HistoryTableHeader({

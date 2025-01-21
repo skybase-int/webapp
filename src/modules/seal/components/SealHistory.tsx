@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { TransactionTypeEnum, useSealHistory } from '@jetstreamgg/hooks';
 import { formatBigInt, useFormatDates } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react';
 import { SavingsSupply, ArrowDown } from '@/modules/icons';
 import { HistoryTable } from '@/modules/ui/components/historyTable/HistoryTable';

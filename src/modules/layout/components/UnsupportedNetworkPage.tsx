@@ -1,5 +1,5 @@
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { UnsupportedNetwork } from '@/modules/icons/UnsupportedNetwork';
 import { useSwitchChain } from 'wagmi';

@@ -1,5 +1,5 @@
 import { StatsCard } from '@/modules/ui/components/StatsCard';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { Text } from '@/modules/layout/components/Typography';
 import { useOverallSkyData } from '@jetstreamgg/hooks';
 
