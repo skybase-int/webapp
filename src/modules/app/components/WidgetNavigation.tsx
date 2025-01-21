@@ -3,7 +3,7 @@ import { Intent } from '../../../lib/enums';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../../components/ui/tabs';
 import { BP, useBreakpointIndex } from '@/modules/ui/hooks/useBreakpointIndex';
 import { Text } from '@/modules/layout/components/Typography';
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { WidgetContent } from './WidgetPane';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cardAnimations } from '@/modules/ui/animation/presets';

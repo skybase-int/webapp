@@ -1,6 +1,6 @@
 import { RewardsModule, Savings, Trade, Upgrade, Seal } from '@/modules/icons';
 import { Intent } from './enums';
-import { msg } from '@lingui/macro';
+import { msg } from '@lingui/core/macro';
 import { MessageDescriptor } from '@lingui/core';
 import { base, mainnet, sepolia } from 'viem/chains';
 import { tenderly, tenderlyBase } from '@/data/wagmi/config/config.default';

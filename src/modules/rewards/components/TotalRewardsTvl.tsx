@@ -1,6 +1,6 @@
 import { StatsCard } from '@/modules/ui/components/StatsCard';
 import { Text } from '@/modules/layout/components/Typography';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useTotalTvl } from '../hooks/useTotalTvl';
 import { formatBigInt } from '@jetstreamgg/utils';
 

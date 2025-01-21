@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import { configDefaults } from 'vitest/config';
 import { lingui } from '@lingui/vite-plugin';
 import tailwindcss from 'tailwindcss';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import simpleHtmlPlugin from 'vite-plugin-simple-html';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
@@ -93,25 +93,15 @@ export default ({ mode }: { mode: string }) => {
       include: ['wagmi > @safe-global/safe-apps-provider']
     },
     plugins: [
-      createHtmlPlugin({
+      simpleHtmlPlugin({
         minify: true,
         inject: {
-          data: {
-            csp: parsedCSP
-          },
           tags: [
             {
-              injectTo: 'head',
-              tag: 'script',
+              tag: 'meta',
               attrs: {
-                'src': 'https://cdn.markfi.xyz/scripts/analytics/0.11.21/cookie3.analytics.min.js',
-                'integrity': 'sha384-wtYmYhbRlAqGwxc5Vb9GZVyp/Op3blmJICmXjRiJu2/TlPze5dHsmg2gglbH8viT',
-                'crossorigin': 'anonymous',
-                'async': 'true',
-                'strategy': 'lazyOnload',
-                'site-id': process.env.VITE_COOKIE3_SITE_ID || '',
-                'data-chain-tracking-enabled': 'true',
-                'data-nscript': 'lazyOnload'
+                'http-equiv': 'Content-Security-Policy',
+                content: parsedCSP
               }
             }
           ]

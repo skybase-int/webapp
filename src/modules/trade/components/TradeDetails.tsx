@@ -1,4 +1,4 @@
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { TradeHistory } from './TradeHistory';
 import { TradeFaq } from './TradeFaq';
 import { DetailSectionWrapper } from '@/modules/ui/components/DetailSectionWrapper';

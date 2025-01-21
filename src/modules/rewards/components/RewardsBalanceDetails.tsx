@@ -13,7 +13,7 @@ import {
   TOKENS
 } from '@jetstreamgg/hooks';
 import { formatNumber } from '@jetstreamgg/utils';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useAccount, useChainId } from 'wagmi';
 
 export function RewardsBalanceDetails({ rewardContract }: { rewardContract: RewardContract }) {

@@ -1,6 +1,6 @@
 import { Tooltip, TooltipArrow, TooltipContent, TooltipPortal, TooltipTrigger } from './ui/tooltip';
 import { Text } from '@/modules/layout/components/Typography';
-import { t } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
 import { useConfigContext } from '@/modules/config/hooks/useConfigContext';
 import { Intent } from '@/lib/enums';
 import { ChainModal } from '@/modules/ui/components/ChainModal';

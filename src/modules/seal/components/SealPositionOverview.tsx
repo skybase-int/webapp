@@ -8,7 +8,8 @@ import {
   ZERO_ADDRESS
 } from '@jetstreamgg/hooks';
 import { formatBigInt, math, WAD_PRECISION } from '@jetstreamgg/utils';
-import { t, Trans } from '@lingui/macro';
+import { t } from '@lingui/core/macro';
+import { Trans } from '@lingui/react/macro';
 import { SealToken } from '../constants';
 import { SealPositionRewardsCard } from './SealPositionRewardsCard';
 import { SealBorrowedCard, SealSealedCard } from '@/modules/ui/components/BalanceCards';

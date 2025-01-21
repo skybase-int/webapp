@@ -13,17 +13,23 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: signStatus === 'signing' ? 'Signing...' : 'Agree and Sign'
 #: src/modules/ui/components/TermsModal.tsx
 msgid "{0}"
 msgstr ""
 
+#. placeholder {0}: SealToken.MKR
+#. placeholder {0}: SealToken.SKY
 #: src/modules/seal/components/SealPositionOverview.tsx
 #: src/modules/seal/components/SealPositionOverview.tsx
 msgid "{0} sealed"
 msgstr ""
 
+#. placeholder {0}: intent && primaryToken && `${capitalizeFirstLetter(i18n._(intentTxt[intent]))} your `
+#. placeholder {1}: formatNumber(parseInt(balance))
+#. placeholder {2}: secondaryTagline[la]
 #: src/modules/ui/components/LinkedActionCard.tsx
-msgid "{0}<0>{1} {primaryToken} </0>to <1>{secondaryToken} </1>{2}"
+msgid "{0}<0>{1} {primaryToken} </0> to <1>{secondaryToken} </1>{2}"
 msgstr ""
 
 #: src/modules/rewards/components/history/RewardsCharts.tsx
@@ -46,11 +52,11 @@ msgstr ""
 msgid "About Chronicle points"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsDetailsView.tsx
-#: src/modules/rewards/components/RewardsOverview.tsx
-#: src/modules/savings/components/SavingsDetails.tsx
-#: src/modules/trade/components/TradeDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
 msgid "About Native Sky Protocol Tokens"
 msgstr ""
 
@@ -58,9 +64,9 @@ msgstr ""
 msgid "About Seal Engine"
 msgstr ""
 
-#: src/modules/seal/components/SealOverview.tsx
-#: src/modules/seal/components/SealPositionDetails.tsx
 #: src/modules/ui/components/AboutSealModule.tsx
+#: src/modules/seal/components/SealPositionDetails.tsx
+#: src/modules/seal/components/SealOverview.tsx
 msgid "About Seal Rewards"
 msgstr ""
 
@@ -105,9 +111,9 @@ msgstr ""
 msgid "Address Verification Error"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsHistory.tsx
-#: src/modules/savings/components/SavingsHistory.tsx
 #: src/modules/seal/components/SealHistory.tsx
+#: src/modules/savings/components/SavingsHistory.tsx
+#: src/modules/rewards/components/RewardsHistory.tsx
 msgid "Amount"
 msgstr ""
 
@@ -155,8 +161,8 @@ msgstr ""
 msgid "Claim all"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsHistory.tsx
 #: src/modules/seal/components/SealHistory.tsx
+#: src/modules/rewards/components/RewardsHistory.tsx
 msgid "Claim rewards"
 msgstr ""
 
@@ -164,12 +170,12 @@ msgstr ""
 msgid "Collateralization ratio"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsDetailsView.tsx
-#: src/modules/rewards/components/RewardsOverview.tsx
-#: src/modules/savings/components/SavingsDetails.tsx
-#: src/modules/seal/components/SealPositionDetails.tsx
-#: src/modules/trade/components/TradeDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/seal/components/SealPositionDetails.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
 msgid "Combined actions"
 msgstr ""
 
@@ -177,9 +183,9 @@ msgstr ""
 msgid "Connect wallet"
 msgstr ""
 
-#: src/modules/layout/components/CustomConnectButton.tsx
-#: src/modules/layout/components/CustomConnectButton.tsx
 #: src/modules/ui/components/TermsModal.tsx
+#: src/modules/layout/components/CustomConnectButton.tsx
+#: src/modules/layout/components/CustomConnectButton.tsx
 msgid "Connect Wallet"
 msgstr ""
 
@@ -199,8 +205,8 @@ msgstr ""
 msgid "Current SKY price"
 msgstr ""
 
-#: src/modules/ui/components/historyTable/HistoryRow.tsx
 #: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
 msgid "Date"
 msgstr ""
 
@@ -224,14 +230,14 @@ msgstr ""
 msgid "Earn with USDS"
 msgstr ""
 
-#: src/modules/balances/components/BalancesDetails.tsx
-#: src/modules/rewards/components/RewardsDetailsView.tsx
-#: src/modules/rewards/components/RewardsOverview.tsx
-#: src/modules/savings/components/SavingsDetails.tsx
-#: src/modules/seal/components/SealOverview.tsx
-#: src/modules/seal/components/SealPositionDetails.tsx
-#: src/modules/trade/components/TradeDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
+#: src/modules/trade/components/TradeDetails.tsx
+#: src/modules/seal/components/SealPositionDetails.tsx
+#: src/modules/seal/components/SealOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/rewards/components/RewardsOverview.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
+#: src/modules/balances/components/BalancesDetails.tsx
 msgid "FAQs"
 msgstr ""
 
@@ -257,6 +263,7 @@ msgstr ""
 msgid "Get SKY rewards with USDS"
 msgstr ""
 
+#. placeholder {0}: isBase ? 'Base' : ''
 #: src/modules/balances/components/ModuleCard.tsx
 msgid "Go to {0} {module}"
 msgstr ""
@@ -269,6 +276,7 @@ msgstr ""
 msgid "Legal Terms"
 msgstr ""
 
+#. placeholder {0}: rewardContract?.supplyToken.symbol.toUpperCase()
 #: src/modules/app/hooks/useNotification.tsx
 msgid "Looks like you need {0} to get rewards"
 msgstr ""
@@ -277,11 +285,11 @@ msgstr ""
 msgid "Looks like you need USDS"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsDetailsView.tsx
-#: src/modules/savings/components/SavingsDetails.tsx
-#: src/modules/seal/components/SealOverview.tsx
-#: src/modules/seal/components/SealPositionDetails.tsx
 #: src/modules/upgrade/components/UpgradeDetails.tsx
+#: src/modules/seal/components/SealPositionDetails.tsx
+#: src/modules/seal/components/SealOverview.tsx
+#: src/modules/savings/components/SavingsDetails.tsx
+#: src/modules/rewards/components/RewardsDetailsView.tsx
 msgid "Metrics"
 msgstr ""
 
@@ -318,8 +326,8 @@ msgstr ""
 msgid "Please try the action again or reach out on Discord for assistance if the problem persists."
 msgstr ""
 
-#: src/modules/auth/components/UnauthorizedPage.tsx
 #: src/modules/ui/components/TermsModal.tsx
+#: src/modules/auth/components/UnauthorizedPage.tsx
 msgid "Please wait..."
 msgstr ""
 
@@ -335,6 +343,7 @@ msgstr ""
 msgid "Reject"
 msgstr ""
 
+#. placeholder {0}: token.symbol
 #: src/modules/ui/components/BalanceCards.tsx
 msgid "Remaining {0} balance"
 msgstr ""
@@ -343,8 +352,8 @@ msgstr ""
 msgid "Repay"
 msgstr ""
 
-#: src/modules/seal/components/SealRewardCard.tsx
 #: src/modules/seal/components/SealRewardsOverview.tsx
+#: src/modules/seal/components/SealRewardCard.tsx
 msgid "Reward"
 msgstr ""
 
@@ -489,13 +498,13 @@ msgstr ""
 msgid "Start saving with your {formattedBalance} {upperSymbol}"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsTokenInfo.tsx
 #: src/modules/seal/components/SealRewardsOverview.tsx
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
 msgid "Suppliers"
 msgstr ""
 
-#: src/modules/rewards/components/RewardsHistory.tsx
 #: src/modules/savings/components/SavingsHistory.tsx
+#: src/modules/rewards/components/RewardsHistory.tsx
 msgid "Supply"
 msgstr ""
 
@@ -531,14 +540,17 @@ msgstr ""
 msgid "There was an error fetching this data"
 msgstr ""
 
+#. placeholder {0}: rewardContract.rewardToken.symbol
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
 msgid "Total {0} Points rewarded"
 msgstr ""
 
+#. placeholder {0}: rewardContract.rewardToken.symbol
 #: src/modules/rewards/components/RewardsTokenInfo.tsx
 msgid "Total {0} rewarded"
 msgstr ""
 
+#. placeholder {0}: userConfig?.sealToken
 #: src/modules/seal/components/SealOverview.tsx
 msgid "Total {0} sealed"
 msgstr ""
@@ -622,10 +634,10 @@ msgstr ""
 msgid "Transactions"
 msgstr ""
 
-#: src/modules/rewards/components/history/RewardsOverviewCharts.tsx
-#: src/modules/rewards/components/RewardsTokenInfo.tsx
-#: src/modules/savings/components/SavingsChart.tsx
 #: src/modules/seal/components/SealOverview.tsx
+#: src/modules/savings/components/SavingsChart.tsx
+#: src/modules/rewards/components/RewardsTokenInfo.tsx
+#: src/modules/rewards/components/history/RewardsOverviewCharts.tsx
 msgid "TVL"
 msgstr ""
 
@@ -637,8 +649,8 @@ msgstr ""
 msgid "TVL (Total Value Locked)"
 msgstr ""
 
-#: src/modules/ui/components/historyTable/HistoryRow.tsx
 #: src/modules/ui/components/historyTable/HistoryTableHeader.tsx
+#: src/modules/ui/components/historyTable/HistoryRow.tsx
 msgid "Tx hash"
 msgstr ""
 
@@ -674,9 +686,9 @@ msgstr ""
 msgid "Upgrade"
 msgstr ""
 
-#: src/modules/app/hooks/useNotification.tsx
-#: src/modules/app/hooks/useNotification.tsx
 #: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/app/hooks/useNotification.tsx
+#: src/modules/app/hooks/useNotification.tsx
 msgid "Upgrade and get rewards"
 msgstr ""
 
@@ -684,10 +696,10 @@ msgstr ""
 msgid "Upgrade and Save"
 msgstr ""
 
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
+#: src/modules/ui/hooks/useUserSuggestedActions.ts
 #: src/modules/app/hooks/useNotification.tsx
-#: src/modules/ui/hooks/useUserSuggestedActions.ts
-#: src/modules/ui/hooks/useUserSuggestedActions.ts
-#: src/modules/ui/hooks/useUserSuggestedActions.ts
 msgid "Upgrade DAI to USDS"
 msgstr ""
 
@@ -740,10 +752,10 @@ msgstr ""
 msgid "View Chronicle"
 msgstr ""
 
-#: src/modules/ui/components/AboutSealModule.tsx
-#: src/modules/ui/components/AboutSky.tsx
-#: src/modules/ui/components/AboutSUsds.tsx
 #: src/modules/ui/components/AboutUsds.tsx
+#: src/modules/ui/components/AboutSky.tsx
+#: src/modules/ui/components/AboutSealModule.tsx
+#: src/modules/ui/components/AboutSUsds.tsx
 msgid "View contract"
 msgstr ""
 
@@ -787,6 +799,7 @@ msgstr ""
 msgid "Withdrawal"
 msgstr ""
 
+#. placeholder {0}: Array.isArray(termsLink) && termsLink.length > 0 ? ( <ExternalLink skipConfirm className="text-textEmphasis" showIcon={false} href={sanitizeUrl(termsLink[0].url)} > {termsLink[0].name} </ExternalLink> ) : ( 'Terms of Use' )
 #: src/modules/auth/components/UnauthorizedPage.tsx
 msgid "Your access is restricted. For more information, please refer to our {0}."
 msgstr ""
@@ -796,13 +809,14 @@ msgid "Your balances"
 msgstr ""
 
 #: src/modules/layout/components/ConnectCard.tsx
-msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS, and your MKR to SKY. Unlocking all the Sky Protocol has to offer, without giving up control, is easy."
+msgid "Your DeFi journey with Sky is just beginning. Connect your wallet to access the decentralised Sky Protocol and upgrade your DAI to USDS, and your MKR to SKY. Unlocking all the Sky Protocol has to offer, without giving up control, is easy. "
 msgstr ""
 
 #: src/modules/balances/components/BalancesDetails.tsx
 msgid "Your funds"
 msgstr ""
 
+#. placeholder {0}: formatUrnIndex(BigInt(positionIndex))
 #: src/modules/seal/components/SealPositionOverview.tsx
 msgid "Your position {0}"
 msgstr ""
