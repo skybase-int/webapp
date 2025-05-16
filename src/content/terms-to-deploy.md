@@ -226,6 +226,8 @@ Users are responsible for ensuring that their use of the Services complies with 
 
 The Services may interact with third-party services, and we do not assume any responsibility or liability for the actions, products, or services of such third parties. Users should review the terms and policies of any third-party services before use.
 
+We may link to, reference, or otherwise provide information about certain third-party services, sites, technology, content, and resources which are not made available to you via sky.money through any API integrations with third-party providers or blockchain-based integrations (in accordance with Section 1.2). Notwithstanding the provision of such information, by choosing to use or rely on any such third-party products and services, you acknowledge and agree that your use of and reliance on such products and services is subject to any terms and conditions, user policies, and/or other applicable agreements of the respective third-party provider(s). It is your responsibility to review and understand any such terms before utilizing any third-party products and services. Skybase International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of, such third-party products and services.
+
 ### **3.6 Amendments**
 
 We reserve the right to modify or update this disclaimer at any time without prior notice. Your continued use of the Services following any changes constitutes your acceptance of the revised disclaimer.
