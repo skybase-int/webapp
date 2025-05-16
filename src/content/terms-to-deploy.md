@@ -98,7 +98,7 @@ You acknowledge that at any time, your access to the Interface may be suspended 
 
 You acknowledge that we use data you submit using the Services through your wallet to detect, prevent and mitigate illicit or harmful activity and that we may share that data with blockchain analytics providers. We share this information with these service providers to allow them to help us to promote the safety, security, and integrity of the Services.
 
-Certain functionalities of the Web App, including the Sky Savings Rate and Sky Token Rewards are subject to geographical restrictions and are unavailable in specific  jurisdictions including the United States.
+Certain functionalities of the Web App, including the Sky Savings Rate and Sky Token Rewards are subject to geographical restrictions and are unavailable in specific jurisdictions including the United States.
 
 Furthermore, the Trade feature is explicitly restricted in all European Union member states.
 
