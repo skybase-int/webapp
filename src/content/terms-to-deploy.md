@@ -1,6 +1,6 @@
 # Skybase International Terms of Use
 
-**Last updated: 9 January 2025**
+**Last updated: 15 May 2025**
 
 ## **Introduction**
 
@@ -98,7 +98,7 @@ You acknowledge that at any time, your access to the Interface may be suspended 
 
 You acknowledge that we use data you submit using the Services through your wallet to detect, prevent and mitigate illicit or harmful activity and that we may share that data with blockchain analytics providers. We share this information with these service providers to allow them to help us to promote the safety, security, and integrity of the Services.
 
-Certain functionalities of the Web App, including the Sky Savings Rate and Sky Token Rewards are subject to geographical restrictions and are unavailable in specific  jurisdictions including the United States and Switzerland.
+Certain functionalities of the Web App, including the Sky Savings Rate and Sky Token Rewards are subject to geographical restrictions and are unavailable in specific jurisdictions including the United States.
 
 Furthermore, the Trade feature is explicitly restricted in all European Union member states.
 
@@ -116,7 +116,7 @@ New versions and upgrades to the Sky Protocol may be released from time to time,
 
 We reserve the right to make certain third-party products and services available to you through API integrations with third-party providers or blockchain-based integrations. Any such third-party products and services may include integrations, links, or other access to third-party services, sites, technology, content, and resources. By choosing to use these third-party products and services, you acknowledge and agree that your use of such products and services is subject to any terms and conditions, privacy policies, and other applicable agreements of the respective third-party providers. It is your responsibility to review and understand these terms before utilizing any third-party products and services available through the Interface. We disclaim any liability for any issues arising from your use of these third-party products and services, including, but not limited to, any breach of contract, privacy, or data security issues. You, and not Skybase International will be responsible for any and all fees and charges associated with your use of any third-party services. Skybase International enables access to these third-party services merely as a convenience, and the inclusion of a third-party service on the Interface does not constitute an endorsement or recommendation of that third partyʼs products and services. Any dealings that you have with third parties while using the Services, such as the Interface, are between you and that third party.
 
-Skybase International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of such third-party products and services. We encourage you to review the terms of use and privacy policies of the third-party providers prior to using such products and services. Some third-party products or services will provide us with access to certain information that you have provided to such parties through your use of the third-party services, and we will use, store, and disclose such information in accordance with our Privacy Policy. For more information on the implications of using any products and services made available via the Services through thirdparty integrations or otherwise, including our use, storage, and disclosure of information related to you and your use of such third-party services within the Services, please see our Privacy Policy.
+Skybase International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of such third-party products and services. We encourage you to review the terms of use and privacy policies of the third-party providers prior to using such products and services. Some third-party products or services will provide us with access to certain information that you have provided to such parties through your use of the third-party services, and we will use, store, and disclose such information in accordance with our Privacy Policy. For more information on the implications of using any products and services made available via the Services through third-party integrations or otherwise, including our use, storage, and disclosure of information related to you and your use of such third-party services within the Services, please see our Privacy Policy.
 
 ### **1.3 Other Products and Services**
 
@@ -225,6 +225,8 @@ Users are responsible for ensuring that their use of the Services complies with 
 ### **3.5 Third-Party Services**
 
 The Services may interact with third-party services, and we do not assume any responsibility or liability for the actions, products, or services of such third parties. Users should review the terms and policies of any third-party services before use.
+
+We may link to, reference, or otherwise provide information about certain third-party services, sites, technology, content, and resources which are not made available to you via sky.money through any API integrations with third-party providers or blockchain-based integrations (in accordance with Section 1.2). Notwithstanding the provision of such information, by choosing to use or rely on any such third-party products and services, you acknowledge and agree that your use of and reliance on such products and services is subject to any terms and conditions, user policies, and/or other applicable agreements of the respective third-party provider(s). It is your responsibility to review and understand any such terms before utilizing any third-party products and services. Skybase International will not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused, by or in connection with the use of or reliance on any third-party products and services. Skybase International has no control over, and is not responsible for the accuracy, reliability, or completeness of, such third-party products and services.
 
 ### **3.6 Amendments**
 
